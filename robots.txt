@@ -1,0 +1,37 @@
+# ClearFuneralCosts - Robots.txt
+# Version: 2.0.0
+# Last Updated: 2025-01-27
+# Description: Search engine crawling instructions for ClearFuneralCosts
+
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the main pages
+Allow: /index.html
+Allow: /questionnaire.html
+Allow: /privacy.html
+Allow: /SouthEast/
+Allow: /reports/
+Allow: /checkout/
+
+# Allow access to important assets
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Disallow access to sensitive areas
+Disallow: /email-templates/
+Disallow: /documentation/
+Disallow: /checkout/payment-failed.html
+Disallow: /checkout/thank-you.html
+
+# Disallow access to temporary files
+Disallow: /*.tmp
+Disallow: /*.log
+Disallow: /*.bak
+
+# Sitemap location
+Sitemap: https://clearfuneralcosts.co.uk/sitemap.xml
+
+# Crawl delay (optional - be respectful to server resources)
+Crawl-delay: 1

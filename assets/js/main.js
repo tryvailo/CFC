@@ -1,0 +1,971 @@
+/* ============================================
+   CLEARFUNERALCOSTS - MAIN JAVASCRIPT (MODULAR)
+   Основной JavaScript файл с модульной структурой
+   ============================================ */
+
+/**
+ * Main Application Class
+ * Handles initialization and coordination of all modules
+ */
+class ClearFuneralCostsApp {
+    constructor() {
+        this.modules = {};
+        this.isInitialized = false;
+        
+        this.init();
+    }
+
+    /**
+     * Initialize the application
+     */
+    init() {
+        if (this.isInitialized) return;
+        
+        this.detectPageType();
+        this.initializeModules();
+        this.setupGlobalEventListeners();
+        this.setupAnalytics();
+        this.isInitialized = true;
+    }
+
+    /**
+     * Detect page type and load appropriate modules
+     */
+    detectPageType() {
+        const path = window.location.pathname;
+        
+        if (path.includes('/reports/')) {
+            this.pageType = 'report';
+        } else if (path.includes('/checkout/')) {
+            this.pageType = 'checkout';
+        } else if (path.includes('/questionnaire')) {
+            this.pageType = 'questionnaire';
+        } else if (path.includes('/south-east') || path.includes('/regional')) {
+            this.pageType = 'regional';
+        } else {
+            this.pageType = 'home';
+        }
+    }
+
+    /**
+     * Initialize modules based on page type
+     */
+    initializeModules() {
+        // Always initialize core modules
+        this.initializeCoreModules();
+        
+        // Initialize page-specific modules
+        switch (this.pageType) {
+            case 'report':
+                this.initializeReportModules();
+                    break;
+            case 'checkout':
+                this.initializeCheckoutModules();
+                    break;
+            case 'questionnaire':
+                this.initializeQuestionnaireModules();
+                    break;
+            case 'regional':
+                this.initializeRegionalModules();
+                    break;
+            default:
+                this.initializeHomeModules();
+                    break;
+        }
+    }
+
+    /**
+     * Initialize core modules (available on all pages)
+     */
+    initializeCoreModules() {
+        this.modules.analytics = new AnalyticsModule();
+        this.modules.smoothScroll = new SmoothScrollModule();
+        this.modules.accessibility = new AccessibilityModule();
+        this.modules.utils = new UtilsModule();
+    }
+
+    /**
+     * Initialize home page modules
+     */
+    initializeHomeModules() {
+        this.modules.informationService = new InformationServiceModule();
+        this.modules.faq = new FAQModule();
+        this.modules.socialProof = new SocialProofModule();
+    }
+
+    /**
+     * Initialize report page modules
+     */
+    initializeReportModules() {
+        // Reports module is loaded via reports.js
+        console.log('Report modules initialized via reports.js');
+    }
+
+    /**
+     * Initialize checkout page modules
+     */
+    initializeCheckoutModules() {
+        // Checkout module is loaded via checkout.js
+        console.log('Checkout modules initialized via checkout.js');
+    }
+
+    /**
+     * Initialize questionnaire page modules
+     */
+    initializeQuestionnaireModules() {
+        // Questionnaire module is loaded via questionnaire.js
+        console.log('Questionnaire modules initialized via questionnaire.js');
+    }
+
+    /**
+     * Initialize regional page modules
+     */
+    initializeRegionalModules() {
+        // Regional module is loaded via regional.js
+        console.log('Regional modules initialized via regional.js');
+    }
+
+    /**
+     * Setup global event listeners
+     */
+    setupGlobalEventListeners() {
+        // Window load event
+        window.addEventListener('load', () => {
+            this.handleWindowLoad();
+        });
+
+        // Window resize event
+        window.addEventListener('resize', this.debounce(() => {
+            this.handleWindowResize();
+        }, 250));
+
+        // Window scroll event
+        window.addEventListener('scroll', this.throttle(() => {
+            this.handleWindowScroll();
+        }, 100));
+
+        // Before unload event
+        window.addEventListener('beforeunload', () => {
+            this.handleBeforeUnload();
+        });
+    }
+
+    /**
+     * Handle window load event
+     */
+    handleWindowLoad() {
+        // Remove loading class if exists
+        document.body.classList.remove('loading');
+        
+        // Initialize lazy loading
+        this.initializeLazyLoading();
+        
+        // Track page load
+        this.modules.analytics?.trackPageLoad();
+    }
+
+    /**
+     * Handle window resize event
+     */
+    handleWindowResize() {
+        // Update mobile menu state
+        this.updateMobileMenuState();
+        
+        // Update responsive elements
+        this.updateResponsiveElements();
+    }
+
+    /**
+     * Handle window scroll event
+     */
+    handleWindowScroll() {
+        // Update scroll indicators
+        this.updateScrollIndicators();
+        
+        // Handle scroll-based animations
+        this.handleScrollAnimations();
+    }
+
+    /**
+     * Handle before unload event
+     */
+    handleBeforeUnload() {
+        // Save any pending data
+        this.savePendingData();
+        
+        // Track page exit
+        this.modules.analytics?.trackPageExit();
+    }
+
+    /**
+     * Setup analytics
+     */
+    setupAnalytics() {
+        // Initialize Google Analytics if available
+        if (typeof gtag !== 'undefined') {
+            this.initializeGoogleAnalytics();
+        }
+        
+        // Initialize custom analytics
+        this.initializeCustomAnalytics();
+    }
+
+    /**
+     * Initialize Google Analytics
+     */
+    initializeGoogleAnalytics() {
+        // Track page view
+        gtag('config', 'GA_MEASUREMENT_ID', {
+            page_title: document.title,
+            page_location: window.location.href
+        });
+    }
+
+    /**
+     * Initialize custom analytics
+     */
+    initializeCustomAnalytics() {
+        // Track user interactions
+        this.trackUserInteractions();
+    }
+
+    /**
+     * Track user interactions
+     */
+    trackUserInteractions() {
+        // Track form submissions
+        document.addEventListener('submit', (e) => {
+            this.modules.analytics?.trackFormSubmission(e.target);
+        });
+
+        // Track button clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('button, .btn, .cta-button')) {
+                this.modules.analytics?.trackButtonClick(e.target);
+            }
+        });
+
+        // Track link clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('a[href]')) {
+                this.modules.analytics?.trackLinkClick(e.target);
+            }
+        });
+    }
+
+    /**
+     * Initialize lazy loading
+     */
+    initializeLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+    }
+
+    /**
+     * Update mobile menu state
+     */
+    updateMobileMenuState() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu && window.innerWidth > 768) {
+            mobileMenu.classList.remove('active');
+        }
+    }
+
+    /**
+     * Update responsive elements
+     */
+    updateResponsiveElements() {
+        // Update responsive tables
+        const tables = document.querySelectorAll('.responsive-table');
+        tables.forEach(table => {
+            this.updateResponsiveTable(table);
+        });
+    }
+
+    /**
+     * Update responsive table
+     */
+    updateResponsiveTable(table) {
+        if (window.innerWidth < 768) {
+            table.classList.add('mobile-view');
+        } else {
+            table.classList.remove('mobile-view');
+        }
+    }
+
+    /**
+     * Update scroll indicators
+     */
+    updateScrollIndicators() {
+        const scrollTop = window.pageYOffset;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+        // Update progress bar if exists
+        const progressBar = document.querySelector('.scroll-progress');
+        if (progressBar) {
+            progressBar.style.width = `${scrollPercentage}%`;
+    }
+}
+
+/**
+     * Handle scroll animations
+     */
+    handleScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        animatedElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                element.classList.add('animated');
+            }
+        });
+    }
+
+    /**
+     * Save pending data
+     */
+    savePendingData() {
+        // Save form data to localStorage
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            localStorage.setItem(`form_${form.id}`, JSON.stringify(data));
+        });
+    }
+
+    /**
+     * Debounce utility function
+     */
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    /**
+     * Throttle utility function
+     */
+    throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+}
+
+// ============================================
+// CORE MODULES
+// ============================================
+
+/**
+ * Analytics Module
+ */
+class AnalyticsModule {
+    constructor() {
+        this.events = [];
+        this.init();
+    }
+
+    init() {
+        this.setupEventTracking();
+    }
+
+    setupEventTracking() {
+        // Track page views
+        this.trackPageView();
+    }
+
+    trackPageView() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: document.title,
+                page_location: window.location.href
+            });
+        }
+    }
+
+    trackPageLoad() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_load', {
+                page_title: document.title,
+                load_time: performance.now()
+            });
+        }
+    }
+
+    trackPageExit() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_exit', {
+                page_title: document.title,
+                time_on_page: performance.now()
+            });
+        }
+    }
+
+    trackFormSubmission(form) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+                form_id: form.id,
+                form_class: form.className
+            });
+        }
+    }
+
+    trackButtonClick(button) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'button_click', {
+                button_text: button.textContent,
+                button_class: button.className
+            });
+        }
+    }
+
+    trackLinkClick(link) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'link_click', {
+                link_url: link.href,
+                link_text: link.textContent
+            });
+        }
+    }
+}
+
+/**
+ * Smooth Scroll Module
+ */
+class SmoothScrollModule {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupSmoothScrolling();
+    }
+
+    setupSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                if (targetId) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+                }
+            });
+        });
+    }
+}
+
+/**
+ * Accessibility Module
+ */
+class AccessibilityModule {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupSkipLinks();
+        this.setupFocusManagement();
+        this.setupKeyboardNavigation();
+    }
+
+    setupSkipLinks() {
+        const skipLinks = document.querySelectorAll('.skip-link');
+        skipLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (targetId) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.focus();
+                        targetElement.scrollIntoView();
+                    }
+            }
+        });
+    });
+    }
+
+    setupFocusManagement() {
+        // Manage focus for modals and overlays
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.handleEscapeKey();
+            }
+        });
+    }
+    
+    setupKeyboardNavigation() {
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                this.handleTabNavigation(e);
+            }
+        });
+    }
+
+    handleEscapeKey() {
+        // Close any open modals or overlays
+        const modals = document.querySelectorAll('.modal.active');
+        modals.forEach(modal => {
+            modal.classList.remove('active');
+        });
+    }
+
+    handleTabNavigation(e) {
+        // Ensure proper tab order
+        const focusableElements = document.querySelectorAll(
+            'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+        }
+    }
+}
+
+/**
+ * Utils Module
+ */
+class UtilsModule {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupUtilityFunctions();
+    }
+
+    setupUtilityFunctions() {
+        // Add utility functions to global scope
+        window.utils = {
+            formatCurrency: this.formatCurrency,
+            formatDate: this.formatDate,
+            debounce: this.debounce,
+            throttle: this.throttle,
+            getQueryParam: this.getQueryParam,
+            setQueryParam: this.setQueryParam
+        };
+    }
+
+    formatCurrency(amount, currency = 'GBP') {
+        return new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: currency
+        }).format(amount);
+    }
+
+    formatDate(date, options = {}) {
+        const defaultOptions = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        
+        return new Intl.DateTimeFormat('en-GB', {
+            ...defaultOptions,
+            ...options
+        }).format(new Date(date));
+    }
+
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
+    getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    setQueryParam(name, value) {
+        const url = new URL(window.location);
+        url.searchParams.set(name, value);
+        window.history.replaceState({}, '', url);
+    }
+}
+
+// ============================================
+// HOME PAGE MODULES
+// ============================================
+
+/**
+ * Information Service Module
+ */
+class InformationServiceModule {
+    constructor() {
+        this.costData = this.getCostData();
+        this.init();
+    }
+
+    init() {
+        this.setupInformationForm();
+        this.setupCostEstimation();
+    }
+
+    getCostData() {
+        return {
+            'BN': { traditional: [3200, 4800], direct: [1200, 1800], hybrid: [2400, 3600], burial: [4500, 6500], providers: 23 },
+            'GU': { traditional: [3800, 5200], direct: [1400, 2000], hybrid: [2800, 3800], burial: [5200, 7000], providers: 18 },
+            'RG': { traditional: [3400, 4600], direct: [1300, 1900], hybrid: [2600, 3400], burial: [4800, 6200], providers: 21 },
+            'SO': { traditional: [3000, 4200], direct: [1200, 1700], hybrid: [2300, 3200], burial: [4200, 5800], providers: 19 },
+            'PO': { traditional: [2900, 4100], direct: [1100, 1600], hybrid: [2200, 3100], burial: [4000, 5600], providers: 16 },
+            'TN': { traditional: [3100, 4300], direct: [1200, 1700], hybrid: [2400, 3300], burial: [4300, 5900], providers: 17 },
+            'ME': { traditional: [2800, 3900], direct: [1100, 1600], hybrid: [2100, 3000], burial: [3900, 5400], providers: 15 },
+            'CT': { traditional: [2700, 3800], direct: [1000, 1500], hybrid: [2000, 2900], burial: [3700, 5200], providers: 14 },
+            'default': { traditional: [3200, 4400], direct: [1200, 1800], hybrid: [2400, 3300], burial: [4300, 5900], providers: 20 }
+        };
+    }
+
+    setupInformationForm() {
+        const form = document.getElementById('analysisForm');
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleFormSubmission();
+        });
+    }
+
+    setupCostEstimation() {
+        const postcodeInput = document.getElementById('postcode');
+        const serviceTypeSelect = document.getElementById('serviceType');
+
+        if (postcodeInput && serviceTypeSelect) {
+            postcodeInput.addEventListener('input', () => {
+                this.updateCostEstimate();
+            });
+
+            serviceTypeSelect.addEventListener('change', () => {
+                this.updateCostEstimate();
+            });
+        }
+    }
+
+    updateCostEstimate() {
+        const postcodeInput = document.getElementById('postcode');
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const estimateRange = document.getElementById('estimateRange');
+        const estimateDescription = document.getElementById('estimateDescription');
+        const emailFormContainer = document.getElementById('email-form-container');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (!postcodeInput || !serviceTypeSelect || !estimateRange) return;
+
+        const postcode = postcodeInput.value.trim();
+        const serviceType = serviceTypeSelect.value;
+
+        if (postcode.length >= 2 && serviceType) {
+            const costData = this.getCostForPostcode(postcode, serviceType);
+            if (costData) {
+                estimateRange.textContent = costData.range;
+                if (estimateDescription) {
+                    estimateDescription.textContent = costData.description;
+                }
+                
+                // Show email form container
+                if (emailFormContainer) {
+                    emailFormContainer.classList.add('visible');
+                }
+                
+                // Enable submit button
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                }
+            }
+        } else {
+            // Hide email form container if not enough data
+            if (emailFormContainer) {
+                emailFormContainer.classList.remove('visible');
+            }
+            
+            // Disable submit button
+            if (submitBtn) {
+                submitBtn.disabled = true;
+            }
+        }
+    }
+
+    getCostForPostcode(postcode, serviceType) {
+        const areaCode = postcode.substring(0, 2).toUpperCase();
+        const data = this.costData[areaCode] || this.costData.default;
+
+        if (!data[serviceType]) return null;
+
+        const [min, max] = data[serviceType];
+        const range = `£${min.toLocaleString()} - £${max.toLocaleString()}`;
+        
+        const descriptions = {
+            traditional: 'Traditional funeral service with ceremony',
+            direct: 'Direct cremation without ceremony',
+            hybrid: 'Simple service followed by cremation',
+            burial: 'Traditional burial service'
+        };
+
+        return {
+            range,
+            description: descriptions[serviceType] || 'Funeral service',
+            providers: data.providers
+        };
+    }
+
+    handleFormSubmission() {
+        const form = document.getElementById('analysisForm');
+        if (!form) return;
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        // Validate form
+        if (!this.validateForm(data)) {
+            return;
+        }
+
+        // Submit form
+        this.submitForm(data);
+    }
+
+    validateForm(data) {
+        const errors = [];
+
+        if (!data.email || !this.isValidEmail(data.email)) {
+            errors.push('Please enter a valid email address');
+        }
+
+        if (!data.postcode || !this.isValidPostcode(data.postcode)) {
+            errors.push('Please enter a valid UK postcode');
+        }
+
+        if (!data.serviceType) {
+            errors.push('Please select a service type');
+        }
+
+        if (errors.length > 0) {
+            this.showErrors(errors);
+            return false;
+        }
+
+        return true;
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    isValidPostcode(postcode) {
+        const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$/i;
+        return postcodeRegex.test(postcode);
+    }
+
+    showErrors(errors) {
+        const errorContainer = document.getElementById('error-container');
+        if (errorContainer) {
+            errorContainer.innerHTML = errors.map(error => `<div class="error-message">${error}</div>`).join('');
+        }
+    }
+
+    submitForm(data) {
+        // Direct redirect to free report without API call
+        this.handleSubmissionSuccess(data);
+    }
+
+    handleSubmissionSuccess(data) {
+        // Redirect to report page
+        window.location.href = `reports/free_report.html?email=${encodeURIComponent(data.email)}&postcode=${encodeURIComponent(data.postcode)}&serviceType=${encodeURIComponent(data.serviceType)}`;
+    }
+}
+
+/**
+ * FAQ Module
+ */
+class FAQModule {
+    constructor() {
+        this.openItems = new Set();
+        this.init();
+    }
+
+    init() {
+        this.setupFAQAccordion();
+    }
+
+    setupFAQAccordion() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('.faq-question');
+            const content = item.querySelector('.faq-answer');
+            const id = item.id;
+
+            if (button && content) {
+                button.addEventListener('click', () => {
+                    this.toggleFAQItem(id, content);
+                });
+            }
+        });
+    }
+
+    toggleFAQItem(id, content) {
+        if (this.openItems.has(id)) {
+            this.closeFAQItem(id, content);
+        } else {
+            this.openFAQItem(id, content);
+        }
+    }
+
+    openFAQItem(id, content) {
+        this.openItems.add(id);
+        const button = content.previousElementSibling;
+        if (button) {
+            button.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    closeFAQItem(id, content) {
+        this.openItems.delete(id);
+        const button = content.previousElementSibling;
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+        }
+    }
+}
+
+/**
+ * Social Proof Module
+ */
+class SocialProofModule {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupTestimonialRotation();
+        this.setupTrustIndicators();
+    }
+
+    setupTestimonialRotation() {
+        const testimonials = document.querySelectorAll('.testimonial');
+        if (testimonials.length > 1) {
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                testimonials.forEach((testimonial, index) => {
+                    testimonial.style.display = index === currentIndex ? 'block' : 'none';
+                });
+                
+                currentIndex = (currentIndex + 1) % testimonials.length;
+            }, 5000);
+        }
+    }
+
+    setupTrustIndicators() {
+        // Add trust indicators if they don't exist
+        const trustSection = document.querySelector('.trust-indicators');
+        if (!trustSection) {
+            this.createTrustIndicators();
+        }
+    }
+
+    createTrustIndicators() {
+        const indicators = [
+            'Based on official CMA data',
+            'Independent analysis',
+            'No commissions received',
+            'Updated weekly'
+        ];
+
+        const container = document.createElement('div');
+        container.className = 'trust-indicators';
+        container.innerHTML = indicators.map(indicator => 
+            `<div class="trust-indicator">✓ ${indicator}</div>`
+        ).join('');
+
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            heroSection.appendChild(container);
+        }
+    }
+}
+
+// ============================================
+// INITIALIZATION
+// ============================================
+
+/**
+ * Initialize application when DOM is loaded
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // Don't initialize main app on questionnaire page
+    if (!window.location.pathname.includes('questionnaire.html')) {
+        new ClearFuneralCostsApp();
+    }
+});
+
+/**
+ * Export for use in other modules
+ */
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = ClearFuneralCostsApp;
+}
+
+
