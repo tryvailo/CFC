@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Compliance | ClearFuneralCosts</title>
+    <meta name="description" content="Privacy Policy, Terms of Service, GDPR Compliance and legal information for ClearFuneralCosts - independent funeral cost information service.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+</head>
+<body>
+    <!-- SKIP NAVIGATION LINKS -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" aria-label="ClearFuneralCosts homepage">
+                        <span class="clear-highlight">Clear</span>FuneralCosts
+                    </a>
+                </div>
+                <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="questionnaire.html">Analysis</a></li>
+                        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div class="header-guarantee">
+                    Independent Information
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+        <div class="container">
+                <!-- Privacy Policy Content will be here -->
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="brand-name">
+                    <span class="clear-highlight">Clear</span>FuneralCosts
+                </h1>
+                <a href="/" class="home-link">← Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="legal-nav">
+        <div class="container">
+            <h1 class="nav-title">Legal & Compliance Information</h1>
+            <p class="nav-subtitle">Transparent policies for our independent funeral cost information service</p>
+            <ul class="nav-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#refund">Refund Policy</a></li>
+                <li><a href="#gdpr">GDPR & Compliance</a></li>
+                <li><a href="#cookies">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SERVICE DEFINITION SECTION -->
+    <section class="service-definition-section">
+        <div class="container">
+            <div class="service-definition-content">
+                <h2 class="service-definition-title">Understanding Our Service</h2>
+                <p style="color: var(--muted-blue); margin-bottom: 20px; font-size: 1.1rem;">We provide independent funeral cost information to help UK families research their options</p>
+                
+                <div class="service-definition-grid">
+                    <div class="service-definition-item">
+                        <h4>Information Service Only</h4>
+                        <p>We aggregate publicly available funeral pricing data for research purposes. We do not provide financial, legal, or funeral planning advice.</p>
+                    </div>
+                    <div class="service-definition-item">
+                        <h4>Verify All Information</h4>
+                        <p>All pricing data may be outdated or incomplete. You must verify all information directly with funeral directors and service providers.</p>
+                    </div>
+                    <div class="service-definition-item">
+                        <h4>Independent Analysis</h4>
+                        <p>We are not authorised by the Financial Conduct Authority and receive no commissions from funeral directors. Always consult qualified professionals for personalised guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- PRIVACY POLICY -->
+            <section id="privacy" class="legal-section">
+                <h2>Privacy Policy</h2>
+                <p class="last-updated">Last updated: 20th September 2025</p>
+
+                <p>ClearFuneralCosts ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our funeral cost information services.</p>
+
+                <div class="highlight-box">
+                    <h4>Our Privacy Commitment</h4>
+                    <p><strong>Information service only:</strong> We provide general funeral price information for research purposes. We never share your personal information with funeral directors or receive commissions from them. Your data is used solely to provide independent analysis.</p>
+                </div>
+
+                <h3>Information We Collect</h3>
+                
+                <h4>Personal Information You Provide</h4>
+                <ul>
+                    <li><strong>Contact Information:</strong> Email address, postal code, phone number (if provided)</li>
+                    <li><strong>Service Preferences:</strong> Funeral service type, budget range, family size</li>
+                    <li><strong>Payment Information:</strong> Billing details when purchasing services (processed securely via Stripe)</li>
+                    <li><strong>Communication Records:</strong> Records of correspondence with our support team</li>
+                </ul>
+
+                <h4>Information We Collect Automatically</h4>
+                <ul>
+                    <li><strong>Usage Data:</strong> Pages visited, time spent, interaction patterns</li>
+                    <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
+                    <li><strong>Analytics Data:</strong> Aggregated and anonymised usage statistics</li>
+                    <li><strong>Cookies:</strong> See our Cookie Policy for detailed information</li>
+                </ul>
+
+                <h3>How We Use Your Information</h3>
+                <ol>
+                    <li><strong>Service Delivery:</strong> To provide funeral cost information and analysis</li>
+                    <li><strong>Research Support:</strong> To help you research funeral options in your area</li>
+                    <li><strong>Communication:</strong> To respond to inquiries and provide information support</li>
+                    <li><strong>Service Improvement:</strong> To enhance our platform and information quality</li>
+                    <li><strong>Legal Compliance:</strong> To meet regulatory requirements including CMA transparency obligations</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h4>What We DON'T Do</h4>
+                    <ul style="margin: 0;">
+                        <li>Share your information with funeral directors</li>
+                        <li>Receive commissions from funeral service providers</li>
+                        <li>Provide financial, legal, or funeral planning advice</li>
+                        <li>Sell or rent your personal information to third parties</li>
+                    </ul>
+                </div>
+
+                <h3>Information Sharing and Disclosure</h3>
+                <p>We may share information only in these limited circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Trusted third parties who assist in operating our website (hosting, payment processing, analytics) under strict confidentiality agreements</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to protect our legal rights</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets (with notice to users)</li>
+                    <li><strong>Consent:</strong> With your explicit consent for specific purposes</li>
+                </ul>
+
+                <h3>Data Security</h3>
+                <p>We implement appropriate technical and organisational measures to protect your personal information:</p>
+                <ul>
+                    <li>SSL encryption for all data transmission</li>
+                    <li>Secure data storage with reputable cloud providers (AWS/Google Cloud)</li>
+                    <li>Regular security audits and vulnerability assessments</li>
+                    <li>Limited access to personal data on a need-to-know basis</li>
+                    <li>Employee training on data protection and privacy</li>
+                </ul>
+
+                <h3>Data Retention</h3>
+                <p>We retain your personal information only as long as necessary:</p>
+                <ul>
+                    <li><strong>Account Data:</strong> Until account deletion is requested</li>
+                    <li><strong>Transaction Records:</strong> 7 years for tax and accounting purposes</li>
+                    <li><strong>Analytics Data:</strong> 26 months in aggregated, anonymised form</li>
+                    <li><strong>Support Communications:</strong> 3 years for quality assurance</li>
+                </ul>
+
+                <h3>Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Delete your personal data</li>
+                    <li>Restrict processing of your data</li>
+                    <li>Data portability</li>
+                    <li>Object to processing</li>
+                    <li>Withdraw consent</li>
+                </ul>
+
+                <div class="contact-info">
+                    <strong>Contact Us About Privacy:</strong><br>
+                    Email: privacy@clearfuneralcosts.co.uk<br>
+                    Data Protection Officer: ClearFuneralCosts Ltd<br>
+                    Response time: Within 24 hours
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top →</a>
+                </div>
+            </section>
+
+            <!-- TERMS OF SERVICE -->
+            <section id="terms" class="legal-section">
+                <h2>Terms of Service</h2>
+                <p class="last-updated">Last updated: 20th September 2025</p>
+
+                <p>These Terms of Service ("Terms") govern your access to and use of ClearFuneralCosts services. By accessing or using our services, you agree to be bound by these Terms.</p>
+
+                <div class="highlight-box">
+                    <h4>Service Definition</h4>
+                    <p><strong>Information service only:</strong> ClearFuneralCosts provides general funeral cost information for research purposes. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.</p>
+                </div>
+
+                <h3>Our Services</h3>
+                <p>ClearFuneralCosts provides funeral cost information services for UK families, including:</p>
+                <ul>
+                    <li>Free funeral cost analysis based on postal code</li>
+                    <li>Comprehensive cost information reports</li>
+                    <li>Funeral director comparison data</li>
+                    <li>Research guidance and support materials</li>
+                    <li>Email support for research questions</li>
+                </ul>
+
+                <h3>Service Accuracy and Important Limitations</h3>
+                <div class="highlight-box">
+                    <h4>Critical Information</h4>
+                    <p>Our analysis is based on publicly available data mandated by the Competition and Markets Authority (CMA). <strong>Important limitations:</strong></p>
+                    <ul style="margin: 10px 0 0 0;">
+                        <li>Pricing data may be outdated or incomplete</li>
+                        <li>Final prices must be confirmed with funeral directors</li>
+                        <li>We cannot guarantee specific savings amounts</li>
+                        <li>All information provided is for research purposes only</li>
+                    </ul>
+                </div>
+
+                <h3>User Responsibilities</h3>
+                <p>When using our services, you agree to:</p>
+                <ol>
+                    <li>Provide accurate and complete information</li>
+                    <li>Use the service for lawful purposes only</li>
+                    <li>Verify all information directly with service providers</li>
+                    <li>Make your own independent decisions</li>
+                    <li>Respect intellectual property rights</li>
+                    <li>Not share purchased reports with third parties</li>
+                </ol>
+
+                <h3>Payment Terms</h3>
+                <ul>
+                    <li><strong>Free Services:</strong> Available without payment or registration</li>
+                    <li><strong>Premium Reports:</strong> One-time payment of £39 (or current listed price)</li>
+                    <li><strong>Payment Processing:</strong> Handled securely via Stripe</li>
+                    <li><strong>Currency:</strong> All prices in British Pounds (GBP)</li>
+                    <li><strong>Refunds:</strong> Subject to our 60-day money-back guarantee (see Refund Policy)</li>
+                </ul>
+
+                <h3>Intellectual Property</h3>
+                <p>All content, analysis methods, algorithms, and materials on our platform are protected by copyright and other intellectual property laws. You receive a limited license to use our services for personal, non-commercial purposes.</p>
+
+                <h3>Disclaimers and Limitations</h3>
+                <p><strong>Important:</strong> ClearFuneralCosts provides information services only. We are not:</p>
+                <ul>
+                    <li>A funeral director or funeral service provider</li>
+                    <li>Authorised by the Financial Conduct Authority</li>
+                    <li>Providing financial, legal, or professional advice</li>
+                    <li>Responsible for the quality or conduct of third-party funeral directors</li>
+                    <li>Liable for decisions made based on our information</li>
+                </ul>
+
+                <h3>Service Availability</h3>
+                <p>We strive to maintain service availability but cannot guarantee uninterrupted access. We reserve the right to:</p>
+                <ul>
+                    <li>Modify or discontinue services with reasonable notice</li>
+                    <li>Suspend access for maintenance or technical issues</li>
+                    <li>Update pricing and features periodically</li>
+                </ul>
+
+                <h3>Termination</h3>
+                <p>We may terminate or suspend access to our services immediately, without prior notice, for conduct that violates these Terms or is harmful to our business, users, or third parties.</p>
+
+                <h3>Governing Law</h3>
+                <p>These Terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+                <h3>Changes to Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Material changes will be communicated via email or website notice. Continued use of our services after changes constitutes acceptance of the new Terms.</p>
+
+                <div class="contact-info">
+                    <strong>Legal Inquiries:</strong><br>
+                    Email: legal@clearfuneralcosts.co.uk<br>
+                    ClearFuneralCosts Ltd<br>
+                    Available Mon-Fri, 9am-5pm
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top →</a>
+                </div>
+            </section>
+
+            <!-- REFUND POLICY -->
+            <section id="refund" class="legal-section">
+                <h2>60-Day Money-Back Guarantee & Refund Policy</h2>
+                <p class="last-updated">Last updated: 20th September 2025</p>
+
+                <div class="highlight-box">
+                    <h4>Research Support Commitment</h4>
+                    <p>If our research guidance doesn't help you save at least £500, we'll refund every penny within 60 days.</p>
+                </div>
+
+                <h3>Guarantee Eligibility</h3>
+                <p>Our money-back guarantee applies when:</p>
+                <ol>
+                    <li>You purchase our Complete Funeral Cost Information Package (£39)</li>
+                    <li>You follow our research recommendations in good faith</li>
+                    <li>You can demonstrate that savings were less than £500</li>
+                    <li>You request a refund within 60 days of purchase</li>
+                    <li>You provide reasonable documentation of your research process</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h4>Important Service Definition</h4>
+                    <p>Our guarantee relates to the information and research guidance we provide. We cannot control final funeral director pricing or service availability, but we guarantee that our information will help you research potential savings opportunities.</p>
+                </div>
+
+                <h3>Simple Refund Process</h3>
+                <ol>
+                    <li><strong>Contact Us:</strong> Email refunds@clearfuneralcosts.co.uk with your order details</li>
+                    <li><strong>Brief Documentation:</strong> Provide basic evidence of costs incurred following our guidance</li>
+                    <li><strong>Quick Review:</strong> We'll review your case within 2 business days</li>
+                    <li><strong>Fast Processing:</strong> Approved refunds are processed within 5 business days</li>
+                    <li><strong>Payment:</strong> Refunds are issued to the original payment method</li>
+                </ol>
+
+                <h3>What We Need for Refund Claims</h3>
+                <p>To process your refund, please provide:</p>
+                <ul>
+                    <li>Proof of purchase from ClearFuneralCosts</li>
+                    <li>Basic documentation of funeral costs researched</li>
+                    <li>Brief explanation of which recommendations were followed</li>
+                    <li>Timeline showing when services were researched</li>
+                </ul>
+
+                <p><strong>Note:</strong> We understand this is a difficult time and keep documentation requirements minimal while maintaining the integrity of our guarantee.</p>
+
+                <h3>Refund Timeframes</h3>
+                <ul>
+                    <li><strong>Standard Refund:</strong> 3-5 business days to original payment method</li>
+                    <li><strong>Credit Card:</strong> May take additional 2-3 days depending on bank</li>
+                    <li><strong>PayPal:</strong> Usually instant once processed</li>
+                    <li><strong>Bank Transfer:</strong> 1-2 business days</li>
+                </ul>
+
+                <h3>Additional Refund Reasons</h3>
+                <p>Beyond our savings guarantee, we offer refunds for:</p>
+                <ul>
+                    <li><strong>Service Dissatisfaction:</strong> If you're not satisfied with our information quality</li>
+                    <li><strong>Technical Issues:</strong> If you can't access your purchased report</li>
+                    <li><strong>Duplicate Purchase:</strong> If you accidentally purchase multiple times</li>
+                    <li><strong>Change of Circumstances:</strong> If your funeral needs change significantly</li>
+                </ul>
+
+                <h3>No Questions Asked Policy</h3>
+                <p>If you're not completely satisfied with our service for any reason within 60 days, we'll process a full refund. We understand that during difficult times, simplicity and compassion matter most.</p>
+
+                <h3>Consumer Rights</h3>
+                <p>This guarantee is in addition to your statutory rights under UK consumer protection law, including:</p>
+                <ul>
+                    <li>Consumer Rights Act 2015</li>
+                    <li>Consumer Contracts Regulations 2013</li>
+                    <li>14-day cooling-off period for distance sales</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Our Commitment</h4>
+                    <p>We're committed to helping families research funeral cost options during difficult times. If our information doesn't help you save money, we don't deserve to keep your payment.</p>
+                </div>
+
+                <div class="contact-info">
+                    <strong>Refund Requests:</strong><br>
+                    Email: refunds@clearfuneralcosts.co.uk<br>
+                    Phone: Available Mon-Fri, 9am-5pm<br>
+                    Response Time: Within 4 hours during business days
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top →</a>
+                </div>
+            </section>
+
+            <!-- GDPR COMPLIANCE -->
+            <section id="gdpr" class="legal-section">
+                <h2>GDPR Compliance & Data Protection</h2>
+                <p class="last-updated">Last updated: 20th September 2025</p>
+
+                <p>ClearFuneralCosts is committed to compliance with the General Data Protection Regulation (GDPR) and UK data protection laws. This section outlines your rights and our obligations under these regulations.</p>
+
+                <h3>Your Data Protection Rights</h3>
+                <p>Under GDPR and UK GDPR, you have comprehensive rights regarding your personal data:</p>
+
+                <ol>
+                    <li><strong>Right of Access:</strong> Request copies of your personal data</li>
+                    <li><strong>Right to Rectification:</strong> Request correction of inaccurate data</li>
+                    <li><strong>Right to Erasure:</strong> Request deletion of your personal data</li>
+                    <li><strong>Right to Restrict Processing:</strong> Limit how we process your data</li>
+                    <li><strong>Right to Data Portability:</strong> Receive your data in a structured format</li>
+                    <li><strong>Right to Object:</strong> Object to processing for specific purposes</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Withdraw consent for data processing</li>
+                    <li><strong>Rights regarding Automated Decision Making:</strong> Human intervention in automated processes</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <h4>Exercising Your Rights</h4>
+                    <p>To exercise any of these rights, contact our Data Protection Officer at privacy@clearfuneralcosts.co.uk. We will respond within one month of your request, free of charge.</p>
+                </div>
+
+                <h3>Lawful Basis for Processing</h3>
+                <p>We process your personal data under the following lawful bases:</p>
+                <ul>
+                    <li><strong>Consent:</strong> For marketing communications and optional services</li>
+                    <li><strong>Contract:</strong> To provide our funeral cost information services</li>
+                    <li><strong>Legitimate Interests:</strong> For service improvement and fraud prevention</li>
+                    <li><strong>Legal Obligation:</strong> To comply with CMA reporting requirements</li>
+                </ul>
+
+                <h3>International Data Transfers</h3>
+                <p>Your personal data may be transferred to and processed in countries outside the UK/EEA. When this occurs, we ensure adequate protection through:</p>
+                <ul>
+                    <li>Standard Contractual Clauses approved by the European Commission</li>
+                    <li>Adequacy decisions for data transfers to approved countries</li>
+                    <li>UK International Data Transfer Agreement (IDTA)</li>
+                    <li>Binding Corporate Rules for transfers within corporate groups</li>
+                </ul>
+
+                <h3>Regulatory Compliance Framework</h3>
+                
+                <h4>Competition and Markets Authority (CMA)</h4>
+                <p>Our data processing activities comply with the CMA Funerals Market Investigation Order 2021:</p>
+                <ul>
+                    <li>Use of CMA-mandated funeral director pricing data</li>
+                    <li>Transparency in our cost comparison methodologies</li>
+                    <li>Independence from funeral director commercial interests</li>
+                    <li>Public reporting of pricing analysis methods</li>
+                </ul>
+
+                <h4>Information Commissioner's Office (ICO)</h4>
+                <p>ClearFuneralCosts maintains active registration with the ICO. For data protection concerns beyond our direct control, you can contact:</p>
+                
+                <div class="contact-info">
+                    <strong>ICO Contact Information:</strong><br>
+                    Website: <a href="https://ico.org.uk" class="external-link" target="_blank">ico.org.uk</a><br>
+                    Phone: 0303 123 1113<br>
+                    Post: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF
+                </div>
+
+                <h3>Data Breach Response</h3>
+                <p>In the unlikely event of a data breach that may result in high risk to your rights and freedoms, we will:</p>
+                <ol>
+                    <li>Notify the ICO within 72 hours of becoming aware</li>
+                    <li>Inform affected individuals without undue delay</li>
+                    <li>Provide clear information about the breach and our response</li>
+                    <li>Offer guidance on protective measures you can take</li>
+                    <li>Provide regular updates on our investigation and remediation</li>
+                </ol>
+
+                <h3>Special Category Data</h3>
+                <p>We do not intentionally collect special category data (health, religious beliefs, etc.). If such information is provided voluntarily in communications, we:</p>
+                <ul>
+                    <li>Process it only for the specific purpose provided</li>
+                    <li>Apply additional security measures</li>
+                    <li>Delete it as soon as reasonably possible</li>
+                    <li>Never share it with third parties</li>
+                </ul>
+
+                <h3>Children's Privacy</h3>
+                <p>Our services are not intended for children under 16. We do not knowingly collect personal data from children. If we become aware that a child has provided personal data, we will take immediate steps to delete such information.</p>
+
+                <h3>Automated Decision Making and Profiling</h3>
+                <p>Our funeral cost analysis involves automated processing to generate recommendations. You have the right to:</p>
+                <ul>
+                    <li>Request human intervention in the decision-making process</li>
+                    <li>Express your point of view regarding automated decisions</li>
+                    <li>Contest decisions made solely by automated means</li>
+                    <li>Receive an explanation of the logic involved</li>
+                </ul>
+
+                <h3>Data Protection by Design and Default</h3>
+                <p>We implement data protection principles from the ground up:</p>
+                <ul>
+                    <li>Privacy-first system architecture</li>
+                    <li>Data minimisation practices</li>
+                    <li>Regular privacy impact assessments</li>
+                    <li>Staff training on data protection principles</li>
+                </ul>
+
+                <div class="contact-info">
+                    <strong>Data Protection Officer:</strong><br>
+                    Email: dpo@clearfuneralcosts.co.uk<br>
+                    ClearFuneralCosts Ltd<br>
+                    Response time: Within 24 hours
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top →</a>
+                </div>
+            </section>
+
+            <!-- COOKIE POLICY -->
+            <section id="cookies" class="legal-section">
+                <h2>Cookie Policy</h2>
+                <p class="last-updated">Last updated: 20th September 2025</p>
+
+                <p>This Cookie Policy explains how ClearFuneralCosts uses cookies and similar technologies when you visit our website clearfuneralcosts.co.uk.</p>
+
+                <div class="highlight-box">
+                    <h4>Cookie Commitment</h4>
+                    <p>We use cookies responsibly to improve your experience while respecting your privacy. You have full control over cookie preferences and can modify them at any time.</p>
+                </div>
+
+                <h3>What Are Cookies</h3>
+                <p>Cookies are small text files stored on your device when you visit a website. They help websites remember information about your visit, making your experience more efficient and personalised.</p>
+
+                <h3>Types of Cookies We Use</h3>
+
+                <h4>Essential Cookies (Always Active)</h4>
+                <p>These cookies are necessary for the website to function properly and cannot be disabled:</p>
+                <ul>
+                    <li><strong>Session cookies:</strong> Maintain your session while browsing</li>
+                    <li><strong>Security cookies:</strong> Help identify and prevent security risks</li>
+                    <li><strong>Load balancing cookies:</strong> Ensure optimal website performance</li>
+                    <li><strong>Form cookies:</strong> Remember form progress to prevent data loss</li>
+                </ul>
+
+                <h4>Analytics Cookies (With Your Consent)</h4>
+                <p>These cookies help us understand how visitors interact with our website:</p>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Tracks website usage and performance (anonymised)</li>
+                    <li><strong>Internal analytics:</strong> Our own tracking for service optimisation</li>
+                    <li><strong>Heatmap tools:</strong> Understand user interaction patterns</li>
+                </ul>
+
+                <h4>Functional Cookies (With Your Consent)</h4>
+                <p>These cookies enable enhanced functionality and personalisation:</p>
+                <ul>
+                    <li><strong>Preference cookies:</strong> Remember your choices and settings</li>
+                    <li><strong>Language cookies:</strong> Remember your language preference</li>
+                    <li><strong>Accessibility cookies:</strong> Remember accessibility preferences</li>
+                </ul>
+
+                <h4>Marketing Cookies (With Your Consent)</h4>
+                <p>These cookies help us show relevant information about our services:</p>
+                <ul>
+                    <li><strong>Conversion tracking:</strong> Measure effectiveness of information campaigns</li>
+                    <li><strong>Remarketing pixels:</strong> Show relevant information about our services on other websites</li>
+                    <li><strong>Social media pixels:</strong> Measure engagement from social platforms</li>
+                </ul>
+
+                <h3>Cookie Duration and Storage</h3>
+                <ul>
+                    <li><strong>Session cookies:</strong> Deleted when you close your browser</li>
+                    <li><strong>Persistent cookies:</strong> Remain on your device for up to 2 years</li>
+                    <li><strong>Analytics cookies:</strong> Typically stored for 26 months</li>
+                    <li><strong>Marketing cookies:</strong> Usually expire after 90 days</li>
+                </ul>
+
+                <h3>Managing Your Cookie Preferences</h3>
+                
+                <div class="highlight-box">
+                    <h4>Easy Cookie Management</h4>
+                    <p>When you first visit our website, you'll see a cookie banner allowing you to choose which types of cookies to accept. You can modify these preferences at any time using our cookie management tool.</p>
+                </div>
+
+                <h4>Browser Cookie Settings</h4>
+                <p>You can also control cookies through your browser settings:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+                    <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+                    <li><strong>Safari:</strong> Preferences > Privacy > Manage Website Data</li>
+                    <li><strong>Edge:</strong> Settings > Site permissions > Cookies and site data</li>
+                </ul>
+
+                <h4>Third-Party Cookie Opt-Outs</h4>
+                <ul>
+                    <li><strong>Google Analytics:</strong> <a href="https://tools.google.com/dlpage/gaoptout" class="external-link" target="_blank">Google Analytics Opt-out Browser Add-on</a></li>
+                    <li><strong>Google Ads:</strong> <a href="https://adssettings.google.com" class="external-link" target="_blank">Google Ad Settings</a></li>
+                    <li><strong>Industry Opt-out:</strong> <a href="https://www.youronlinechoices.com/uk/" class="external-link" target="_blank">Your Online Choices</a></li>
+                </ul>
+
+                <h3>Impact of Disabling Cookies</h3>
+                <p>Understanding how disabling different cookie types affects your experience:</p>
+                <ul>
+                    <li><strong>Essential cookies:</strong> Website may not function properly (forms, security)</li>
+                    <li><strong>Analytics cookies:</strong> We can't improve our services based on usage data</li>
+                    <li><strong>Functional cookies:</strong> You may need to re-enter preferences each visit</li>
+                    <li><strong>Marketing cookies:</strong> You may see less relevant information about our services</li>
+                </ul>
+
+                <h3>Other Tracking Technologies</h3>
+                <p>In addition to cookies, we may use:</p>
+                <ul>
+                    <li><strong>Web beacons:</strong> Small transparent images that track email opens</li>
+                    <li><strong>Local storage:</strong> Stores data locally on your device for functionality</li>
+                    <li><strong>Server logs:</strong> Automatically collect basic usage information</li>
+                </ul>
+
+                <h3>Cookie Policy Updates</h3>
+                <p>We may update this Cookie Policy to reflect changes in our practices or for operational, legal, or regulatory reasons. Material changes will be communicated through:</p>
+                <ul>
+                    <li>Email notification to registered users</li>
+                    <li>Prominent notice on our website</li>
+                    <li>Updated "Last modified" date at the top of this policy</li>
+                </ul>
+
+                <h3>Contact Us About Cookies</h3>
+                <p>If you have questions about our cookie practices or need help managing your preferences:</p>
+
+                <div class="contact-info">
+                    <strong>Cookie Support:</strong><br>
+                    Email: cookies@clearfuneralcosts.co.uk<br>
+                    Subject: Cookie Policy Inquiry<br>
+                    Response time: Within 24 hours
+                </div>
+
+                <div class="back-to-top">
+                    <a href="#top">Back to top →</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><span class="clear-highlight">Clear</span>FuneralCosts</h3>
+                <p>Helping UK families research funeral options through transparent cost information based on official government data.</p>
+                <p style="margin-top: 20px;">
+                    support@clearfuneralcosts.co.uk<br>
+                    Available Mon-Fri, 9am-5pm
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal & Compliance</h3>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#refund">Refund Policy</a></li>
+                    <li><a href="#gdpr">GDPR Compliance</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Data Sources</h3>
+                <p>Based on CMA Funerals Market Investigation Order 2021</p>
+                <p>Competition and Markets Authority pricing data</p>
+                <p>Independent funeral director verification</p>
+                <p>Weekly data updates from official sources</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span class="clear-highlight">Clear</span>FuneralCosts. All rights reserved.</p>
+            <div class="footer-disclaimer">
+                <strong>Important:</strong> This service provides general price information only. Confirm all prices directly with providers. 
+                Pricing data may be outdated or incomplete. We are not authorised by the Financial Conduct Authority and do not provide 
+                regulated financial services. We recognise bereavement is a challenging time. For personalised support, consult qualified professionals. 
+                We are independent and receive no commissions from funeral directors.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links and back to top
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                if (targetId === 'top' || targetId === '') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const target = document.querySelector('#' + targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('.legal-section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightCurrentSection);
+        window.addEventListener('load', highlightCurrentSection);
+
+        // Enhanced accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+
+        // Analytics tracking for legal page interactions
+        document.querySelectorAll('.nav-links a, .back-to-top a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'legal_navigation', {
+                        'event_category': 'legal',
+                        'event_label': this.textContent.trim()
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

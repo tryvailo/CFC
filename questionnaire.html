@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell us more about your needs - ClearFuneralCosts</title>
+    <meta name="description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area. Based on official CMA data from funeral directors and crematoria. Free analysis with no obligation.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Funeral Cost Analysis Questionnaire | ClearFuneralCosts">
+    <meta property="og:description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area. Based on official CMA data from funeral directors and crematoria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearfuneralcosts.co.uk/questionnaire.html">
+    <meta property="og:site_name" content="ClearFuneralCosts">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Funeral Cost Analysis Questionnaire | ClearFuneralCosts">
+    <meta name="twitter:description" content="Complete our 10-minute questionnaire to receive a personalised funeral cost analysis for your area.">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="keywords" content="funeral cost questionnaire, funeral analysis, funeral planning, CMA data, funeral directors, crematoria costs">
+    <meta name="author" content="ClearFuneralCosts">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clearfuneralcosts.co.uk/questionnaire.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ClearFuneralCosts",
+        "description": "Independent funeral cost information service providing compassionate guidance based on official UK government data",
+        "url": "https://clearfuneralcosts.co.uk",
+        "logo": "https://clearfuneralcosts.co.uk/assets/images/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "refunds@clearfuneralcosts.co.uk",
+            "availableLanguage": ["English"],
+            "areaServed": "GB"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "foundingDate": "2024",
+        "knowsAbout": [
+            "UK funeral costs",
+            "Government pricing data",
+            "Funeral planning guidance",
+            "Cost comparison analysis"
+        ],
+        "sameAs": [
+            "https://www.trustpilot.com/review/clearfuneralcosts.co.uk",
+            "https://twitter.com/clearfuneralcosts",
+            "https://linkedin.com/company/clearfuneralcosts"
+        ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://clearfuneralcosts.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Questionnaire",
+          "item": "https://clearfuneralcosts.co.uk/questionnaire.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/questionnaire.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/css/questionnaire.css" as="style">
+    <link rel="preload" href="assets/js/questionnaire.js" as="script">
+</head>
+<body>
+    <!-- SKIP NAVIGATION LINKS -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#questionnaire-form" class="skip-link">Skip to questionnaire form</a>
+    
+    <!-- BREADCRUMBS -->
+    <nav aria-label="Breadcrumb" class="breadcrumbs">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-separator" aria-hidden="true">›</li>
+                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                    Questionnaire
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <div class="questionnaire-container">
+        <!-- HEADER -->
+        <header class="questionnaire-header">
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="questionnaire-title">Tell us more about your research needs</h1>
+            <p class="questionnaire-subtitle">This helps us create your personalised research plan</p>
+            <div class="completion-info">Step <span id="current-step">1</span> of 8 • 3-4 minutes</div>
+        </header>
+
+        <!-- SERVICE DEFINITION -->
+        <div class="service-definition">
+            <h4>What This Process Provides</h4>
+            <p><strong>Information service only:</strong> Your responses help us provide more detailed general price information to support your research. We aggregate publicly available data for informational purposes.</p>
+            <p><strong>Important:</strong> We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours. <strong>Verify</strong> all information.</p>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <section class="progress-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </section>
+
+        <!-- LIVE STATS -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number savings" id="estimated-savings">£500 - £2,500</div>
+                <div class="stat-label">Informed Choice Benefit: £500-£2,500</div>
+                <div class="stat-disclaimer">Estimates only - <strong>verify</strong> with providers</div>
+            </div>
+            <div class="stat-card providers">
+                <div class="stat-number providers" id="provider-count">47</div>
+                <div class="stat-label">Providers Available (for Research)</div>
+                <div class="stat-disclaimer">Based on your area</div>
+            </div>
+            <div class="stat-card time">
+                <div class="stat-number time" id="research-time">2-3 hours</div>
+                <div class="stat-label">Planning Investment: 2-3 hours</div>
+                <div class="stat-disclaimer">Your time investment</div>
+            </div>
+        </section>
+
+        <!-- QUESTIONNAIRE FORM -->
+        <form id="questionnaire-form" aria-label="Funeral cost research questionnaire">
+        <!-- QUESTION 1: SERVICE TYPE -->
+        <section class="question-card" id="question-1" role="group" aria-labelledby="question-1-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-1-title">What type of funeral service do you wish to research?</h2>
+                <p class="question-subtitle">This affects available research strategies</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="service_type" data-value="traditional_burial" tabindex="0" role="radio" aria-label="Traditional Burial Service, Typical range: £5,200 to £7,500">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Burial service</div>
+                            <div class="option-description">Church or chapel service followed by burial</div>
+                            <div class="option-meta">Typical range: £5,200-£7,500*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="service_type" data-value="traditional_cremation" tabindex="0" role="radio" aria-label="Traditional Cremation Service, Typical range: £3,800 to £5,500">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Traditional cremation</div>
+                            <div class="option-description">Full service followed by cremation</div>
+                            <div class="option-meta">Typical range: £3,800-£5,500*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="service_type" data-value="direct_cremation" tabindex="0" role="radio" aria-label="Direct Cremation Service, Typical range: £1,200 to £2,400">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Direct cremation</div>
+                            <div class="option-description">Cremation without ceremony (separate memorial possible)</div>
+                            <div class="option-meta">Typical range: £1,200-£2,400*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="service_type" data-value="not_sure" tabindex="0" role="radio" aria-label="Not Sure Yet, We'll help you explore options">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">I'm not sure yet</div>
+                            <div class="option-description">Help me explore different options</div>
+                            <div class="option-meta">We'll help you compare</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 2: BUDGET RANGE -->
+        <section class="question-card hidden" id="question-2" role="group" aria-labelledby="question-2-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-2-title">What investment level are you considering for the funeral arrangements?</h2>
+                <p class="question-subtitle">This helps us focus on relevant providers and strategies</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="budget_range" data-value="under_2000" tabindex="0" role="radio" aria-label="Under £2,000, Essential dignified service">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Under £2,000</div>
+                            <div class="option-description">Essential dignified service</div>
+                            <div class="option-meta">Maximum savings potential</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget_range" data-value="2000_4000" tabindex="0" role="radio" aria-label="£2,000 - £4,000, Traditional service with considered choices">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">£2,000 - £4,000</div>
+                            <div class="option-description">Traditional service with considered choices</div>
+                            <div class="option-meta">Good value options</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget_range" data-value="4000_6000" tabindex="0" role="radio" aria-label="£4,000 - £6,000, Comprehensive traditional arrangements">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">£4,000 - £6,000</div>
+                            <div class="option-description">Comprehensive traditional arrangements</div>
+                            <div class="option-meta">Comprehensive packages</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="budget_range" data-value="over_6000" tabindex="0" role="radio" aria-label="Over £6,000, Premium service options">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Over £6,000</div>
+                            <div class="option-description">Premium service options</div>
+                            <div class="option-meta">High-end providers</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="option" data-question="budget_range" data-value="not_sure" tabindex="0" role="radio" aria-label="I'm not sure, Help me explore options">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">I'm not sure</div>
+                            <div class="option-description">Help me explore options</div>
+                            <div class="option-meta">We'll show you ranges</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 3: TIMELINE -->
+        <section class="question-card hidden" id="question-3" role="group" aria-labelledby="question-3-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-3-title">What's your research timeline?</h2>
+                <p class="question-subtitle">This affects the urgency of our recommendations</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="timeline" data-value="immediate" tabindex="0" role="radio" aria-label="Immediate (within 1 week), Priority research needed">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Immediate (within 1 week)</div>
+                            <div class="option-description">Priority research needed</div>
+                            <div class="option-meta">Fast-track recommendations</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="timeline" data-value="short_term" tabindex="0" role="radio" aria-label="Short term (1-4 weeks), Standard research timeline">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Short term (1-4 weeks)</div>
+                            <div class="option-description">Standard research timeline</div>
+                            <div class="option-meta">Balanced approach</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="timeline" data-value="medium_term" tabindex="0" role="radio" aria-label="Medium term (1-3 months), Comprehensive research">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Medium term (1-3 months)</div>
+                            <div class="option-description">Comprehensive research</div>
+                            <div class="option-meta">Thorough analysis</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="timeline" data-value="planning_ahead" tabindex="0" role="radio" aria-label="Just planning ahead, Educational research">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Just planning ahead</div>
+                            <div class="option-description">Educational research</div>
+                            <div class="option-meta">General information</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="help-text">Remember: our goal is to help you research the best value within your budget.</p>
+        </section>
+        
+        <!-- ИЗМЕНЕНИЕ 1: Progress Save Feature -->
+        <section class="save-progress-section hidden" id="question-3-5" role="region" aria-label="Save Progress Option">
+            <h3>Ready to save your progress?</h3>
+            <p>We'll email you a unique link. You can return later and continue your research right where you left off.</p>
+            
+            <input type="email" placeholder="Your email address" id="save-email" aria-label="Email address for saving progress">
+            <button onclick="saveProgress()" aria-label="Save and Continue">Save & Continue</button>
+        </section>
+
+        <!-- QUESTION 4: LOCATION FLEXIBILITY -->
+        <section class="question-card hidden" id="question-4" role="group" aria-labelledby="question-4-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-4-title">How flexible are you with location?</h2>
+                <p class="question-subtitle">Greater flexibility can unlock more savings opportunities</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="location_flexibility" data-value="very_flexible" tabindex="0" role="radio" aria-label="Very flexible (50+ miles), Maximum savings potential">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Very flexible (50+ miles)</div>
+                            <div class="option-description">Maximum savings potential</div>
+                            <div class="option-meta">Wide provider network</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="location_flexibility" data-value="somewhat_flexible" tabindex="0" role="radio" aria-label="Somewhat flexible (20-50 miles), Good savings potential">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Somewhat flexible (20-50 miles)</div>
+                            <div class="option-description">Good savings potential</div>
+                            <div class="option-meta">Regional options</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="location_flexibility" data-value="local_only" tabindex="0" role="radio" aria-label="Local only (within 20 miles), Convenience focus">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Local only (within 20 miles)</div>
+                            <div class="option-description">Convenience focus</div>
+                            <div class="option-meta">Local providers</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+        </section>
+
+        <!-- QUESTION 5: SPECIAL REQUIREMENTS -->
+        <section class="question-card hidden" id="question-5" role="group" aria-labelledby="question-5-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-5-title">Any special requirements?</h2>
+                <p class="question-subtitle">This helps us identify relevant providers and considerations</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="special_requirements" data-value="religious_requirements" tabindex="0" role="radio" aria-label="Religious requirements, Specific faith considerations">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Religious requirements</div>
+                            <div class="option-description">Specific faith considerations</div>
+                            <div class="option-meta">Faith-based providers</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="special_requirements" data-value="accessibility_needs" tabindex="0" role="radio" aria-label="Accessibility needs, Disability considerations">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Accessibility needs</div>
+                            <div class="option-description">Disability considerations</div>
+                            <div class="option-meta">Accessible venues</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="special_requirements" data-value="environmental_preferences" tabindex="0" role="radio" aria-label="Environmental preferences, Eco-friendly options">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Environmental preferences</div>
+                            <div class="option-description">Eco-friendly options</div>
+                            <div class="option-meta">Green providers</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="special_requirements" data-value="none" tabindex="0" role="radio" aria-label="None, Standard service options">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">None</div>
+                            <div class="option-description">Standard service options</div>
+                            <div class="option-meta">General providers</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTION 6: RESEARCH PREFERENCES -->
+        <section class="question-card hidden" id="question-6" role="group" aria-labelledby="question-6-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-6-title">How would you like to receive your research?</h2>
+                <p class="question-subtitle">This affects how we deliver your personalised analysis</p>
+            </div>
+            
+            <div class="options-container">
+                <div class="option" data-question="research_preferences" data-value="detailed_report" tabindex="0" role="radio" aria-label="Detailed report, Comprehensive analysis">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Detailed report</div>
+                            <div class="option-description">Comprehensive analysis</div>
+                            <div class="option-meta">Full documentation</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="research_preferences" data-value="summary_guide" tabindex="0" role="radio" aria-label="Summary guide, Key points only">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Summary guide</div>
+                            <div class="option-description">Key points only</div>
+                            <div class="option-meta">Quick reference</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="research_preferences" data-value="provider_list" tabindex="0" role="radio" aria-label="Provider list, Contact information focus">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Provider list</div>
+                            <div class="option-description">Contact information focus</div>
+                            <div class="option-meta">Direct contacts</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+        </section>
+
+        <!-- QUESTION 7: CONTACT INFORMATION -->
+        <section class="question-card hidden" id="question-7" role="group" aria-labelledby="question-7-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-7-title">How should we send your research?</h2>
+                <p class="question-subtitle">We'll email your personalised analysis within 24 hours</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                <p class="form-help">We'll send your research analysis here</p>
+                </div>
+
+            <div class="form-group">
+                <label for="postcode" class="form-label">Your Postcode</label>
+                <input type="text" id="postcode" name="postcode" class="form-input" placeholder="e.g. BN1 4GH" required>
+                <p class="form-help">This helps us provide location-specific information</p>
+                        </div>
+        </section>
+
+        <!-- QUESTION 8: FINAL REVIEW -->
+        <section class="question-card hidden" id="question-8" role="region" aria-labelledby="question-8-title">
+            <div class="question-header">
+                <h2 class="question-title" id="question-8-title">Review your research preferences</h2>
+                <p class="question-subtitle">Please confirm your selections before we generate your analysis</p>
+            </div>
+            
+            <div class="summary-section">
+                <h3 class="summary-title">Your Research Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-item-label">Service Type</div>
+                        <div class="summary-item-value" id="summary-service-type">Not selected</div>
+                </div>
+                    <div class="summary-item">
+                        <div class="summary-item-label">Budget Range</div>
+                        <div class="summary-item-value" id="summary-budget">Not selected</div>
+                </div>
+                    <div class="summary-item">
+                        <div class="summary-item-label">Timeline</div>
+                        <div class="summary-item-value" id="summary-timeline">Not selected</div>
+                </div>
+                    <div class="summary-item">
+                        <div class="summary-item-label">Location Flexibility</div>
+                        <div class="summary-item-value" id="summary-location">Not selected</div>
+                </div>
+                </div>
+                
+                <p class="help-text">Remember: our goal is to help you research the best value within your budget.</p>
+                </div>
+        </section>
+
+        <!-- FORM CONTROLS -->
+        <div class="navigation-buttons">
+            <button type="button" class="nav-button prev" id="prevBtn" disabled>Previous</button>
+            <button type="button" class="nav-button next" id="nextBtn">Next</button>
+            <button type="submit" class="nav-button next" id="submitBtn" style="display: none;">View Cost Breakdown</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/questionnaire.js"></script>
+</body>
+</html>
