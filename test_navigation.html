@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation - ClearFuneralCosts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .test-button { padding: 10px 20px; margin: 10px; background: #1e3a5f; color: white; border: none; cursor: pointer; }
+        .test-button:hover { background: #7d5a50; }
+        .url-display { background: #f5f5f5; padding: 10px; margin: 10px 0; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>Test Navigation & Data Transfer</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Main Page Form Submission</h2>
+        <p>Simulates form submission from main page (index.html)</p>
+        <button class="test-button" onclick="testMainPageSubmission()">Test Main Page → Free Report</button>
+        <div class="url-display" id="main-url"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Regional Page Form Submission</h2>
+        <p>Simulates form submission from regional page (SouthEast/index.html)</p>
+        <button class="test-button" onclick="testRegionalPageSubmission()">Test Regional Page → Free Report</button>
+        <div class="url-display" id="regional-url"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Direct URL Parameters</h2>
+        <p>Test with specific parameters:</p>
+        <button class="test-button" onclick="testWithParams()">Test with Custom Data</button>
+        <div class="url-display" id="custom-url"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Current URL Parameters</h2>
+        <div class="url-display" id="current-params"></div>
+    </div>
+
+    <script>
+        // Display current URL parameters
+        function displayCurrentParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {};
+            for (let [key, value] of urlParams) {
+                params[key] = value;
+            }
+            document.getElementById('current-params').textContent = 
+                Object.keys(params).length > 0 ? JSON.stringify(params, null, 2) : 'No parameters in current URL';
+        }
+        
+        // Test main page submission
+        function testMainPageSubmission() {
+            const testData = {
+                email: 'test@example.com',
+                postcode: 'BN1 4GH',
+                serviceType: 'traditional'
+            };
+            
+            const urlParams = new URLSearchParams(testData);
+            const url = `reports/free_report.html?${urlParams.toString()}`;
+            
+            document.getElementById('main-url').textContent = url;
+            
+            // Uncomment to actually navigate
+            // window.location.href = url;
+        }
+        
+        // Test regional page submission
+        function testRegionalPageSubmission() {
+            const testData = {
+                email: 'regional@example.com',
+                postcode: 'GU1 2AB',
+                serviceType: 'direct'
+            };
+            
+            const urlParams = new URLSearchParams(testData);
+            const url = `../reports/free_report.html?${urlParams.toString()}`;
+            
+            document.getElementById('regional-url').textContent = url;
+            
+            // Uncomment to actually navigate
+            // window.location.href = url;
+        }
+        
+        // Test with custom parameters
+        function testWithParams() {
+            const testData = {
+                email: 'custom@example.com',
+                postcode: 'SO14 1AB',
+                serviceType: 'hybrid'
+            };
+            
+            const urlParams = new URLSearchParams(testData);
+            const url = `reports/free_report.html?${urlParams.toString()}`;
+            
+            document.getElementById('custom-url').textContent = url;
+            
+            // Uncomment to actually navigate
+            // window.location.href = url;
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCurrentParams();
+        });
+    </script>
+</body>
+</html>
