@@ -10,7 +10,8 @@ Allow: /
 Allow: /index.html
 Allow: /questionnaire.html
 Allow: /privacy.html
-Allow: /SouthEast/
+Allow: /regions/
+Allow: /regions/south-east/
 Allow: /reports/
 Allow: /checkout/
 
