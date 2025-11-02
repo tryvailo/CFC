@@ -1,37 +1,21 @@
 /* ============================================ EMAIL TEMPLATES CSS ============================================ */
 
 /* EMAIL TEMPLATE VARIABLES */
-/* Uses brandbook colors from main.css */
 :root {
-    /* Primary colors - matching brandbook */
-    --navy-primary: var(--primary-navy, #1e3a5f);
-    --charcoal-text: var(--neutral-900, #1f2937);
-    --accent-sage: var(--accent-sage, #5a7a5f);
-    --accent-sage-dark: var(--accent-sage-dark, #4a6a4f);
-    
-    /* Background colors */
-    --warm-grey-bg: var(--bg-secondary, #f7fafc);
-    --warm-cream: var(--bg-tertiary, #fffaf0);
-    --pure-white: var(--bg-primary, #ffffff);
-    
-    /* Text colors */
-    --muted-blue: var(--neutral-600, #718096);
-    --text-muted: var(--neutral-600, #6b7280);
-    
-    /* Border colors */
-    --border-color: var(--neutral-300, #e2e8f0);
-    
-    /* Status colors */
-    --success-green: var(--success-green, #047857);
-    --soft-amber: var(--warning-amber, #d97706);
-    
-    /* Shadows */
+    --navy-primary: #1a237e;
+    --charcoal-text: #1f2937;
+    --burgundy-accent: #744c2c;
+    --warm-grey-bg: #f7fafc;
+    --muted-blue: #374151;
+    --warm-cream: #fffaf0;
+    --pure-white: #ffffff;
+    --burgundy-hover: #5a3921;
+    --success-green: #059669;
+    --soft-amber: #f59e0b;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-medium: rgba(0, 0, 0, 0.15);
-    
-    /* Legacy support - map deprecated names */
-    --burgundy-accent: var(--accent-sage);
-    --burgundy-hover: var(--accent-sage-dark);
 }
 
 /* RESET STYLES */
@@ -44,7 +28,7 @@
 /* EMAIL BODY STYLES */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 20px; /* Brandbook compliant - 20px minimum for 50+ audience */
+    font-size: 18px;
     line-height: 1.6;
     color: var(--charcoal-text);
     background-color: var(--warm-cream);
@@ -105,7 +89,7 @@ body {
 .email-header p {
     margin: 12px 0 0 0;
     color: var(--pure-white);
-    font-size: 18px; /* Increased from 16px for 50+ audience readability */
+    font-size: 16px;
     opacity: 0.95;
 }
 
@@ -131,7 +115,7 @@ body {
 
 .email-content p {
     margin: 0 0 20px 0;
-    font-size: 18px; /* Increased from 16px for 50+ audience readability */
+    font-size: 16px;
     line-height: 1.6;
     color: var(--charcoal-text);
 }
@@ -277,7 +261,7 @@ body {
     padding: 12px 24px;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 18px; /* Increased from 16px for 50+ audience readability */
+    font-size: 16px;
     text-align: center;
     transition: background-color 0.3s ease;
 }

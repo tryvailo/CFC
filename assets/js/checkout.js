@@ -64,7 +64,7 @@ class CheckoutModule {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    amount: 4680, // £46.80 in pence
+                    amount: 5880, // £58.80 in pence (£49.00 + £9.80 VAT)
                     currency: 'gbp',
                     customerEmail: 'test@example.com', // Will be updated from form
                     reportId: 'premium_guide'
@@ -84,7 +84,7 @@ class CheckoutModule {
             this.paymentIntent = {
                 id: 'pi_mock_' + Date.now(),
                 client_secret: 'pi_mock_secret_' + Date.now(),
-                amount: 4680,
+                amount: 5880,
                 currency: 'gbp',
                 status: 'requires_payment_method'
             };
@@ -396,7 +396,7 @@ class CheckoutModule {
         } else {
             submitButton.disabled = false;
             submitButton.classList.remove('loading');
-            submitButton.textContent = 'Complete Payment - £39';
+            submitButton.textContent = 'Complete Payment - £49';
         }
     }
 

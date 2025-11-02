@@ -23,6 +23,11 @@ class ReportsModule {
         this.setupShareFunctionality();
         this.setupProgressTracker();
         this.setupScriptCopying();
+        this.setupProviderFreshness();
+        this.setupRoadmapWithPriorities();
+        this.setupGlossaryTooltips();
+        this.setupFullGlossary();
+        this.checkQuestionnaireData();
     }
 
     /**
@@ -565,7 +570,474 @@ class ReportsModule {
             alert('Failed to copy to clipboard. Please try again.');
         }
     }
+
+    /**
+     * Setup provider data freshness indicator
+     */
+    setupProviderFreshness() {
+        // Make setupProviderFreshness globally available
+        window.setupProviderFreshness = this.setupProviderFreshness.bind(this);
+        
+        // Initialize freshness indicators on page load
+        this.updateProviderFreshness();
+    }
+
+    /**
+     * Update provider freshness indicators based on data age
+     */
+    updateProviderFreshness() {
+        const providerElements = document.querySelectorAll('[data-updated]');
+        
+        providerElements.forEach(element => {
+            const updatedDate = new Date(element.dataset.updated);
+            const now = new Date();
+            const daysDiff = Math.floor((now - updatedDate) / (1000 * 60 * 60 * 24));
+            
+            const updatedElement = element.querySelector('.provider-updated');
+            if (updatedElement) {
+                // Remove existing freshness classes
+                updatedElement.classList.remove('fresh', 'aging', 'stale');
+                
+                // Add appropriate freshness class based on age
+                if (daysDiff <= 30) {
+                    updatedElement.classList.add('fresh');
+                } else if (daysDiff <= 60) {
+                    updatedElement.classList.add('aging');
+                } else {
+                    updatedElement.classList.add('stale');
+                }
+                
+                // Update the displayed date to be more human-readable
+                this.updateDisplayedDate(updatedElement, updatedDate);
+            }
+        });
+    }
+
+    /**
+     * Update the displayed date in a more human-readable format
+     */
+    updateDisplayedDate(updatedElement, date) {
+        const textElement = updatedElement.querySelector('.updated-text');
+        if (textElement) {
+            const options = { 
+                day: 'numeric', 
+                month: 'short', 
+                year: 'numeric' 
+            };
+            const formattedDate = date.toLocaleDateString('en-GB', options);
+            textElement.textContent = `Updated: ${formattedDate}`;
+        }
+    }
+
+    /**
+     * Setup user preferences summary
+     */
+    setupUserPreferencesSummary() {
+        // Make setupUserPreferencesSummary globally available
+        window.setupUserPreferencesSummary = this.setupUserPreferencesSummary.bind(this);
+        // Try to get data from localStorage
+        const savedData = localStorage.getItem('funeralAnalysis');
+        let analysisData = null;
+        
+        if (savedData) {
+            try {
+                analysisData = JSON.parse(savedData);
+            } catch (e) {
+                console.warn('Could not parse saved analysis data');
+            }
+        }
+        
+        // Also check URL parameters as fallback
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Service Type
+        const serviceTypeElement = document.getElementById('pref-service-type');
+        if (serviceTypeElement) {
+            const serviceType = analysisData?.serviceType || urlParams.get('serviceType') || 'traditional-cremation';
+            const serviceNames = {
+                'traditional-cremation': 'Traditional Cremation',
+                'direct-cremation': 'Direct Cremation',
+                'simple-service': 'Simple Service + Cremation',
+                'traditional-burial': 'Traditional Burial',
+                'natural-burial': 'Natural Burial',
+                'unsure': 'Exploring Options',
+                'traditional': 'Traditional Funeral Service',
+                'direct': 'Direct Cremation',
+                'simple': 'Simple Service + Cremation',
+                'burial': 'Traditional Burial',
+                'not_sure': 'Exploring Options'
+            };
+            serviceTypeElement.textContent = serviceNames[serviceType] || 'Not specified';
+        }
+        
+        // Location
+        const locationElement = document.getElementById('pref-location');
+        if (locationElement) {
+            const postcode = analysisData?.location?.postcode || urlParams.get('postcode') || '';
+            const town = analysisData?.location?.town || urlParams.get('town') || '';
+            
+            // Try to extract area name from postcode if no town provided
+            let locationText = '';
+            if (town && postcode) {
+                locationText = `${town}, ${postcode}`;
+            } else if (postcode) {
+                // Map postcode areas to readable names
+                const areaMap = {
+                    'BN': 'Brighton, East Sussex',
+                    'GU': 'Guildford, Surrey', 
+                    'RG': 'Reading, Berkshire',
+                    'SO': 'Southampton, Hampshire',
+                    'PO': 'Portsmouth, Hampshire',
+                    'TN': 'Tunbridge Wells, Kent',
+                    'ME': 'Medway, Kent',
+                    'CT': 'Canterbury, Kent'
+                };
+                
+                const area = postcode.substring(0, 2);
+                const areaName = areaMap[area] || `${postcode} area`;
+                locationText = areaName;
+            } else if (town) {
+                locationText = town;
+            } else {
+                locationText = 'Not specified';
+            }
+            
+            locationElement.textContent = locationText;
+        }
+        
+        // Budget
+        const budgetElement = document.getElementById('pref-budget');
+        if (budgetElement) {
+            const budgetMin = analysisData?.budget?.min;
+            const budgetMax = analysisData?.budget?.max;
+            
+            if (budgetMin && budgetMax) {
+                budgetElement.textContent = `£${budgetMin.toLocaleString()} - £${budgetMax.toLocaleString()}`;
+            } else {
+                budgetElement.textContent = 'Flexible';
+            }
+        }
+        
+        // Timeline
+        const timelineElement = document.getElementById('pref-timeline');
+        if (timelineElement) {
+            const timeline = analysisData?.timeline || urlParams.get('timeline') || 'Not specified';
+            const timelineLabels = {
+                'urgent': 'Urgent (within days)',
+                '1-2-weeks': 'Within 1-2 weeks',
+                '2-4-weeks': 'Within 2-4 weeks',
+                'flexible': 'Flexible timing',
+                'asap': 'As soon as possible',
+                'within-week': 'Within a week'
+            };
+            
+            timelineElement.textContent = timelineLabels[timeline] || timeline;
+        }
+    }
+
+    /**
+     * Setup roadmap with priority levels
+     */
+    setupRoadmapWithPriorities() {
+        // Make setupRoadmapWithPriorities globally available
+        window.setupRoadmapWithPriorities = this.setupRoadmapWithPriorities.bind(this);
+        
+        // Initialize roadmap with priorities
+        this.renderRoadmapWithPriorities();
+    }
+
+    /**
+     * Setup glossary tooltips for funeral terms
+     */
+    setupGlossaryTooltips() {
+        window.setupGlossaryTooltips = this.setupGlossaryTooltips.bind(this);
+        
+        // For mobile: toggle tooltip on tap
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.term-tooltip').forEach(term => {
+                term.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close other tooltips
+                    document.querySelectorAll('.term-tooltip.active').forEach(other => {
+                        if (other !== this) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle this tooltip
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Close tooltip when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.term-tooltip')) {
+                    document.querySelectorAll('.term-tooltip.active').forEach(term => {
+                        term.classList.remove('active');
+                    });
+                }
+            });
+        }
+        
+        // Make tooltips keyboard accessible
+        document.querySelectorAll('.term-tooltip').forEach(term => {
+            term.setAttribute('tabindex', '0');
+            term.setAttribute('role', 'button');
+            term.setAttribute('aria-label', `Definition: ${term.dataset.term}`);
+            
+            term.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+                if (e.key === 'Escape') {
+                    this.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    /**
+     * Setup full glossary section
+     */
+    setupFullGlossary() {
+        window.setupFullGlossary = this.setupFullGlossary.bind(this);
+        
+        const toggleButton = document.getElementById('glossary-toggle');
+        const glossaryContent = document.getElementById('glossary-content');
+        const glossaryGrid = document.getElementById('glossary-grid');
+        
+        if (!toggleButton || !glossaryContent || !glossaryGrid) return;
+        
+        // Populate glossary
+        Object.entries(glossary).forEach(([term, definition]) => {
+            const termElement = document.createElement('div');
+            termElement.className = 'glossary-item';
+            termElement.innerHTML = `
+                <h4 class="glossary-term">${term.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                <p class="glossary-definition">${definition}</p>
+            `;
+            glossaryGrid.appendChild(termElement);
+        });
+        
+        // Toggle functionality
+        toggleButton.addEventListener('click', function() {
+            const isVisible = glossaryContent.style.display !== 'none';
+            glossaryContent.style.display = isVisible ? 'none' : 'block';
+            this.querySelector('.toggle-arrow').textContent = isVisible ? '▼' : '▲';
+            this.querySelector('.toggle-text').textContent = isVisible ? 'View Full Glossary' : 'Hide Glossary';
+        });
+    }
+
+    /**
+     * Load questionnaire data with validation
+     */
+    loadQuestionnaireData() {
+        const savedData = localStorage.getItem('funeralAnalysis');
+        
+        if (!savedData) {
+            console.warn('No questionnaire data found');
+            return null;
+        }
+        
+        try {
+            const data = JSON.parse(savedData);
+            
+            // Check if data is expired (30 days)
+            if (data.timestamp) {
+                const savedDate = new Date(data.timestamp);
+                const now = new Date();
+                const daysDiff = Math.floor((now - savedDate) / (1000 * 60 * 60 * 24));
+                
+                if (daysDiff > 30) {
+                    console.warn('Questionnaire data expired');
+                    localStorage.removeItem('funeralAnalysis');
+                    return null;
+                }
+            }
+            
+            return data;
+        } catch (e) {
+            console.error('Failed to parse questionnaire data:', e);
+            localStorage.removeItem('funeralAnalysis');
+            return null;
+        }
+    }
+
+    /**
+     * Check questionnaire data and show prompt if missing
+     */
+    checkQuestionnaireData() {
+        const data = this.loadQuestionnaireData();
+        
+        if (!data || !data.completed) {
+            this.showIncompleteDataPrompt();
+        }
+    }
+
+    /**
+     * Show prompt to complete questionnaire if data is missing
+     */
+    showIncompleteDataPrompt() {
+        const promptElement = document.createElement('div');
+        promptElement.className = 'incomplete-data-prompt';
+        promptElement.innerHTML = `
+            <div class="prompt-content">
+                <h3>Complete Your Questionnaire</h3>
+                <p>For the most accurate recommendations, please complete our short questionnaire.</p>
+                <a href="questionnaire.html" class="prompt-button">Complete Questionnaire</a>
+                <button class="prompt-dismiss">Continue with defaults</button>
+            </div>
+        `;
+        
+        document.body.insertBefore(promptElement, document.body.firstChild);
+        
+        // Handle dismiss
+        promptElement.querySelector('.prompt-dismiss').addEventListener('click', function() {
+            promptElement.remove();
+        });
+    }
+
+    /**
+     * Render roadmap with priority levels
+     */
+    renderRoadmapWithPriorities() {
+        const roadmapContainer = document.getElementById('roadmap-actions-container');
+        if (!roadmapContainer) return;
+
+        // Clear existing content
+        roadmapContainer.innerHTML = '';
+
+        // Add priority legend
+        const legend = document.createElement('div');
+        legend.className = 'priority-legend';
+        legend.innerHTML = `
+            <h4>Priority Levels:</h4>
+            <div class="legend-items">
+                <span class="priority-badge priority-high">HIGH</span>
+                <span class="legend-text">Must do within 24-48 hours</span>
+                <span class="priority-badge priority-medium">MEDIUM</span>
+                <span class="legend-text">Should do within 3-7 days</span>
+                <span class="priority-badge priority-low">LOW</span>
+                <span class="legend-text">Can do within 1-2 weeks</span>
+            </div>
+        `;
+        roadmapContainer.appendChild(legend);
+
+        // Render each action
+        roadmapActions.forEach(action => {
+            const actionElement = document.createElement('div');
+            actionElement.className = 'roadmap-action';
+            actionElement.innerHTML = `
+                <div class="action-header">
+                    <span class="priority-badge priority-${action.priority}">${action.priority.toUpperCase()} PRIORITY</span>
+                    <span class="action-timeframe">${action.timeframe}</span>
+                </div>
+                <h4 class="action-title">${action.title}</h4>
+                <p class="action-description">${action.description}</p>
+                ${action.tip ? `
+                    <div class="action-tip">
+                        <span class="tip-icon">💡</span>
+                        <span class="tip-text">${action.tip}</span>
+                    </div>
+                ` : ''}
+            `;
+            roadmapContainer.appendChild(actionElement);
+        });
+    }
 }
+
+/**
+ * Roadmap Actions with Priority Levels
+ * Sensitive context - priorities help users focus during difficult times
+ */
+const roadmapActions = [
+    {
+        priority: 'high',
+        timeframe: 'Day 1-2',
+        title: 'Contact 3 funeral directors for quotes',
+        description: 'Get written quotes to compare prices and services. Use the email template provided in Section 5.',
+        tip: 'Aim to contact directors by phone first, then follow up with email'
+    },
+    {
+        priority: 'high',
+        timeframe: 'Day 1-2',
+        title: 'Request Standard Price Lists (SPL)',
+        description: 'All funeral directors must provide their SPL. This helps you compare like-for-like.',
+        tip: 'SPLs are legally required and must be provided free of charge'
+    },
+    {
+        priority: 'high',
+        timeframe: 'Day 2-3',
+        title: 'Check crematorium availability',
+        description: 'Contact local crematoria to understand availability and book preferred dates.',
+        tip: 'Weekday mornings often have better availability and may be less expensive'
+    },
+    {
+        priority: 'medium',
+        timeframe: 'Day 3-5',
+        title: 'Compare quotes and services',
+        description: 'Review all quotes side-by-side. Look beyond price to services included.',
+        tip: 'Use our comparison checklist to ensure you\'re comparing equivalent services'
+    },
+    {
+        priority: 'medium',
+        timeframe: 'Day 4-6',
+        title: 'Visit or video call with shortlisted directors',
+        description: 'Meet with your top 2-3 choices to discuss details and ask questions.',
+        tip: 'Trust your instincts - you need to feel comfortable with the funeral director'
+    },
+    {
+        priority: 'medium',
+        timeframe: 'Day 5-7',
+        title: 'Review contract terms carefully',
+        description: 'Before signing, ensure you understand all costs, payment terms, and cancellation policy.',
+        tip: 'Don\'t feel pressured to decide immediately - take time to review'
+    },
+    {
+        priority: 'low',
+        timeframe: 'Day 7-10',
+        title: 'Arrange additional services',
+        description: 'Order flowers, arrange catering, book venues for wake if needed.',
+        tip: 'Some funeral directors offer packages, but you can often save by arranging separately'
+    },
+    {
+        priority: 'low',
+        timeframe: 'Day 8-12',
+        title: 'Finalize ceremony details',
+        description: 'Choose music, readings, order of service. Work with celebrant or officiant.',
+        tip: 'Personal touches make the ceremony more meaningful and don\'t have to be expensive'
+    },
+    {
+        priority: 'low',
+        timeframe: 'Day 10-14',
+        title: 'Confirm all arrangements',
+        description: 'Final check with funeral director, crematorium, and any other service providers.',
+        tip: 'Get written confirmation of all details to avoid misunderstandings'
+    }
+];
+
+// Glossary definitions for funeral terms
+const glossary = {
+    'funeral-director': 'A professional who arranges and manages funeral services, including care of the deceased, paperwork, and coordination of all aspects.',
+    'crematorium': 'A facility where cremation takes place. Typically includes a chapel for services and viewing.',
+    'coffin': 'A container for the deceased, typically tapered at the head and foot. Different from a casket which is rectangular.',
+    'casket': 'A rectangular container for the deceased, typically more expensive than a coffin.',
+    'hearse': 'A vehicle designed to carry a coffin to the funeral service and crematorium or cemetery.',
+    'chapel-of-rest': 'A peaceful room where the deceased can be viewed by family and friends before the funeral.',
+    'direct-cremation': 'A cremation without a ceremony, typically the most affordable option. The deceased is collected, cremated, and ashes returned to family.',
+    'natural-burial': 'An eco-friendly burial in a woodland or meadow setting using biodegradable materials. No embalming or traditional headstones.',
+    'spl': 'Standard Price List - A legally required document that all funeral directors must provide, showing their prices for services and products.',
+    'disbursements': 'Third-party costs that the funeral director pays on your behalf, such as crematorium fees, doctor\'s fees, and death certificates.',
+    'celebrant': 'A person who conducts a funeral ceremony, can be religious or non-religious (humanist).',
+    'embalming': 'A preservation process for the deceased, typically only needed if there will be a delay before the funeral or for international repatriation.',
+    'viewing': 'An opportunity for family and friends to see the deceased before the funeral, usually at the chapel of rest.',
+    'wake': 'A gathering after the funeral service where family and friends come together to remember the deceased, often with refreshments.',
+    'ashes': 'The cremated remains returned to the family after cremation, technically called "cremated remains".',
+    'urn': 'A container for holding cremated remains (ashes).',
+    'memorial': 'A permanent marker or tribute, such as a headstone, plaque, or tree, to remember the deceased.'
+};
 
 /**
  * Initialize reports module when DOM is loaded

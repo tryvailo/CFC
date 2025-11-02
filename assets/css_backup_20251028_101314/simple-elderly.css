@@ -1,0 +1,1557 @@
+/* 
+ * Simple CSS for Elderly Users - ClearFuneralCosts
+ * Optimized for users aged 55-80+ in grief/stress
+ * Principles: High contrast, large text, simple colors, minimal visual noise
+ */
+
+/* 
+ * Simple CSS for Elderly Users - ClearFuneralCosts
+ * Optimized for users aged 55-80+ in grief/stress
+ * Principles: High contrast, large text, simple colors, minimal visual noise
+ * Colors from BRANDBOOK v2.0 - No transparency, no gradients
+ */
+
+/* CSS Variables from BRANDBOOK - Simple Colors Only */
+:root {
+    /* PRIMARY COLORS */
+    --primary-navy: #1e3a5f;
+    --navy-light: #2d5a8a;
+    
+    /* ACCENT COLORS - Sage Green (PRIMARY ACCENT) */
+    --accent-sage: #5a7a5f;
+    --accent-sage-light: #7a9a7f;
+    --accent-sage-pale: #e8f3ea;
+    --accent-sage-dark: #4a6a4f;
+    
+    /* NEUTRAL COLORS */
+    --neutral-900: #1a202c;
+    --neutral-800: #2d3748;
+    --neutral-700: #4a5568;
+    --neutral-600: #718096;
+    --neutral-500: #a0aec0;
+    --neutral-400: #cbd5e0;
+    --neutral-300: #e2e8f0;
+    --neutral-200: #edf2f7;
+    --neutral-100: #f7fafc;
+    --neutral-50: #fafbfc;
+    
+    /* BACKGROUND COLORS */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --bg-tertiary: #edf2f7;
+    
+    /* SEMANTIC COLORS */
+    --success-green: #047857;
+    --success-green-light: #10b981;
+    --success-green-pale: #d1fae5;
+    
+    --error-red: #b91c1c;
+    --error-red-light: #dc2626;
+    --error-red-pale: #fee2e2;
+    
+    --warning-amber: #d97706;
+    --warning-amber-light: #f59e0b;
+    --warning-amber-pale: #fef3c7;
+    
+    --info-blue: #1e40af;
+    --info-blue-light: #3b82f6;
+    --info-blue-pale: #dbeafe;
+}
+
+/* Simple Header - Original Color Scheme Restored */
+.header-simple {
+    background: var(--primary-navy); /* Dark navy background */
+    border-bottom: 4px solid var(--accent-sage); /* Sage green border */
+    padding: 32px 0;
+    margin-bottom: 32px;
+    text-align: center;
+    color: white; /* White text on dark background */
+}
+
+.logo-simple {
+    font-size: 32px; /* Large logo */
+    font-weight: bold;
+    color: white; /* White logo text */
+    margin-bottom: 16px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    letter-spacing: -0.3px;
+}
+
+.empathy-simple {
+    font-size: 20px; /* Large text */
+    color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    margin: 16px 0;
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.title-simple {
+    font-size: 36px; /* Large title */
+    font-weight: 600;
+    color: white; /* White title text */
+    margin: 16px 0 0 0;
+    line-height: 1.3;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/* Mobile Header Adjustments */
+@media (max-width: 768px) {
+    .header-simple {
+        padding: 24px 0;
+        margin-bottom: 24px;
+    }
+    
+    .logo-simple {
+        font-size: 28px; /* Slightly smaller on mobile */
+        margin-bottom: 20px;
+    }
+    
+    .empathy-simple {
+        font-size: 22px; /* Larger on mobile */
+        margin: 20px 0;
+    }
+    
+    .title-simple {
+        font-size: 32px; /* Slightly smaller on mobile */
+        margin: 20px 0 0 0;
+    }
+}
+
+/* Base Typography - Large and Readable */
+body {
+    font-family: Georgia, serif;
+    font-size: 18px; /* Increased from 16px */
+    line-height: 1.6; /* Increased for better readability */
+    color: var(--neutral-900);
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings - Large and Clear */
+h1 {
+    font-size: 2.2rem; /* Increased from 2rem */
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 24px 0 16px 0;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.8rem; /* Increased from 1.6rem */
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 32px 0 20px 0;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 24px 0 16px 0;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.3rem; /* Increased from 1.1rem */
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 20px 0 12px 0;
+    line-height: 1.3;
+}
+
+/* Paragraphs - Large and Spaced */
+p {
+    font-size: 18px; /* Minimum 16px as required */
+    line-height: 1.7; /* Increased for better readability */
+    margin: 16px 0;
+    color: var(--neutral-900);
+}
+
+/* Links - High Contrast */
+a {
+    color: var(--accent-sage);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--accent-sage-dark);
+    text-decoration: underline;
+}
+
+/* Simple Info Box - Clean and Accessible */
+.info-box-simple {
+    background: var(--accent-sage-pale); /* Simple background from BRANDBOOK */
+    padding: 24px;
+    border-radius: 8px;
+    margin: 24px 0;
+    border: 2px solid var(--accent-sage); /* Simple border instead of border-left */
+    color: var(--neutral-900);
+}
+
+.info-box-simple h3 {
+    margin-top: 0;
+    color: var(--accent-sage);
+    margin-bottom: 16px;
+    font-size: 20px; /* Large heading */
+    font-weight: bold;
+}
+
+.info-box-simple ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.8; /* Increased line-height */
+    color: var(--neutral-900);
+}
+
+.info-box-simple li {
+    margin-bottom: 12px; /* Increased spacing */
+    font-size: 18px; /* Large text */
+    line-height: 1.8; /* Increased line-height */
+}
+
+/* Simple Testimonials - Clean and Accessible */
+.testimonial-simple {
+    background: var(--bg-primary);
+    border: 2px solid var(--neutral-300);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: none; /* Remove complex shadows */
+}
+
+.testimonial-simple p {
+    font-size: 18px; /* Large text */
+    line-height: 1.6;
+    color: var(--neutral-900);
+    margin: 0 0 16px 0;
+    font-style: normal; /* Remove italic */
+}
+
+.testimonial-simple .author-simple {
+    font-size: 16px;
+    color: var(--neutral-700);
+    font-weight: normal; /* Simple font weight */
+    text-align: right;
+    margin: 0;
+}
+
+/* Inline Testimonial */
+.testimonial-simple-inline {
+    background: var(--neutral-100);
+    border: 2px solid var(--neutral-300);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.testimonial-simple-inline p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--neutral-900);
+    margin: 0 0 12px 0;
+    font-style: normal;
+}
+
+.testimonial-simple-inline .author-simple {
+    font-size: 16px;
+    color: var(--neutral-700);
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Prevent footer overlap with sticky CTA */
+body {
+    padding-bottom: 120px; /* Space for sticky CTA */
+}
+
+main {
+    padding-bottom: 20px; /* Extra space before sticky CTA */
+}
+
+/* Ultra Simple Summary Box - Immediate Context */
+.summary-box-ultra-simple {
+    background: #F5F5F5;
+    padding: 32px;
+    border: 3px solid #5A7A5F;
+    border-radius: 8px;
+    margin: 32px 0;
+    text-align: center;
+}
+
+.summary-box-ultra-simple h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+.summary-box-ultra-simple p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin: 12px 0;
+    color: #2C3E50;
+}
+
+/* Mobile Summary Box */
+@media (max-width: 768px) {
+    .summary-box-ultra-simple {
+        padding: 40px 24px;
+        margin: 40px 0;
+    }
+    
+    .summary-box-ultra-simple h2 {
+        font-size: 32px; /* Even larger on mobile */
+        margin-bottom: 24px;
+    }
+    
+    .summary-box-ultra-simple p {
+        font-size: 22px; /* Even larger on mobile */
+        margin: 16px 0;
+        line-height: 1.8;
+    }
+}
+
+/* Simple Scenario Info - Clean and Readable */
+.scenario-info-simple {
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid var(--neutral-300);
+}
+
+.scenario-info-simple p {
+    font-size: 18px;
+    margin: 8px 0;
+    line-height: 1.6;
+    color: var(--neutral-900);
+}
+
+.scenario-info-simple strong {
+    color: var(--accent-sage);
+    font-weight: 600;
+}
+
+/* Mobile Scenario Info */
+@media (max-width: 768px) {
+    .scenario-info-simple {
+        padding: 24px;
+        margin-top: 24px;
+    }
+    
+    .scenario-info-simple p {
+        font-size: 20px; /* Even larger on mobile */
+        margin: 12px 0; /* More spacing on mobile */
+    }
+}
+
+/* Simple Steps List - Clean and Readable */
+.steps-list-simple {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.steps-list-simple li {
+    font-size: 18px; /* Large text for elderly */
+    line-height: 1.6;
+    color: var(--neutral-900);
+    margin-bottom: 16px; /* Increased spacing */
+    padding-left: 24px;
+    position: relative;
+}
+
+.steps-list-simple li:before {
+    content: "•";
+    color: var(--accent-sage);
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Mobile Steps List */
+@media (max-width: 768px) {
+    .steps-list-simple li {
+        font-size: 20px; /* Even larger on mobile */
+        margin-bottom: 20px; /* More spacing on mobile */
+        padding-left: 28px;
+    }
+    
+    .steps-list-simple li:before {
+        font-size: 22px;
+    }
+}
+
+/* Simple List Styles */
+ul {
+    margin: 20px 0;
+    padding-left: 24px;
+    line-height: 1.8;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+/* Simple Dignity Points - Vertical List */
+.dignity-point-simple {
+    margin-bottom: 24px; /* Increased spacing between points */
+    padding: 0; /* Remove padding */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+}
+
+.dignity-point-simple h4 {
+    color: var(--accent-sage);
+    margin-bottom: 8px;
+    font-size: 20px; /* Large heading */
+    font-weight: bold;
+}
+
+.dignity-point-simple p {
+    color: var(--neutral-900);
+    margin: 0;
+    font-size: 18px; /* Large text */
+    line-height: 1.6;
+}
+
+/* Simple Savings Display - Clean and Large */
+.savings-display-simple {
+    text-align: center;
+    padding: 20px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 2px solid var(--accent-sage);
+}
+
+.savings-pounds {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2C5F3D;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.savings-percent {
+    font-size: 18px;
+    color: #555555;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Mobile Savings Display */
+@media (max-width: 768px) {
+    .savings-display-simple {
+        padding: 24px;
+        margin: 24px 0;
+    }
+    
+    .savings-pounds {
+        font-size: 36px; /* Even larger on mobile */
+    }
+    
+    .savings-percent {
+        font-size: 20px; /* Larger on mobile */
+    }
+}
+
+/* Simple Scenario Summary */
+.scenario-summary-simple {
+    background: var(--accent-sage-pale);
+    color: var(--accent-sage);
+    font-weight: 500;
+    font-size: 1.1rem; /* Increased from 1rem */
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--accent-sage);
+}
+
+/* Simple Warm Background */
+.warm-background-simple {
+    background: var(--neutral-100);
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-300);
+}
+
+/* Simple Comparison Grid */
+.comparison-grid-simple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.comparison-column-simple {
+    background: var(--neutral-100);
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid var(--neutral-300);
+}
+
+.comparison-column-premium {
+    background: var(--neutral-100);
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-sage);
+}
+
+/* Simple Centered Text */
+.text-center-simple {
+    text-align: center;
+    color: var(--neutral-700);
+    margin-bottom: 20px;
+}
+
+.text-center-large {
+    text-align: center;
+    color: var(--neutral-700);
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+/* Simple Margin Utilities */
+.margin-top-small {
+    margin-top: 12px;
+}
+
+.margin-top-medium {
+    margin-top: 20px;
+}
+
+.margin-top-large {
+    margin-top: 24px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 12px;
+}
+
+.margin-bottom-medium {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-large {
+    margin-bottom: 32px;
+}
+
+/* Simple Border Styles */
+.border-dashed-simple {
+    border: 1px dashed var(--neutral-300);
+    padding: 16px;
+    border-radius: 6px;
+    background: var(--neutral-100);
+}
+
+/* Simple Action Steps */
+.actionable-steps-simple h4 {
+    color: var(--primary-navy);
+    font-size: 1.2rem; /* Increased from 1.1rem */
+    margin-bottom: 12px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.scenario-actions-simple {
+    border-top: none;
+    padding-top: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.scenario-actions-simple li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 18px;
+}
+
+.scenario-actions-simple li:before {
+    content: "•";
+    color: var(--accent-sage);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Simplified Scenario Cards - Linear Structure */
+.scenario-card-simple {
+    background: var(--bg-primary);
+    border: 2px solid var(--neutral-300);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: none; /* Remove shadows for simplicity */
+}
+
+.scenario-title-simple {
+    font-size: 1.6rem; /* Large and clear */
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.savings-amount-simple {
+    font-size: 1.8rem; /* Very large for emphasis */
+    font-weight: bold;
+    color: var(--accent-sage);
+    margin: 0 0 16px 0;
+    text-align: center;
+    padding: 12px;
+    background: var(--accent-sage-pale);
+    border-radius: 6px;
+    border: 2px solid var(--accent-sage);
+}
+
+.scenario-description-simple {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--neutral-900);
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.actions-list-simple {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.actions-list-simple li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--neutral-900);
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.actions-list-simple li:before {
+    content: "•";
+    color: var(--accent-sage);
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.scenario-footer-simple {
+    font-size: 16px;
+    color: var(--neutral-700);
+    text-align: center;
+    padding: 12px;
+    background: var(--neutral-100);
+    border-radius: 6px;
+    border: 1px solid var(--neutral-300);
+    margin-top: 16px;
+}
+
+/* Recommended Badge - Simple Text */
+.recommended-text-simple {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-sage);
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 8px;
+    background: var(--accent-sage-pale);
+    border-radius: 4px;
+    border: 1px solid var(--accent-sage);
+}
+
+/* Skip Links - Large and Accessible */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-navy);
+    color: var(--bg-primary);
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+    outline: 3px solid var(--accent-sage);
+    outline-offset: 2px;
+}
+.cta-primary-simple {
+    display: inline-block;
+    background: var(--accent-sage);
+    color: var(--bg-primary);
+    padding: 16px 32px; /* Increased padding */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px; /* Minimum 18px */
+    margin-top: 16px;
+    border: 2px solid var(--accent-sage);
+    min-height: 50px; /* Accessibility standard */
+    line-height: 1.2;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.cta-primary-simple:hover {
+    background: var(--accent-sage-light);
+    border-color: var(--accent-sage-light);
+    color: var(--bg-primary);
+    transform: translateY(-1px); /* Subtle feedback */
+}
+
+.cta-primary-simple:active {
+    transform: translateY(0);
+}
+
+/* Enhanced CTA Button - Large and Accessible */
+.enhanced-cta-simple {
+    display: inline-block;
+    background: var(--accent-sage);
+    color: var(--bg-primary);
+    padding: 16px 32px; /* Large padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px; /* Large text */
+    margin: 16px 0; /* Spacing between buttons */
+    border: 2px solid var(--accent-sage);
+    min-height: 50px; /* Accessibility standard */
+    line-height: 1.2;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.enhanced-cta-simple:hover {
+    background: var(--accent-sage-light);
+    border-color: var(--accent-sage-light);
+    color: var(--bg-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.enhanced-cta-simple:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Large Links - Accessible Text Links */
+a {
+    color: var(--accent-sage);
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 18px; /* Large text for links */
+    padding: 4px 8px; /* Touch-friendly padding */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    min-height: 44px; /* Accessibility standard */
+    display: inline-block;
+    line-height: 1.4;
+}
+
+a:hover {
+    color: var(--accent-sage-dark);
+    text-decoration: underline;
+    background: var(--accent-sage-pale);
+}
+
+/* Service Comparison Table - Simplified and Accessible */
+.service-comparison-table-simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 18px; /* Large text for readability */
+    background: var(--bg-primary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-comparison-table-simple th {
+    background: var(--primary-navy);
+    color: var(--bg-primary);
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 16px; /* Large padding */
+    text-align: left;
+    border: none;
+}
+
+.service-comparison-table-simple td {
+    padding: 20px 16px; /* Large padding */
+    border: none;
+    border-bottom: 1px solid var(--neutral-200);
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+/* Alternating row colors for better readability */
+.service-comparison-table-simple tbody tr:nth-child(even) {
+    background: var(--neutral-50);
+}
+
+.service-comparison-table-simple tbody tr:nth-child(odd) {
+    background: var(--bg-primary);
+}
+
+.service-comparison-table-simple tbody tr:hover {
+    background: var(--accent-sage-pale);
+    cursor: pointer;
+}
+
+/* Bold text for prices */
+.service-comparison-table-simple td strong {
+    font-weight: bold;
+    color: var(--primary-navy);
+    font-size: 18px;
+}
+
+/* Mobile Service Cards */
+.service-cards-mobile {
+    display: none; /* Hidden on desktop */
+}
+
+.service-card-mobile {
+    background: var(--bg-primary);
+    border: 2px solid var(--neutral-300);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-navy);
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent-sage);
+}
+
+.service-card-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 12px 0;
+    color: var(--neutral-900);
+}
+
+.service-card-content strong {
+    color: var(--primary-navy);
+    font-weight: 600;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .service-comparison-table-simple {
+        display: none; /* Hide table on mobile */
+    }
+    
+    .service-cards-mobile {
+        display: block; /* Show cards on mobile */
+    }
+    
+    .service-card-mobile {
+        padding: 24px; /* Larger padding on mobile */
+        margin-bottom: 20px;
+    }
+    
+    .service-card-title {
+        font-size: 22px; /* Larger title on mobile */
+    }
+    
+    .service-card-content p {
+        font-size: 20px; /* Larger text on mobile */
+        margin: 16px 0;
+    }
+}
+.provider-table-simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.provider-table-simple th,
+.provider-table-simple td {
+    padding: 16px 12px; /* Increased padding for touch targets */
+    text-align: left;
+    border: 1px solid var(--neutral-300);
+    min-height: 44px; /* Accessibility standard */
+    vertical-align: middle;
+}
+
+.provider-table-simple th {
+    background: var(--neutral-100);
+    font-weight: bold;
+    color: var(--primary-navy);
+    font-size: 18px; /* Large text */
+}
+
+.provider-table-simple .best-value {
+    background: var(--neutral-100);
+}
+
+.provider-table-simple tr:hover {
+    background: var(--neutral-50);
+    cursor: pointer;
+}
+
+/* Large Comparison Table */
+.comparison-table-simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.comparison-table-simple th,
+.comparison-table-simple td {
+    padding: 16px 12px; /* Large padding */
+    text-align: left;
+    border: 1px solid var(--neutral-300);
+    min-height: 44px; /* Accessibility standard */
+    vertical-align: middle;
+}
+
+.comparison-table-simple th {
+    background: var(--neutral-100);
+    font-weight: bold;
+    color: var(--primary-navy);
+    font-size: 18px; /* Large text */
+}
+
+.comparison-table-simple .check {
+    text-align: center;
+    color: var(--accent-sage);
+    font-weight: bold;
+    font-size: 20px; /* Large checkmarks */
+}
+
+.comparison-table-simple .cross {
+    text-align: center;
+    color: var(--neutral-700);
+    font-weight: bold;
+    font-size: 20px; /* Large crosses */
+}
+
+/* Premium Enhanced CTA - Large and Accessible */
+.cta-premium-enhanced-simple {
+    display: inline-block;
+    background: var(--primary-navy);
+    color: var(--bg-primary);
+    padding: 20px 40px; /* Extra large padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px; /* Larger text */
+    margin: 20px 0; /* Spacing between buttons */
+    border: 2px solid var(--primary-navy);
+    min-height: 60px; /* Extra large touch target */
+    line-height: 1.2;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-premium-enhanced-simple:hover {
+    background: var(--navy-light);
+    border-color: var(--navy-light);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-premium-enhanced-simple:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+    background: var(--accent-sage);
+    color: var(--bg-primary);
+    padding: 16px 32px; /* Large padding */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 16px;
+    font-size: 18px; /* Large text */
+    min-height: 50px; /* Accessibility standard */
+    line-height: 1.2;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.sticky-cta-bar-simple .cta-button-sticky:hover {
+    background: var(--accent-sage-light);
+    color: var(--bg-primary);
+    transform: translateY(-1px);
+}
+
+/* Large Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    padding: 16px 20px; /* Large padding */
+    font-size: 18px; /* Large text */
+    border: 2px solid var(--neutral-300);
+    border-radius: 6px;
+    min-height: 50px; /* Accessibility standard */
+    line-height: 1.4;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent-sage);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-sage-pale);
+}
+
+/* Large Checkboxes and Radio Buttons */
+input[type="checkbox"],
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+/* Large Labels */
+label {
+    font-size: 18px; /* Large text */
+    font-weight: 500;
+    color: var(--neutral-900);
+    margin-bottom: 8px;
+    display: block;
+    line-height: 1.4;
+}
+
+/* Button Spacing */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Minimum spacing between buttons */
+    margin: 24px 0;
+}
+
+.button-group .cta-primary-simple,
+.button-group .enhanced-cta-simple {
+    margin: 0; /* Remove individual margins */
+}
+
+/* Responsive Button Sizing */
+@media (max-width: 768px) {
+    .cta-primary-simple,
+    .enhanced-cta-simple {
+        width: 100%; /* Full width on mobile */
+        margin: 16px 0;
+        padding: 20px 32px; /* Even larger on mobile */
+        font-size: 20px; /* Larger text on mobile */
+        min-height: 56px; /* Larger touch target on mobile */
+    }
+    
+    .sticky-cta-bar-simple .cta-button-sticky {
+        width: 100%;
+        margin: 8px 0;
+        padding: 20px 32px;
+        font-size: 20px;
+        min-height: 56px;
+    }
+    
+    a {
+        font-size: 20px; /* Larger links on mobile */
+        padding: 8px 12px;
+        min-height: 48px;
+    }
+}
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.provider-table-simple th,
+.provider-table-simple td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--neutral-300);
+}
+
+.provider-table-simple th {
+    background: var(--neutral-100);
+    font-weight: bold;
+    color: var(--primary-navy);
+}
+
+.provider-table-simple .best-value {
+    background: var(--neutral-100);
+}
+
+/* Simple Disclaimer */
+.enhanced-disclaimer-simple {
+    background: var(--neutral-100);
+    padding: 24px;
+    border-radius: 8px;
+    margin: 32px 0;
+    border: 1px solid var(--neutral-300);
+}
+
+.enhanced-disclaimer-simple h4 {
+    color: var(--primary-navy);
+    margin-top: 0;
+}
+
+/* Simple Footer */
+.report-footer-simple {
+    background: var(--neutral-100);
+    padding: 24px;
+    text-align: center;
+    border-top: 2px solid var(--neutral-300);
+    margin-top: 48px;
+}
+
+/* Simple Sticky CTA - Fixed Layout Issues */
+.sticky-cta-bar-simple {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--primary-navy);
+    color: var(--bg-primary);
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    z-index: 1000;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sticky-cta-bar-simple p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--bg-primary);
+}
+
+.sticky-cta-bar-simple .cta-button-sticky {
+    background: var(--accent-sage);
+    color: var(--bg-primary);
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 20px; /* Even larger on mobile */
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.7rem;
+    }
+    
+    .dignity-grid-simple {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-grid-simple {
+        grid-template-columns: 1fr;
+    }
+    
+    .provider-table-simple {
+        font-size: 16px;
+    }
+    
+    .provider-table-simple th,
+    .provider-table-simple td {
+        padding: 8px;
+    }
+}
+
+/* Additional Classes for HTML Elements */
+.dignity-intro {
+    font-size: 1.2rem; /* Increased from 1.1rem */
+    line-height: 1.7;
+    color: var(--primary-navy);
+    margin-bottom: 20px;
+}
+
+.scenario-header-simple {
+    margin-bottom: 0;
+}
+
+.scenario-description {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: var(--primary-navy);
+}
+
+.border-dashed-simple {
+    margin-top: 24px;
+    background: var(--neutral-100);
+    color: var(--primary-navy);
+    border: 1px dashed var(--neutral-300);
+    padding: 16px;
+    border-radius: 6px;
+}
+
+/* Additional Classes for Remaining Elements */
+.provider-location {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--neutral-700);
+}
+
+.popularity-indicator {
+    margin-top: 24px;
+    font-weight: 500;
+    color: var(--accent-sage);
+}
+
+.margin-top-large {
+    margin-top: 24px;
+}
+
+/* Simple Comparison Table */
+.comparison-table-simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.comparison-table-simple th,
+.comparison-table-simple td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--neutral-300);
+}
+
+.comparison-table-simple th {
+    background: var(--neutral-100);
+    font-weight: bold;
+    color: var(--primary-navy);
+}
+
+.comparison-table-simple .check {
+    text-align: center;
+    color: var(--accent-sage);
+    font-weight: bold;
+}
+
+.comparison-table-simple .cross {
+    text-align: center;
+    color: var(--neutral-700);
+    font-weight: bold;
+}
+
+/* Simple Investment Card */
+.investment-card-simple {
+    background: var(--neutral-100);
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-sage);
+    text-align: center;
+    margin: 24px 0;
+}
+
+.investment-card-simple__title {
+    font-size: 1.5rem;
+    color: var(--primary-navy);
+    margin-bottom: 16px;
+}
+
+.investment-card-simple__price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-sage);
+    margin-bottom: 16px;
+}
+
+.investment-card-simple__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.investment-card-simple__stat {
+    text-align: center;
+}
+
+.investment-card-simple__stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--neutral-700);
+}
+
+.investment-card-simple__stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-navy);
+}
+
+/* Simple Guarantee Text */
+.guarantee-text-simple {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--bg-primary);
+    font-weight: 500;
+    padding: 0 20px;
+    background: var(--primary-navy);
+    padding: 16px;
+    border-radius: 6px;
+    margin: 24px 0;
+}
+
+.sticky-cta-bar-simple .cta-button-sticky:hover {
+    background: var(--bg-primary);
+    color: var(--accent-sage);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Sticky CTA */
+@media (max-width: 768px) {
+    .sticky-cta-bar-simple {
+        padding: 24px 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .sticky-cta-bar-simple p {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .sticky-cta-bar-simple .cta-button-sticky {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px 32px;
+        font-size: 20px;
+        min-height: 56px;
+    }
+}
+
+/* УПРОЩЕННЫЕ ШАГИ */
+.simple-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.step-card {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid var(--neutral-300);
+    text-align: center;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-sage);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 16px;
+}
+
+.step-card h3 {
+    font-size: 20px;
+    color: var(--primary-navy);
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    font-size: 16px;
+    color: var(--neutral-700);
+    margin: 0;
+}
+
+/* УПРОЩЕННАЯ DIGNITY GRID */
+.dignity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.dignity-point {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-sage);
+}
+
+.dignity-icon {
+    color: var(--accent-sage);
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.dignity-point strong {
+    display: block;
+    font-size: 18px;
+    color: var(--primary-navy);
+    margin-bottom: 8px;
+}
+
+.dignity-point p {
+    font-size: 16px;
+    color: var(--neutral-700);
+    margin: 0;
+}
+
+/* TRUST INDICATOR */
+.trust-indicator {
+    text-align: center;
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--accent-sage-pale);
+    border-radius: 8px;
+}
+
+.trust-icon {
+    color: var(--accent-sage);
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.trust-text {
+    font-size: 16px;
+    color: var(--neutral-800);
+    font-weight: 500;
+}
+
+/* PREMIUM PREVIEW BOX */
+.premium-preview-box {
+    background: var(--accent-sage-pale);
+    border-left: 4px solid var(--accent-sage);
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.premium-preview-box p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--neutral-800);
+}
+
+.premium-preview-box strong {
+    color: var(--accent-sage-dark);
+}
+
+/* PATH RESULT */
+.path-result {
+    background: var(--neutral-50);
+    padding: 12px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 15px;
+    color: var(--neutral-800);
+}
+
+.path-result strong {
+    color: var(--primary-navy);
+}
+
+/* INTRO TEXT */
+.intro-text {
+    text-align: center;
+    font-size: 18px;
+    color: var(--neutral-700);
+    margin-bottom: 24px;
+}
+
+/* KEY INSIGHT BOX */
+.key-insight {
+    background: var(--accent-sage-pale);
+    border-left: 4px solid var(--accent-sage);
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 4px;
+}
+
+.key-insight p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--neutral-900);
+}
+
+/* COMPARISON SUBTITLE */
+.comparison-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: var(--neutral-700);
+    margin-bottom: 32px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+    .simple-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dignity-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}

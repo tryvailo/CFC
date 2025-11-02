@@ -4,30 +4,18 @@
    ============================================ */
 
 /* CHECKOUT COLOR PALETTE */
-/* Uses brandbook colors from main.css */
 :root {
-    /* Primary colors - matching brandbook */
-    --navy-primary: var(--primary-navy, #1e3a5f);
-    --charcoal-text: var(--neutral-900, #1f2937);
-    --accent-sage: var(--accent-sage, #5a7a5f);
-    --accent-sage-dark: var(--accent-sage-dark, #4a6a4f);
-    
-    /* Background colors */
-    --warm-grey-bg: var(--bg-secondary, #f7fafc);
-    --warm-cream: var(--bg-tertiary, #fffaf0);
-    --pure-white: var(--bg-primary, #ffffff);
-    
-    /* Text colors */
-    --muted-blue: var(--neutral-600, #718096);
-    
-    /* Status colors */
-    --success-green: var(--success-green, #047857);
-    --soft-amber: var(--warning-amber, #d97706);
-    --error-red: var(--error-red-light, #dc2626);
-    
-    /* Legacy support - map deprecated names */
-    --burgundy-accent: var(--accent-sage);
-    --burgundy-hover: var(--accent-sage-dark);
+    --navy-primary: #1a237e;
+    --charcoal-text: #1f2937;
+    --burgundy-accent: #744c2c;
+    --warm-grey-bg: #f7fafc;
+    --muted-blue: #374151;
+    --warm-cream: #fffaf0;
+    --pure-white: #ffffff;
+    --burgundy-hover: #5a3921;
+    --success-green: #059669;
+    --soft-amber: #f59e0b;
+    --error-red: #dc2626;
 }
 
 /* CHECKOUT CONTAINER */
@@ -84,7 +72,7 @@
     color: var(--navy-primary);
     margin-bottom: 20px;
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent-sage);
+    border-bottom: 2px solid var(--burgundy-accent);
 }
 
 .form-row {
@@ -103,23 +91,23 @@
     font-weight: 500;
     color: var(--charcoal-text);
     margin-bottom: 8px;
-    font-size: var(--text-base);
+    font-size: 0.95rem;
 }
 
 .form-input {
     width: 100%;
     padding: 12px 16px;
-    border: 2px solid var(--neutral-300, #e2e8f0);
+    border: 2px solid #e5e7eb;
     border-radius: 8px;
-    font-size: var(--text-base);
+    font-size: 1rem;
     transition: border-color 0.3s ease;
     background: var(--pure-white);
 }
 
 .form-input:focus {
     outline: none;
-    border-color: var(--accent-sage);
-    box-shadow: 0 0 0 3px rgba(90, 122, 95, 0.1);
+    border-color: var(--burgundy-accent);
+    box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
 }
 
 .form-input.error {
@@ -128,22 +116,22 @@
 
 .error-message {
     color: var(--error-red);
-    font-size: var(--text-sm);
+    font-size: 0.85rem;
     margin-top: 4px;
 }
 
 /* STRIPE ELEMENTS */
 .stripe-element {
     padding: 12px 16px;
-    border: 2px solid var(--neutral-300, #e2e8f0);
+    border: 2px solid #e5e7eb;
     border-radius: 8px;
     background: var(--pure-white);
     transition: border-color 0.3s ease;
 }
 
 .stripe-element:focus {
-    border-color: var(--accent-sage);
-    box-shadow: 0 0 0 3px rgba(90, 122, 95, 0.1);
+    border-color: var(--burgundy-accent);
+    box-shadow: 0 0 0 3px rgba(116, 76, 44, 0.1);
 }
 
 /* ORDER SUMMARY */
@@ -166,7 +154,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
-    border-bottom: 1px solid var(--neutral-300, #e2e8f0);
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .summary-item:last-child {
@@ -202,7 +190,7 @@
     align-items: center;
     gap: 8px;
     color: var(--muted-blue);
-    font-size: var(--text-base);
+    font-size: 0.9rem;
 }
 
 .security-icon {
@@ -213,12 +201,12 @@
 /* SUBMIT BUTTON */
 .submit-button {
     width: 100%;
-    background: var(--accent-sage);
+    background: var(--burgundy-accent);
     color: var(--pure-white);
     padding: 16px 32px;
     border: none;
     border-radius: 8px;
-    font-size: var(--text-lg);
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -226,7 +214,7 @@
 }
 
 .submit-button:hover:not(:disabled) {
-    background: var(--accent-sage-dark);
+    background: var(--burgundy-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }

@@ -121,6 +121,9 @@ class ClearFuneralCostsApp {
      * Initialize regional page modules
      */
     initializeRegionalModules() {
+        // Initialize information service module for regional pages
+        this.modules.informationService = new InformationServiceModule();
+        
         // Regional module is loaded via regional.js
         console.log('Regional modules initialized via regional.js');
     }

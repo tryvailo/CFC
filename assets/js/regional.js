@@ -61,14 +61,36 @@ class RegionalModule {
 
     /**
      * Get region statistics
+     * 
+     * ⚠️ IMPORTANT: This function currently returns hardcoded values for demonstration purposes.
+     * 
+     * TODO: Replace with dynamic data loading from:
+     * - API endpoint (e.g., /api/regions/{regionCode}/stats)
+     * - Database query (Supabase/PostgreSQL)
+     * - External CMA data source
+     * 
+     * Real implementation should:
+     * 1. Fetch actual pricing data from CMA-compliant provider price lists
+     * 2. Calculate averageCost dynamically: sum(all_provider_costs) / number_of_providers
+     * 3. Calculate costRange from actual min/max values in the dataset
+     * 4. Update savings based on real documented cases
+     * 5. Update providers count from actual CMA data
+     * 6. Calculate trends from historical data
+     * 
+     * Current hardcoded values are for UI demonstration only and should NOT be used
+     * for actual cost guidance to users.
      */
     getRegionStats(regionCode) {
+        // TODO: Replace with async API call:
+        // const response = await fetch(`/api/regions/${regionCode}/stats`);
+        // return await response.json();
+        
         const stats = {
             'south-east': {
                 averageCost: 4200,
                 costRange: [3200, 5800],
                 population: 9200000,
-                providers: 45,
+                providers: 342, // Updated to match actual CMA data: 342 South East providers
                 savings: 1500,
                 trends: {
                     yearOverYear: 3.2,
@@ -126,6 +148,9 @@ class RegionalModule {
 
     /**
      * Get comparison data
+     * 
+     * ⚠️ NOTE: Currently returns hardcoded comparison data.
+     * TODO: Replace with dynamic data from API/database for real regional comparisons.
      */
     getComparisonData(regionCode) {
         return [
@@ -166,12 +191,25 @@ class RegionalModule {
 
     /**
      * Update regional statistics display
+     * 
+     * ⚠️ NOTE: This function updates UI with hardcoded values from getRegionStats().
+     * In production, this should update from real-time calculated statistics based on
+     * actual CMA-compliant provider pricing data.
      */
     updateRegionalStats() {
-        // Update average cost
+        // Update average cost - only if element doesn't have static content
+        // Skip if it's a count/number without currency symbol (like "342" for providers)
         const averageCostElement = document.querySelector('.stat-number');
         if (averageCostElement) {
-            averageCostElement.textContent = `£${this.regionStats.averageCost.toLocaleString()}`;
+            const currentText = averageCostElement.textContent.trim();
+            // Don't update static numbers without currency (like "342", "1,347")
+            // Only update if: empty, starts with £, or contains "Strategies"
+            if (currentText === '' || currentText.startsWith('£') || currentText.includes('Strategies')) {
+                if (currentText === '' || currentText.startsWith('£')) {
+                    averageCostElement.textContent = `£${this.regionStats.averageCost.toLocaleString()}`;
+                }
+            }
+            // If currentText is a plain number (not starting with £ and not containing "Strategies"), leave unchanged
         }
 
         // Update cost range
@@ -287,6 +325,7 @@ class RegionalModule {
     setupCostEstimation() {
         const postcodeInput = document.querySelector('input[name="postcode"]');
         const serviceTypeSelect = document.querySelector('select[name="serviceType"]');
+        const emailInput = document.querySelector('input[name="email"]');
 
         if (postcodeInput && serviceTypeSelect) {
             postcodeInput.addEventListener('input', () => {
@@ -294,6 +333,13 @@ class RegionalModule {
             });
 
             serviceTypeSelect.addEventListener('change', () => {
+                this.updateCostEstimate();
+            });
+        }
+
+        // Add email input listener
+        if (emailInput) {
+            emailInput.addEventListener('input', () => {
                 this.updateCostEstimate();
             });
         }
@@ -305,6 +351,7 @@ class RegionalModule {
     updateCostEstimate() {
         const postcodeInput = document.querySelector('input[name="postcode"]');
         const serviceTypeSelect = document.querySelector('select[name="serviceType"]');
+        const emailInput = document.querySelector('input[name="email"]');
         const estimateRange = document.getElementById('estimateRange');
         const estimateDescription = document.getElementById('estimateDescription');
         const emailFormContainer = document.getElementById('email-form-container');
@@ -314,6 +361,7 @@ class RegionalModule {
 
         const postcode = postcodeInput.value.trim();
         const serviceType = serviceTypeSelect.value;
+        const email = emailInput ? emailInput.value.trim() : '';
 
         if (postcode.length >= 2 && serviceType) {
             const costData = this.getCostForPostcode(postcode, serviceType);
@@ -325,17 +373,19 @@ class RegionalModule {
                 
                 // Show email form container
                 if (emailFormContainer) {
+                    emailFormContainer.style.display = 'block';
                     emailFormContainer.classList.add('visible');
                 }
                 
-                // Enable submit button
+                // Enable submit button only if email is also provided
                 if (submitBtn) {
-                    submitBtn.disabled = false;
+                    submitBtn.disabled = !(email && email.length > 0);
                 }
             }
         } else {
             // Hide email form container if not enough data
             if (emailFormContainer) {
+                emailFormContainer.style.display = 'none';
                 emailFormContainer.classList.remove('visible');
             }
             

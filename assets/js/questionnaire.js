@@ -9,9 +9,41 @@
 class QuestionnaireModule {
     constructor() {
         this.currentStep = 1;
-        this.totalSteps = 3;
+        this.totalSteps = 8;
         this.formData = {};
         this.isSubmitting = false;
+        
+        // Comprehensive data structure
+        this.questionnaireData = {
+            serviceType: '',           // traditional-cremation, direct-cremation, simple-service, traditional-burial, natural-burial, unsure
+            location: {
+                postcode: '',
+                town: '',
+                county: '',
+                region: ''               // Will be determined from postcode
+            },
+            budget: {
+                min: 0,
+                max: 0,
+                flexible: false,
+                priority: ''             // cost, quality, balance
+            },
+            timeline: '',              // urgent, 1-2-weeks, 2-4-weeks, flexible
+            priorities: [],            // Array: ['cost', 'dignity', 'convenience', 'tradition', 'eco-friendly']
+            specialRequirements: [],   // Array: ['religious-christian', 'religious-muslim', 'religious-hindu', 'religious-jewish', 'non-religious', 'eco-friendly', 'military']
+            ceremonyPreferences: {
+                wantsCeremony: null,     // true, false, null (not specified)
+                ceremonySize: '',        // intimate, small, medium, large
+                ceremonyLocation: ''     // crematorium, church, venue, home, none
+            },
+            contactInfo: {
+                name: '',
+                email: '',
+                phone: ''
+            },
+            timestamp: null,
+            completed: false
+        };
         
         this.init();
     }
@@ -31,8 +63,17 @@ class QuestionnaireModule {
         this.setupLegalDisclaimer();
         this.setupOptionSelection();
         
-        // Update navigation buttons after initialization
+        // Setup new functionality
+        this.enableBackNavigation();
+        this.setupSaveForLater();
+        
+        // Update navigation buttons immediately
         this.updateNavigationButtons();
+        
+        // Also update after a small delay to ensure everything is ready
+        setTimeout(() => {
+            this.updateNavigationButtons();
+        }, 100);
     }
 
     /**
@@ -77,11 +118,258 @@ class QuestionnaireModule {
     }
 
     /**
+     * Validate questionnaire data
+     */
+    validateQuestionnaireData(data) {
+        const errors = [];
+        
+        // Validate service type
+        const validServiceTypes = [
+            'traditional-cremation', 'traditional_cremation',
+            'direct-cremation', 'direct_cremation', 
+            'simple-service', 'simple_service',
+            'traditional-burial', 'traditional_burial',
+            'natural-burial', 'natural_burial'
+        ];
+        if (!validServiceTypes.includes(data.serviceType)) {
+            errors.push('Invalid service type');
+        }
+        
+        // Validate postcode (UK format) - only if provided
+        if (data.location.postcode) {
+            const postcodeRegex = /^[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z]{2}$/i;
+            if (!postcodeRegex.test(data.location.postcode)) {
+                errors.push('Invalid UK postcode format');
+            }
+        }
+        // Note: Postcode is not required for basic validation
+        
+        // Validate budget
+        if (data.budget.min && data.budget.max) {
+            if (data.budget.min > data.budget.max) {
+                errors.push('Minimum budget cannot be greater than maximum budget');
+            }
+            if (data.budget.min < 0 || data.budget.max < 0) {
+                errors.push('Budget values must be positive');
+            }
+        }
+        
+        // Validate email if provided
+        if (data.contactInfo.email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.contactInfo.email)) {
+                errors.push('Invalid email format');
+            }
+        }
+        
+        return {
+            isValid: errors.length === 0,
+            errors: errors
+        };
+    }
+
+    /**
+     * Show validation errors to user
+     */
+    showValidationErrors(errors) {
+        // Remove existing error messages
+        const existingErrors = document.querySelectorAll('.validation-error');
+        existingErrors.forEach(error => error.remove());
+        
+        // Create error container
+        const errorContainer = document.createElement('div');
+        errorContainer.className = 'validation-error';
+        errorContainer.style.cssText = `
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 16px 0;
+        `;
+        
+        const errorList = document.createElement('ul');
+        errorList.style.margin = '0';
+        errorList.style.paddingLeft = '20px';
+        
+        errors.forEach(error => {
+            const li = document.createElement('li');
+            li.textContent = error;
+            errorList.appendChild(li);
+        });
+        
+        errorContainer.appendChild(errorList);
+        
+        // Insert at top of form
+        const form = document.getElementById('questionnaire-form');
+        if (form) {
+            form.insertBefore(errorContainer, form.firstChild);
+        }
+    }
+
+    /**
+     * Save questionnaire data to localStorage with validation
+     */
+    saveQuestionnaireData(data) {
+        // Validate first
+        const validation = this.validateQuestionnaireData(data);
+        
+        if (!validation.isValid) {
+            console.error('Validation errors:', validation.errors);
+            this.showValidationErrors(validation.errors);
+            return false;
+        }
+        
+        // Add timestamp
+        data.timestamp = new Date().toISOString();
+        
+        try {
+            localStorage.setItem('funeralAnalysis', JSON.stringify(data));
+            console.log('Questionnaire data saved successfully');
+            return true;
+        } catch (e) {
+            console.error('Failed to save to localStorage:', e);
+            // Handle quota exceeded or other errors
+            if (e.name === 'QuotaExceededError') {
+                alert('Unable to save your preferences. Please clear your browser data and try again.');
+            }
+            return false;
+        }
+    }
+
+    /**
      * Setup progress indicator
      */
     setupProgressIndicator() {
         this.updateProgressBar();
         this.updateProgressText();
+    }
+
+    /**
+     * Update progress indicator
+     */
+    updateProgress(currentQuestion, totalQuestions) {
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressFill && progressText) {
+            const percentage = (currentQuestion / totalQuestions) * 100;
+            progressFill.style.width = `${percentage}%`;
+            progressText.textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+        }
+    }
+
+    /**
+     * Enable back navigation
+     */
+    enableBackNavigation() {
+        const backButtons = document.querySelectorAll('.back-button');
+        
+        backButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const currentStep = parseInt(button.dataset.currentStep);
+                const previousStep = currentStep - 1;
+                
+                if (previousStep >= 1) {
+                    this.showStep(previousStep);
+                    this.updateProgress(previousStep, this.totalSteps);
+                }
+            });
+        });
+    }
+
+    /**
+     * Setup save & continue later functionality
+     */
+    setupSaveForLater() {
+        const saveButton = document.getElementById('save-for-later-btn');
+        
+        if (saveButton) {
+            saveButton.addEventListener('click', async function() {
+                // Get current questionnaire data
+                const currentData = this.gatherCurrentData();
+                
+                // Prompt for email if not provided
+                let email = currentData.contactInfo.email;
+                if (!email) {
+                    email = prompt('Please enter your email address to receive the resume link:');
+                    if (!email) return;
+                    currentData.contactInfo.email = email;
+                }
+                
+                // Save to localStorage
+                const saved = this.saveQuestionnaireData(currentData);
+                
+                if (saved) {
+                    // Generate resume token (in real implementation, this would be server-side)
+                    const resumeToken = btoa(JSON.stringify({
+                        timestamp: Date.now(),
+                        email: email
+                    }));
+                    
+                    // Create resume URL
+                    const resumeUrl = `${window.location.origin}${window.location.pathname}?resume=${resumeToken}`;
+                    
+                    // In real implementation, send email via API
+                    // For now, just copy to clipboard
+                    try {
+                        await navigator.clipboard.writeText(resumeUrl);
+                        alert(`Your progress has been saved!\n\nResume link copied to clipboard. You can also bookmark this page to continue later.`);
+                    } catch (e) {
+                        alert(`Your progress has been saved!\n\nBookmark this page to continue later:\n${resumeUrl}`);
+                    }
+                }
+            }.bind(this));
+        }
+    }
+
+    /**
+     * Gather current data from form
+     */
+    gatherCurrentData() {
+        // Return a deep copy of questionnaireData
+        return JSON.parse(JSON.stringify(this.questionnaireData));
+    }
+
+    /**
+     * Map service type from form to standardized format
+     */
+    mapServiceType(formValue) {
+        const mapping = {
+            'traditional_burial': 'traditional-burial',
+            'traditional_cremation': 'traditional-cremation',
+            'direct_cremation': 'direct-cremation',
+            'simple_service': 'simple-service',
+            'natural_burial': 'natural-burial'
+        };
+        return mapping[formValue] || 'traditional-cremation';
+    }
+
+    /**
+     * Map budget range from form to min/max values
+     */
+    mapBudgetRange(formValue) {
+        const mapping = {
+            'under_2000': { min: 0, max: 2000 },
+            '2000_4000': { min: 2000, max: 4000 },
+            '4000_6000': { min: 4000, max: 6000 },
+            'over_6000': { min: 6000, max: 10000 },
+            'not_sure': { min: 0, max: 0, flexible: true }
+        };
+        return mapping[formValue] || { min: 0, max: 0 };
+    }
+
+    /**
+     * Map timeline from form to standardized format
+     */
+    mapTimeline(formValue) {
+        const mapping = {
+            'immediate': 'urgent',
+            'short_term': '1-2-weeks',
+            'medium_term': '2-4-weeks',
+            'planning_ahead': 'flexible'
+        };
+        return mapping[formValue] || 'flexible';
     }
 
     /**
@@ -117,17 +405,22 @@ class QuestionnaireModule {
      * Show specific step
      */
     showStep(stepNumber) {
-        // Hide all steps
-        const steps = document.querySelectorAll('.step');
-        steps.forEach(step => {
-            step.classList.remove('active');
+        // Hide all question cards
+        const questionCards = document.querySelectorAll('.question-card');
+        questionCards.forEach(card => {
+            card.classList.add('hidden');
+            card.classList.remove('active');
         });
 
         // Show current step
-        const currentStepElement = document.querySelector(`.step:nth-child(${stepNumber})`);
+        const currentStepElement = document.querySelector(`#question-${stepNumber}`);
         if (currentStepElement) {
+            currentStepElement.classList.remove('hidden');
             currentStepElement.classList.add('active');
         }
+
+        // Update current step
+        this.currentStep = stepNumber;
 
         // Update progress
         this.updateProgressBar();
@@ -285,7 +578,6 @@ class QuestionnaireModule {
         if (!nextButton) return;
 
         nextButton.addEventListener('click', (e) => {
-            console.log('Next button clicked');
             e.preventDefault();
             this.goToNextStep();
         });
@@ -323,10 +615,10 @@ class QuestionnaireModule {
     goToNextStep() {
         console.log('goToNextStep called');
         
-        // Find current visible question - look for the one that's actually visible
-        let currentQuestion = document.querySelector('.question-card[style*="block"]');
+        // Find current visible question - look for the one that's active
+        let currentQuestion = document.querySelector('.question-card.active');
         if (!currentQuestion) {
-            currentQuestion = document.querySelector('.question-card:not(.hidden):not([style*="none"])');
+            currentQuestion = document.querySelector('.question-card:not(.hidden)');
         }
         
         console.log('Current question:', currentQuestion);
@@ -373,8 +665,23 @@ class QuestionnaireModule {
         }
 
         console.log('Moving to next question with ID:', currentQuestion.id);
-        // Move to next question
-        this.showNextQuestion(currentQuestion.id);
+        
+        // Get current step number and move to next
+        const currentStepNumber = parseInt(currentQuestion.id.replace('question-', ''));
+        const nextStepNumber = currentStepNumber + 1;
+        
+        console.log('Current step:', currentStepNumber, 'Next step:', nextStepNumber);
+        
+        // Check if next step exists
+        const nextQuestion = document.getElementById(`question-${nextStepNumber}`);
+        if (nextQuestion) {
+            // Move to next question using showStep
+            this.showStep(nextStepNumber);
+        } else {
+            // No more questions, show summary
+            console.log('No more questions, showing summary');
+            this.showSummary();
+        }
     }
 
     /**
@@ -382,23 +689,16 @@ class QuestionnaireModule {
      */
     goToPrevStep() {
         // Find current visible question
-        const currentQuestion = document.querySelector('.question-card[style*="block"], .question-card:not([style*="none"])');
+        const currentQuestion = document.querySelector('.question-card.active');
         if (!currentQuestion) return;
 
-        // Find previous question
-        const prevQuestion = currentQuestion.previousElementSibling;
-        if (prevQuestion && prevQuestion.classList.contains('question-card')) {
-            // Hide current question
-            currentQuestion.style.display = 'none';
-            
-            // Show previous question
-            prevQuestion.style.display = 'block';
-            
-            // Update progress
-            this.updateProgress();
-            
-            // Update navigation buttons
-            this.updateNavigationButtons();
+        // Get current step number and move to previous
+        const currentStepNumber = parseInt(currentQuestion.id.replace('question-', ''));
+        const prevStepNumber = currentStepNumber - 1;
+        
+        if (prevStepNumber >= 1) {
+            // Move to previous question using showStep
+            this.showStep(prevStepNumber);
         }
     }
 
@@ -411,10 +711,20 @@ class QuestionnaireModule {
         const submitButton = document.querySelector('#submitBtn');
 
         // Find current question
-        const currentQuestion = document.querySelector('.question-card[style*="block"], .question-card:not([style*="none"])');
+        const currentQuestion = document.querySelector('.question-card.active');
         const allQuestions = document.querySelectorAll('.question-card');
         const currentIndex = Array.from(allQuestions).indexOf(currentQuestion);
         const isLastQuestion = currentIndex === allQuestions.length - 1;
+
+        // If no active question found, default to showing next button
+        if (!currentQuestion) {
+            if (nextButton) {
+                nextButton.style.display = 'inline-block';
+                nextButton.style.visibility = 'visible';
+            }
+            if (submitButton) submitButton.style.display = 'none';
+            return;
+        }
 
         // Update previous button
         if (prevButton) {
@@ -423,11 +733,23 @@ class QuestionnaireModule {
 
         // Update next/submit buttons
         if (isLastQuestion) {
-            if (nextButton) nextButton.style.display = 'none';
-            if (submitButton) submitButton.style.display = 'inline-block';
+            if (nextButton) {
+                nextButton.style.display = 'none';
+                nextButton.style.visibility = 'hidden';
+            }
+            if (submitButton) {
+                submitButton.style.display = 'inline-block';
+                submitButton.style.visibility = 'visible';
+            }
         } else {
-            if (nextButton) nextButton.style.display = 'inline-block';
-            if (submitButton) submitButton.style.display = 'none';
+            if (nextButton) {
+                nextButton.style.display = 'inline-block';
+                nextButton.style.visibility = 'visible';
+            }
+            if (submitButton) {
+                submitButton.style.display = 'none';
+                submitButton.style.visibility = 'hidden';
+            }
         }
     }
 
@@ -532,10 +854,23 @@ class QuestionnaireModule {
      * Submit form data
      */
     async submitForm() {
-        // For local testing, save data to localStorage and redirect to free report
-        console.log('Saving form data to localStorage:', this.formData);
+        // Gather comprehensive data
+        const comprehensiveData = this.gatherCurrentData();
+        comprehensiveData.completed = true;
         
-        // Save form data to localStorage
+        console.log('Saving comprehensive questionnaire data:', comprehensiveData);
+        
+        // Save comprehensive data to localStorage with validation
+        const saved = this.saveQuestionnaireData(comprehensiveData);
+        
+        if (!saved) {
+            return {
+                success: false,
+                error: 'Failed to save questionnaire data. Please check your inputs and try again.'
+            };
+        }
+        
+        // Also save legacy format for backward compatibility
         localStorage.setItem('questionnaireData', JSON.stringify(this.formData));
         
         // Save individual fields for free report
@@ -706,8 +1041,64 @@ class QuestionnaireModule {
         // Store the selection
         this.formData[questionType] = value;
         
+        // Also update questionnaireData for validation
+        this.updateQuestionnaireData(questionType, value);
+        
         // Update progress
         this.updateProgress();
+        
+        // Update navigation buttons after selection
+        this.updateNavigationButtons();
+    }
+
+    /**
+     * Update questionnaireData based on form selection
+     */
+    updateQuestionnaireData(questionType, value) {
+        switch (questionType) {
+            case 'service_type':
+                this.questionnaireData.serviceType = value;
+                break;
+            case 'location_001': // postcode
+                this.questionnaireData.location.postcode = value;
+                break;
+            case 'location_002': // town
+                this.questionnaireData.location.town = value;
+                break;
+            case 'location_003': // county
+                this.questionnaireData.location.county = value;
+                break;
+            case 'location_004': // region
+                this.questionnaireData.location.region = value;
+                break;
+            case 'budget_range':
+                const budgetMapping = {
+                    'under-2000': { min: 0, max: 2000 },
+                    '2000-3000': { min: 2000, max: 3000 },
+                    '3000-4000': { min: 3000, max: 4000 },
+                    '4000-5000': { min: 4000, max: 5000 },
+                    '5000-6000': { min: 5000, max: 6000 },
+                    'over-6000': { min: 6000, max: 10000 },
+                    'flexible': { min: 0, max: 0, flexible: true }
+                };
+                const budget = budgetMapping[value];
+                if (budget) {
+                    this.questionnaireData.budget = budget;
+                }
+                break;
+            case 'timeline':
+                this.questionnaireData.timeline = value;
+                break;
+            case 'contact_001': // name
+                this.questionnaireData.contactInfo.name = value;
+                break;
+            case 'contact_002': // email
+                this.questionnaireData.contactInfo.email = value;
+                break;
+            case 'contact_003': // phone
+                this.questionnaireData.contactInfo.phone = value;
+                break;
+        }
     }
 
     /**
@@ -718,11 +1109,16 @@ class QuestionnaireModule {
         const questions = document.querySelectorAll('.question-card');
         questions.forEach((question, index) => {
             if (index === 0) {
-                question.style.display = 'block';
+                question.classList.remove('hidden');
+                question.classList.add('active');
             } else {
-                question.style.display = 'none';
+                question.classList.add('hidden');
+                question.classList.remove('active');
             }
         });
+        
+        // Set current step to 1
+        this.currentStep = 1;
     }
 
     /**
@@ -758,10 +1154,16 @@ class QuestionnaireModule {
             console.log('Showing next question:', nextQuestion.id);
             
             // Hide current question
-            currentQuestion.style.display = 'none';
+            currentQuestion.classList.add('hidden');
+            currentQuestion.classList.remove('active');
             
             // Show next question
-            nextQuestion.style.display = 'block';
+            nextQuestion.classList.remove('hidden');
+            nextQuestion.classList.add('active');
+            
+            // Update current step number
+            const stepNumber = parseInt(nextQuestion.id.replace('question-', ''));
+            this.currentStep = stepNumber;
             
             // Update progress
             this.updateProgress();
@@ -783,21 +1185,25 @@ class QuestionnaireModule {
      * Update progress
      */
     updateProgress() {
-        const questions = document.querySelectorAll('.question-card');
-        const answeredQuestions = document.querySelectorAll('.question-card .option.selected').length;
-        const totalQuestions = questions.length;
+        const totalQuestions = this.totalSteps;
         
         // Update progress bar
         const progressFill = document.getElementById('progress-fill');
         if (progressFill) {
-            const progressPercentage = (answeredQuestions / totalQuestions) * 100;
+            const progressPercentage = (this.currentStep / totalQuestions) * 100;
             progressFill.style.width = `${progressPercentage}%`;
         }
         
         // Update step counter
         const currentStepElement = document.getElementById('current-step');
         if (currentStepElement) {
-            currentStepElement.textContent = answeredQuestions + 1;
+            currentStepElement.textContent = this.currentStep;
+        }
+        
+        // Update progress text
+        const progressText = document.getElementById('progress-text');
+        if (progressText) {
+            progressText.textContent = `Question ${this.currentStep} of ${totalQuestions}`;
         }
     }
 
@@ -836,9 +1242,19 @@ class QuestionnaireModule {
 /**
  * Initialize questionnaire module when DOM is loaded
  */
-document.addEventListener('DOMContentLoaded', () => {
-    new QuestionnaireModule();
-});
+function initializeQuestionnaire() {
+    try {
+        window.questionnaire = new QuestionnaireModule();
+    } catch (error) {
+        console.error('Failed to initialize questionnaire:', error);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeQuestionnaire);
+} else {
+    initializeQuestionnaire();
+}
 
 /**
  * Export for use in other modules
