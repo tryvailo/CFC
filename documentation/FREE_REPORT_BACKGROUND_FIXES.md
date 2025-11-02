@@ -15,11 +15,11 @@
 ```html
 <!-- БЫЛО -->
 <div style="background: linear-gradient(135deg, rgba(90, 122, 95, 0.1) 0%, rgba(125, 90, 80, 0.05) 100%); padding: 24px; border-radius: 8px; border: 2px solid var(--sage-green);">
-    <h3 style="margin-top: 0; color: var(--sage-green);">Complete Guide (£39)</h3>
+    <h3 style="margin-top: 0; color: var(--sage-green);">Complete Guide (£49)</h3>
 
 <!-- СТАЛО -->
 <div style="background: #f8f9fa; padding: 24px; border-radius: 8px; border: 2px solid var(--sage-green);">
-    <h3 style="margin-top: 0; color: var(--navy-primary);">Complete Guide (£39)</h3>
+    <h3 style="margin-top: 0; color: var(--navy-primary);">Complete Guide (£49)</h3>
 ```
 
 **Изменения:**

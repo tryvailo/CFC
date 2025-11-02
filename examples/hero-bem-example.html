@@ -1,0 +1,67 @@
+<!-- HERO SECTION - BEM VERSION -->
+<section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__container">
+        <div class="hero__content">
+            <h1 id="hero-heading" class="hero__title">
+                Understanding Funeral Costs: A Compassionate Guide for Families
+            </h1>
+            <p class="hero__subtitle">
+                Independent guidance helping UK families honour their loved ones whilst managing costs thoughtfully. Potential financial benefits of £500-£2,500 through informed choices.
+            </p>
+            <ul class="hero__proof">
+                <li class="hero__proof-item">Based on official government pricing data</li>
+                <li class="hero__proof-item">Independent analysis with no commissions</li>
+                <li class="hero__proof-item">Transparent breakdown helping you make informed financial decisions</li>
+                <li class="hero__proof-item">Respecting traditions whilst exploring practical options</li>
+            </ul>
+        </div>
+
+        <div class="information-service" role="region" aria-labelledby="information-heading">
+            <h2 id="information-heading" class="information-service__title">Free Cost Information Service</h2>
+            <p class="information-service__subtitle">
+                Understand funeral costs in your area and investigate your choices with no pressure or commitment
+            </p>
+
+            <div id="message-box" class="message-box" role="alert" aria-live="polite"></div>
+            <form id="analysisForm" class="information-service__form" aria-label="Funeral cost information form">
+                <div class="information-service__form-group">
+                    <label class="information-service__label" for="postcode">Your Postcode</label>
+                    <input 
+                        type="text" 
+                        id="postcode"
+                        name="postcode" 
+                        class="information-service__input"
+                        placeholder="e.g., BN1 4GH"
+                        pattern="^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$"
+                        required
+                        aria-describedby="postcode-help"
+                        autocomplete="postal-code"
+                    >
+                    <small id="postcode-help" class="form-help">We'll find funeral directors and crematoria near you for comparison</small>
+                </div>
+
+                <div class="information-service__form-group">
+                    <label class="information-service__label" for="serviceType">Type of Service</label>
+                    <select 
+                        id="serviceType" 
+                        name="serviceType" 
+                        class="information-service__select"
+                        required
+                        aria-describedby="service-help"
+                    >
+                        <option value="">Please select...</option>
+                        <option value="cremation">Cremation</option>
+                        <option value="burial">Burial</option>
+                        <option value="direct-cremation">Direct Cremation</option>
+                        <option value="not-sure">I'm not sure yet</option>
+                    </select>
+                    <small id="service-help" class="form-help">This helps us provide more accurate cost estimates</small>
+                </div>
+
+                <button type="submit" class="information-service__button">
+                    Get My Free Savings Analysis (60 Seconds)
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

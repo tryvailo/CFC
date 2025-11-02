@@ -117,8 +117,8 @@
 - **Предлагаемый текст:** "maximising potential financial benefits through complete service restructuring"
 
 **Строка 302:**
-- **Текущий текст:** "The £39 guide's contact details and scripts saved us £1,200"
-- **Предлагаемый текст:** "The £39 guide's contact details and scripts helped us make informed financial decisions worth £1,200"
+- **Текущий текст:** "The £49 guide's contact details and scripts saved us £1,200"
+- **Предлагаемый текст:** "The £49 guide's contact details and scripts helped us make informed financial decisions worth £1,200"
 
 **Строка 328:**
 - **Текущий текст:** "Saved us £1,240. The contact details and scripts were invaluable."
@@ -149,8 +149,8 @@
 - **Предлагаемый текст:** "Off-peak timing strategies and booking guidance worth £100-400 potential financial benefits"
 
 **Строка 532:**
-- **Текущий текст:** "Ready to explore these savings? £39 for complete guidance"
-- **Предлагаемый текст:** "Ready to explore these financial benefits? £39 for complete guidance"
+- **Текущий текст:** "Ready to explore these savings? £49 for complete guidance"
+- **Предлагаемый текст:** "Ready to explore these financial benefits? £49 for complete guidance"
 
 ---
 

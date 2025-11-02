@@ -79,7 +79,7 @@
 
 **Было (фокус на экономии):**
 ```html
-"The £39 guide's contact details and scripts helped us make informed financial decisions worth £1,200..."
+"The £49 guide's contact details and scripts helped us make informed financial decisions worth £1,200..."
 "Helped us make informed financial decisions worth £1,240. The contact details and scripts were invaluable."
 ```
 

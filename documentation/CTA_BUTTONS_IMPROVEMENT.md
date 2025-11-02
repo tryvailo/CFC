@@ -14,7 +14,7 @@
 **Было (агрессивно):**
 - ❌ "Get My Free Analysis" → ✅ "Explore Your Options"
 - ❌ "Get Free Analysis" → ✅ "Understand the Costs"
-- ❌ "Upgrade When Ready (£39)" → ✅ "Get Transparent Pricing (£39)"
+- ❌ "Upgrade When Ready (£49)" → ✅ "Get Transparent Pricing (£49)"
 - ❌ "Get Free Analysis Now" → ✅ "View Cost Breakdown"
 
 **Результат:**
@@ -26,9 +26,9 @@
 
 **Было (агрессивно):**
 - ❌ "Get My Free Analysis" → ✅ "Explore Your Options"
-- ❌ "Get Detailed Guidance (£39)" → ✅ "Get Transparent Pricing (£39)"
+- ❌ "Get Detailed Guidance (£49)" → ✅ "Get Transparent Pricing (£49)"
 - ❌ "Get Free Analysis" → ✅ "Understand the Costs"
-- ❌ "Upgrade When Ready (£39)" → ✅ "Get Transparent Pricing (£39)"
+- ❌ "Upgrade When Ready (£49)" → ✅ "Get Transparent Pricing (£49)"
 
 **Результат:**
 - ✅ **Региональная адаптация** - "Explore your South East funeral cost options"
@@ -38,7 +38,7 @@
 #### **3. Бесплатный отчет (reports/free_report.html) - 3 изменения ✅**
 
 **Было (агрессивно):**
-- ❌ "Get South East Personalised Analysis - £39" → ✅ "Get Transparent Pricing - £39"
+- ❌ "Get South East Personalised Analysis - £49" → ✅ "Get Transparent Pricing - £49"
 - ❌ "Get Your Complete Guide Now" → ✅ "View Cost Breakdown"
 - ❌ "Get Complete Guide" → ✅ "View Cost Breakdown"
 
@@ -83,7 +83,7 @@
 - **Тон:** Образовательный, поддерживающий
 
 #### **3. "Get Transparent Pricing"**
-- **Использование:** Премиум кнопки (£39)
+- **Использование:** Премиум кнопки (£49)
 - **Значение:** Подчеркивает прозрачность и честность
 - **Тон:** Профессиональный, доверительный
 
@@ -148,7 +148,7 @@
 ```
 Get My Free Analysis
 Get Free Analysis Now
-Upgrade When Ready (£39)
+Upgrade When Ready (£49)
 Get Complete Guide
 ```
 
@@ -156,7 +156,7 @@ Get Complete Guide
 ```
 Explore Your Options
 Understand the Costs
-Get Transparent Pricing (£39)
+Get Transparent Pricing (£49)
 View Cost Breakdown
 ```
 
