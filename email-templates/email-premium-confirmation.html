@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Your Guide is Ready | ClearFuneralCosts</title>
+    <meta name="description" content="Thank you for your purchase. Access your Complete South East Funeral Cost Guide.">
+    <link rel="stylesheet" href="../assets/css/email-templates.css">
+</head>
+<body>
+    <div class="email-container">
+        <!-- SUCCESS HEADER -->
+        <div class="success-header">
+            <div class="success-icon"></div>
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="success-title">Thank You!</h1>
+            <p class="success-subtitle">Your Complete South East Guide is ready</p>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <p class="welcome-message">
+                Hello <strong>{{CUSTOMER_NAME}}</strong>,
+            </p>
+            
+            <p class="welcome-message">
+                Thank you for your purchase! We've prepared your personalised funeral cost research guide based on your preferences and location.
+            </p>
+
+            <!-- ORDER SUMMARY -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="order-details">
+                    <div class="order-item">
+                        <span class="order-label">Order ID:</span>
+                        <span class="order-value">{{ORDER_ID}}</span>
+                    </div>
+                    <div class="order-item">
+                        <span class="order-label">Date:</span>
+                        <span class="order-value">{{ORDER_DATE}}</span>
+                    </div>
+                    <div class="order-item">
+                        <span class="order-label">Amount:</span>
+                        <span class="order-value">£49.00</span>
+                    </div>
+                    <div class="order-item">
+                        <span class="order-label">Payment Method:</span>
+                        <span class="order-value">{{CARD_BRAND}} ending in {{CARD_LAST4}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACCESS SECTION -->
+            <div class="access-section">
+                <h2>Access Your Guide</h2>
+                <p>Your personalised research guide is now available. Click the button below to access it:</p>
+                <a href="{{REPORT_LINK}}" class="access-button">
+                    View Your Complete Guide
+                </a>
+            </div>
+
+            <!-- WHAT'S INCLUDED -->
+            <div class="features-section">
+                <h2>What's Included in Your Guide</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <h3>Personalised Analysis</h3>
+                        <p>Cost breakdown tailored to your preferences and location</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📞</div>
+                        <h3>Direct Contacts</h3>
+                        <p>{{PROVIDERS_COUNT}} local funeral directors with phone numbers and email addresses</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🗓️</div>
+                        <h3>14-Day Roadmap</h3>
+                        <p>Step-by-step implementation guide with daily actions</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <h3>Negotiation Scripts</h3>
+                        <p>Ready-to-use conversation starters and email templates</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Timing Strategies</h3>
+                        <p>Off-peak scheduling to reduce costs</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>60-Day Support</h3>
+                        <p>Email support for any research questions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAVINGS HIGHLIGHT -->
+            <div class="savings-highlight">
+                <h2>Your Potential Savings</h2>
+                <div class="savings-amount">£{{MIN_SAVINGS}} - £{{MAX_SAVINGS}}</div>
+                <p>Based on your preferences and local market analysis</p>
+            </div>
+
+            <!-- GUARANTEE -->
+            <div class="guarantee-section">
+                <h2>Our Guarantee</h2>
+                <div class="guarantee-box">
+                    <h3>60-Day Money-Back Guarantee</h3>
+                    <p>If you don't save at least £500 using our guidance, we'll refund every penny. No questions asked.</p>
+                </div>
+            </div>
+
+            <!-- NEXT STEPS -->
+            <div class="next-steps">
+                <h2>Next Steps</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Review Your Guide</h3>
+                            <p>Read through your personalised analysis and implementation roadmap</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Contact Providers</h3>
+                            <p>Use our templates to contact funeral directors in your area</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Follow the Roadmap</h3>
+                            <p>Implement the 14-day plan to maximize your savings</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Get Support</h3>
+                            <p>Email us with any questions during your research process</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUPPORT -->
+            <div class="support-section">
+                <h2>Need Help?</h2>
+                <div class="support-info">
+                    <p>Our support team is available Monday-Friday, 9am-5pm to help with any questions.</p>
+                    <p><strong>Email:</strong> refunds@clearfuneralcosts.co.uk</p>
+                    <p><strong>Response time:</strong> Within 24 hours</p>
+                </div>
+            </div>
+
+            <!-- DISCLAIMER -->
+            <div class="disclaimer">
+                <p><strong>Information Service:</strong> This purchase is for general funeral cost information and research support. We do not provide financial, legal, or funeral planning advice. All decisions remain entirely yours.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="email-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="clear-highlight">Clear</span>FuneralCosts
+                </div>
+                <p>Independent funeral cost information service</p>
+                <p>Questions? Reply to this email or visit our <a href="https://clearfuneralcosts.co.uk/contact.html">support page</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

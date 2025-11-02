@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/blog/:path*",
+      "destination": "https://blog.clearfuneralcosts.co.uk/:path*"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# ClearFuneralCosts Migration Rules
+
+## Project Context
+This is a funeral cost analysis platform with:
+- Static HTML pages converting to React/Next.js
+- Existing color scheme: navy-primary (#1e3a8a), sage-green (#10b981)
+- Responsive design with mobile-first approach
+- Form validation and analytics integration
+
+## Component Structure
+- Break HTML into logical React components
+- Maintain existing CSS class naming conventions
+- Use TypeScript interfaces for props
+- Keep existing responsive design patterns
+
+## Styling Guidelines  
+- Convert existing CSS to Tailwind classes
+- Preserve color variables: navy-primary, sage-green, cream-bg
+- Maintain 44px minimum touch targets for mobile
+- Keep existing font stack: Georgia serif
+
+## API Integration
+- Use Supabase for database operations
+- Implement n8n webhooks for data processing
+- Add Stripe integration for payments
+- Use React Query for data fetching

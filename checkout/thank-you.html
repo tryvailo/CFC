@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Your Guide is Ready | ClearFuneralCosts</title>
+    <meta name="description" content="Thank you for your purchase. Access your Complete South East Funeral Cost Guide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-primary: #1a237e;
+            --charcoal-text: #1f2937;
+            --burgundy-accent: #744c2c;
+            --warm-grey-bg: #f7fafc;
+            --muted-blue: #374151;
+            --warm-cream: #fffaf0;
+            --pure-white: #ffffff;
+            --burgundy-hover: #5a3921;
+            --success-green: #059669;
+            --soft-amber: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--charcoal-text);
+            background-color: var(--warm-cream);
+            margin: 0;
+            padding: 0;
+        }
+
+        .thankyou-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* SUCCESS HEADER */
+        .success-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .success-icon::before {
+            content: "✓";
+            color: var(--pure-white);
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .company-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 16px;
+        }
+
+        .clear-highlight {
+            color: var(--burgundy-accent);
+            font-weight: 700;
+        }
+
+        .success-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .success-subtitle {
+            font-size: 1.3rem;
+            color: var(--muted-blue);
+            margin-bottom: 12px;
+        }
+
+        .order-id {
+            font-size: 0.95rem;
+            color: var(--muted-blue);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ORDER DETAILS */
+        .order-details {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--warm-grey-bg);
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--muted-blue);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--charcoal-text);
+        }
+
+        /* ACCESS SECTION */
+        .access-section {
+            background: linear-gradient(135deg, var(--burgundy-accent), var(--burgundy-hover));
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            color: var(--pure-white);
+            text-align: center;
+        }
+
+        .access-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .access-description {
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .access-button {
+            display: inline-block;
+            background: var(--pure-white);
+            color: var(--burgundy-accent);
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .access-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .email-notice {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* NEXT STEPS */
+        .next-steps {
+            background: var(--pure-white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .step-item {
+            padding: 24px;
+            background: var(--warm-grey-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--burgundy-accent);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--burgundy-accent);
+            color: var(--pure-white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-description {
+            color: var(--muted-blue);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* SUPPORT SECTION */
+        .support-section {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .support-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 12px;
+        }
+
+        .support-text {
+            color: var(--muted-blue);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--burgundy-accent);
+            font-weight: 600;
+        }
+
+        /* GUARANTEE REMINDER */
+        .guarantee-reminder {
+            background: var(--success-green);
+            color: var(--pure-white);
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .guarantee-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .guarantee-text {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* FOOTER LINKS */
+        .footer-links {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-link {
+            color: var(--burgundy-accent);
+            text-decoration: none;
+            margin: 0 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--burgundy-hover);
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            .thankyou-container {
+                padding: 30px 16px;
+            }
+
+            .success-title {
+                font-size: 2.2rem;
+            }
+
+            .success-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .order-details,
+            .next-steps,
+            .access-section {
+                padding: 28px 24px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            .success-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .success-icon::before {
+                font-size: 2.2rem;
+            }
+
+            .success-title {
+                font-size: 1.9rem;
+            }
+
+            .order-details,
+            .next-steps,
+            .access-section {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thankyou-container">
+        <!-- SUCCESS HEADER -->
+        <header class="success-header">
+            <div class="success-icon"></div>
+            <div class="company-logo">
+                <span class="clear-highlight">Clear</span>FuneralCosts
+            </div>
+            <h1 class="success-title">Payment Successful!</h1>
+            <p class="success-subtitle">Your Complete South East Guide is ready</p>
+            <p class="order-id">Order ID: <span id="order-id">Loading...</span></p>
+        </header>
+
+        <!-- ORDER DETAILS -->
+        <section class="order-details">
+            <h2 class="section-title">Order Details</h2>
+            <div class="detail-item">
+                <span class="detail-label">Purchase Date:</span>
+                <span class="detail-value" id="purchase-date">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Email Address:</span>
+                <span class="detail-value" id="email-address">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Amount Paid:</span>
+                <span class="detail-value">£49.00</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Product:</span>
+                <span class="detail-value">Complete South East Guide</span>
+            </div>
+        </section>
+
+        <!-- ACCESS SECTION -->
+        <section class="access-section">
+            <h2 class="access-title">Access Your Research Guide</h2>
+            <p class="access-description">
+                Your personalised funeral cost research guide is ready. Click below to view your comprehensive report with all the information you need.
+            </p>
+            <a href="/premium-report.html" class="access-button" id="report-link">
+                View Your Complete Guide →
+            </a>
+            <p class="email-notice">
+                📧 A copy has also been sent to your email address for future reference
+            </p>
+        </section>
+
+        <!-- NEXT STEPS -->
+        <section class="next-steps">
+            <h2 class="section-title">What Happens Next?</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Review Your Guide</div>
+                    <p class="step-description">
+                        Read through your personalised cost breakdown and provider recommendations
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Contact Providers</div>
+                    <p class="step-description">
+                        Use the contact details and scripts we've provided to reach out to funeral directors
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Follow the Roadmap</div>
+                    <p class="step-description">
+                        Implement the 14-day action plan to research and secure the best value
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Get Support</div>
+                    <p class="step-description">
+                        Email us anytime within 60 days with questions about your research
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GUARANTEE REMINDER -->
+        <section class="guarantee-reminder">
+            <h3 class="guarantee-title">Remember: 60-Day Money-Back Guarantee</h3>
+            <p class="guarantee-text">
+                If you don't save at least £500 using our research guidance, we'll refund every penny. 
+                We're confident our information will help you make informed decisions.
+            </p>
+        </section>
+
+        <!-- SUPPORT SECTION -->
+        <section class="support-section">
+            <h3 class="support-title">Need Help? We're Here to Support Your Research</h3>
+            <p class="support-text">
+                Have questions about your guide? Need clarification on any recommendations? 
+                Our team is available Monday-Friday, 9am-5pm.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>refunds@clearfuneralcosts.co.uk</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>Response within 4 hours</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER LINKS -->
+        <footer class="footer-links">
+            <a href="/" class="footer-link">← Back to Home</a>
+            <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="/contact.html" class="footer-link">Contact Support</a>
+        </footer>
+    </div>
+
+    <script>
+        // Load payment data from sessionStorage
+        const paymentData = JSON.parse(sessionStorage.getItem('paymentSuccess') || '{}');
+        
+        if (paymentData.orderId) {
+            // Populate order details
+            document.getElementById('order-id').textContent = paymentData.orderId;
+            document.getElementById('email-address').textContent = paymentData.email || '-';
+            
+            // Format date
+            if (paymentData.timestamp) {
+                const date = new Date(paymentData.timestamp);
+                const formattedDate = date.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                document.getElementById('purchase-date').textContent = formattedDate;
+            }
+
+            // Add order ID to report link
+            const reportLink = document.getElementById('report-link');
+            reportLink.href = `/premium-report.html?order=${paymentData.orderId}`;
+
+            // Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    'transaction_id': paymentData.orderId,
+                    'value': 49,
+                    'currency': 'GBP',
+                    'items': [{
+                        'item_id': 'complete-guide',
+                        'item_name': 'Complete South East Guide',
+                        'price': 49,
+                        'quantity': 1
+                    }]
+                });
+            }
+
+            // Clear sensitive data after a delay (optional)
+            setTimeout(() => {
+                sessionStorage.removeItem('questionnaireData');
+                sessionStorage.removeItem('paymentSuccess');
+            }, 5000);
+        } else {
+            // No payment data - redirect to home
+            console.warn('No payment data found');
+            // Uncomment to redirect:
+            // setTimeout(() => window.location.href = '/', 3000);
+        }
+
+        // Smooth scroll for footer links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

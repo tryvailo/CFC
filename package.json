@@ -1,0 +1,25 @@
+{
+  "name": "clearfuneralcosts",
+  "version": "1.0.0",
+  "description": "ClearFuneralCosts - Funeral cost analysis platform",
+  "scripts": {
+    "minify-css": "bash scripts/minify-css.sh",
+    "watch-css": "npm run minify-css && echo 'Watching CSS files...' && npm run minify-css",
+    "build": "npm run minify-css",
+    "dev": "npm run watch-css",
+    "migrate-bem": "bash scripts/migrate-to-bem.sh"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2"
+  },
+  "keywords": [
+    "funeral",
+    "costs",
+    "analysis",
+    "uk",
+    "css",
+    "bem"
+  ],
+  "author": "ClearFuneralCosts",
+  "license": "MIT"
+}

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Scenarios Section - ClearFuneralCosts</title>
+    
+    <style>
+        /* БАЗОВЫЕ СТИЛИ ДЛЯ 55+ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 18px; /* Увеличенный базовый размер */
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #fafafa;
+        }
+        
+        /* КОНТЕЙНЕР */
+        .report-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* ПЕРСОНАЛИЗАЦИЯ HEADER */
+        .personalization-notice {
+            background: linear-gradient(135deg, #f0f7f1 0%, #ffffff 100%);
+            border: 2px solid #5a7a5f;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .service-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #5a7a5f;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .personalization-text {
+            color: #4a5449;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /* ЗАГОЛОВОК СЕКЦИИ */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a3a1c;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        /* ГРИД СЦЕНАРИЕВ */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        /* КАРТОЧКА СЦЕНАРИЯ */
+        .scenario-card {
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .scenario-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .scenario-card.recommended {
+            border-color: #5a7a5f;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafffe 100%);
+        }
+        
+        /* РЕКОМЕНДОВАННЫЙ БЕЙДЖ */
+        .recommended-badge {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: #5a7a5f;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ЗАГОЛОВОК СЦЕНАРИЯ */
+        .scenario-header {
+            margin-bottom: 20px;
+        }
+        
+        .scenario-title {
+            font-size: 24px;
+            color: #1a3a1c;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .savings-display {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .savings-amount {
+            font-size: 28px;
+            font-weight: 700;
+            color: #5a7a5f;
+        }
+        
+        .savings-percent {
+            font-size: 18px;
+            color: #7d9d80;
+            font-weight: 500;
+        }
+        
+        /* TAGLINE */
+        .scenario-tagline {
+            font-size: 18px;
+            color: #4a5449;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e8e8e8;
+            font-weight: 500;
+        }
+        
+        /* КЛЮЧЕВЫЕ ПУНКТЫ - ВСЕГДА ВИДНЫ */
+        .key-points {
+            margin-bottom: 24px;
+        }
+        
+        .key-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            color: #2c2c2c;
+        }
+        
+        .key-point .icon {
+            color: #5a7a5f;
+            font-size: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        /* ДОПОЛНИТЕЛЬНЫЕ ДЕТАЛИ - ВИДНЫ, НО ПРИГЛУШЕНЫ */
+        .additional-details {
+            background: #f8f8f8;
+            border-left: 3px solid #e0e0e0;
+            padding: 16px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .additional-details p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .additional-details p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #4a5449;
+        }
+        
+        /* СРАВНЕНИЕ FREE vs PREMIUM */
+        .comparison-section {
+            background: linear-gradient(to right, #ffffff 0%, #f5f9f5 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 60px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 28px;
+            color: #1a3a1c;
+            margin-bottom: 32px;
+        }
+        
+        .paths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .path-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+        }
+        
+        .path-card.premium {
+            border-color: #5a7a5f;
+            position: relative;
+        }
+        
+        .premium-label {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: #5a7a5f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .path-title {
+            font-size: 22px;
+            color: #1a3a1c;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .path-features {
+            margin-bottom: 20px;
+        }
+        
+        .feature-item {
+            font-size: 16px;
+            color: #4a5449;
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .feature-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5a7a5f;
+            font-weight: 700;
+        }
+        
+        .time-display {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .time-label {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .time-amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3a1c;
+        }
+        
+        .price-area {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e8e8;
+        }
+        
+        .price-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: #5a7a5f;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .guarantee {
+            font-size: 14px;
+            color: #7d9d80;
+        }
+        
+        /* CTA КНОПКИ */
+        .cta-button {
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 20px;
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #5a7a5f;
+            border: 2px solid #5a7a5f;
+        }
+        
+        .cta-secondary:hover {
+            background: #f5f9f5;
+        }
+        
+        .cta-primary {
+            background: #5a7a5f;
+            color: white;
+            border: 2px solid #5a7a5f;
+        }
+        
+        .cta-primary:hover {
+            background: #4a6a4f;
+            border-color: #4a6a4f;
+        }
+        
+        /* ЧЕСТНОЕ СООБЩЕНИЕ */
+        .honest-message {
+            text-align: center;
+            font-size: 18px;
+            color: #4a5449;
+            margin-top: 24px;
+            padding: 20px;
+            background: #f8faf8;
+            border-radius: 8px;
+        }
+        
+        .honest-message strong {
+            color: #1a3a1c;
+        }
+        
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 768px) {
+            .scenarios-grid,
+            .paths-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .scenario-title {
+                font-size: 20px;
+            }
+            
+            .savings-amount {
+                font-size: 24px;
+            }
+            
+            .scenario-card {
+                padding: 24px;
+            }
+            
+            .comparison-section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report-section">
+        <!-- ПЕРСОНАЛИЗАЦИЯ NOTICE -->
+        <div class="personalization-notice">
+            <div class="service-badge">
+                <span>✓</span>
+                <span>Showing analysis for: Traditional Funeral Service</span>
+            </div>
+            <p class="personalization-text">
+                We're showing you 2 optimization approaches specifically tailored for your chosen service type.
+            </p>
+        </div>
+        
+        <!-- ЗАГОЛОВОК СЕКЦИИ -->
+        <div class="section-header">
+            <h2 class="section-title">Your Two Savings Approaches</h2>
+            <p class="section-subtitle">Both maintain dignity while reducing costs</p>
+        </div>
+        
+        <!-- СЦЕНАРИИ -->
+        <div class="scenarios-grid">
+            <!-- СЦЕНАРИЙ 1: CONSERVATIVE -->
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <h3 class="scenario-title">Conservative Approach</h3>
+                    <div class="savings-display">
+                        <span class="savings-amount">£500-800</span>
+                        <span class="savings-percent">10-15% savings</span>
+                    </div>
+                </div>
+                
+                <p class="scenario-tagline">
+                    Keep all traditions, optimize carefully
+                </p>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>Compare 3 local funeral directors</span>
+                    </div>
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>Request off-peak timing (save £150)</span>
+                    </div>
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>2-3 hours total effort needed</span>
+                    </div>
+                </div>
+                
+                <div class="additional-details">
+                    <p><span class="detail-label">Best for:</span> Families wanting minimal changes</p>
+                    <p><span class="detail-label">Typical result:</span> £3,900 instead of £4,570</p>
+                </div>
+            </div>
+            
+            <!-- СЦЕНАРИЙ 2: OPTIMIZED -->
+            <div class="scenario-card recommended">
+                <span class="recommended-badge">Recommended</span>
+                
+                <div class="scenario-header">
+                    <h3 class="scenario-title">Optimized Approach</h3>
+                    <div class="savings-display">
+                        <span class="savings-amount">£1,200-1,800</span>
+                        <span class="savings-percent">25-35% savings</span>
+                    </div>
+                </div>
+                
+                <p class="scenario-tagline">
+                    Strategic choices, substantial savings
+                </p>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>Compare 5-7 providers (20 mile radius)</span>
+                    </div>
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>Tuesday 9am slot (save £320)</span>
+                    </div>
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>Alternative venue (save £400)</span>
+                    </div>
+                    <div class="key-point">
+                        <span class="icon">✓</span>
+                        <span>4-6 hours total effort needed</span>
+                    </div>
+                </div>
+                
+                <div class="additional-details">
+                    <p><span class="detail-label">Best for:</span> Families ready to explore options</p>
+                    <p><span class="detail-label">Typical result:</span> £2,900 instead of £4,570</p>
+                    <p><span class="detail-label">Most families choose this:</span> 68% success rate</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- СРАВНЕНИЕ FREE vs PREMIUM -->
+        <div class="comparison-section">
+            <h2 class="comparison-title">Ready to Take Action?</h2>
+            
+            <div class="paths-grid">
+                <!-- FREE PATH -->
+                <div class="path-card">
+                    <h3 class="path-title">Continue with FREE Report</h3>
+                    
+                    <div class="path-features">
+                        <div class="feature-item">2 scenarios for your service</div>
+                        <div class="feature-item">Provider names (no contacts)</div>
+                        <div class="feature-item">General savings strategies</div>
+                        <div class="feature-item">Educational information</div>
+                    </div>
+                    
+                    <div class="time-display">
+                        <span class="time-label">Your time needed:</span>
+                        <span class="time-amount">8-14 hours</span>
+                    </div>
+                    
+                    <button class="cta-button cta-secondary">
+                        I'll Do It Myself
+                    </button>
+                </div>
+                
+                <!-- PREMIUM PATH -->
+                <div class="path-card premium">
+                    <span class="premium-label">SAVE 10+ HOURS</span>
+                    <h3 class="path-title">Premium Implementation Guide</h3>
+                    
+                    <div class="path-features">
+                        <div class="feature-item">3 detailed scenarios for YOUR situation</div>
+                        <div class="feature-item">All 23 provider phone numbers & emails</div>
+                        <div class="feature-item">14-day step-by-step action plan</div>
+                        <div class="feature-item">Ready-to-send email templates</div>
+                        <div class="feature-item">Word-for-word phone scripts</div>
+                        <div class="feature-item">60-day email support included</div>
+                    </div>
+                    
+                    <div class="time-display">
+                        <span class="time-label">Your time needed:</span>
+                        <span class="time-amount">2-4 hours</span>
+                    </div>
+                    
+                    <div class="price-area">
+                        <span class="price-amount">£49</span>
+                        <span class="guarantee">60-day money-back guarantee</span>
+                    </div>
+                    
+                    <button class="cta-button cta-primary">
+                        Get Premium Guide Now
+                    </button>
+                </div>
+            </div>
+            
+            <div class="honest-message">
+                <strong>Both paths work.</strong> It's simply about what you value more: 
+                your time (£49) or your money (8-14 hours of research). 
+                Most families save £1,200+ either way.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

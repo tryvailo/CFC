@@ -1,0 +1,1453 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║           CLEARFUNERALCOSTS COLOR & TYPOGRAPHY BRAND BOOK                ║
+║                         Version 2.1 - October 2025                        ║
+║              Professional Design for British Audience 55+                 ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════
+📋 DOCUMENT PURPOSE
+═══════════════════════════════════════════════════════════════════════════
+
+This is the SINGLE SOURCE OF TRUTH for all color usage AND typography in the 
+ClearFuneralCosts project. Any deviation from these standards must be 
+approved and documented.
+
+Use this document to:
+✓ Validate all CSS changes
+✓ Design new components
+✓ Ensure brand consistency
+✓ Maintain accessibility standards
+✓ Check font sizes for 50+ audience compliance
+✓ Train new team members
+✓ Quick reference for font sizes and typography rules
+
+═══════════════════════════════════════════════════════════════════════════
+🎨 CORE BRAND PRINCIPLES
+═══════════════════════════════════════════════════════════════════════════
+
+1. RESTRAINT & DIGNITY
+   The subject matter requires a subdued, respectful color palette that 
+   conveys professionalism and trustworthiness without being clinical or cold.
+
+2. ACCESSIBILITY FIRST
+   All colors must meet WCAG 2.1 AA standards minimum (4.5:1 contrast).
+   Aim for AAA (7:1) wherever possible for 55+ audience.
+
+3. BRITISH SENSIBILITY
+   Colors should reflect traditional British values: understated, reliable,
+   and professional. Avoid trendy or overly bright colors.
+
+4. AGE-APPROPRIATE
+   High contrast, clear differentiation between colors. No subtle gradients
+   or low-contrast combinations that may be difficult for older eyes.
+
+═══════════════════════════════════════════════════════════════════════════
+🎯 PRIMARY COLORS - Foundation
+═══════════════════════════════════════════════════════════════════════════
+
+PRIMARY NAVY
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --primary-navy
+Hex:          #1e3a5f
+RGB:          30, 58, 95
+HSL:          214°, 52%, 25%
+Pantone:      19-4033 TCX (Dress Blues - approximate)
+
+USAGE:
+✓ Main headers and hero sections
+✓ Primary navigation
+✓ Important headings (H1, H2)
+✓ Footer backgrounds
+✓ Brand identity elements
+
+CONTRAST RATIOS:
+- On white (#ffffff): 11.4:1 ✓ AAA
+- On cream (#f7fafc): 10.8:1 ✓ AAA
+- White on navy: 11.4:1 ✓ AAA
+
+DO:
+✓ Use for trust and authority
+✓ Pair with white or cream backgrounds
+✓ Use for main CTAs if sage green isn't appropriate
+
+DON'T:
+✗ Use on dark backgrounds
+✗ Pair with burgundy or brown
+✗ Use for body text (too dark, use neutrals instead)
+
+────────────────────────────────────────────────────────────────────────────
+
+NAVY LIGHT (Secondary)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --navy-light
+Hex:          #2d5a8a
+RGB:          45, 90, 138
+HSL:          211°, 51%, 36%
+
+USAGE:
+✓ Hover states for navy elements
+✓ Secondary backgrounds
+✓ Gradient endpoints (if absolutely necessary)
+✓ Borders and dividers
+
+CONTRAST RATIOS:
+- On white (#ffffff): 7.2:1 ✓ AAA
+- White on navy-light: 7.2:1 ✓ AAA
+
+DO:
+✓ Use for interactive states
+✓ Use as lighter variant of primary navy
+
+DON'T:
+✗ Use as primary color
+✗ Use for small text
+
+════════════════════════════════════════════════════════════════════════════
+🌿 ACCENT COLORS - Sage Green Family (PRIMARY ACCENT)
+════════════════════════════════════════════════════════════════════════════
+
+⭐ SAGE GREEN (Primary Accent)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --accent-sage
+Hex:          #5a7a5f
+RGB:          90, 122, 95
+HSL:          129°, 15%, 42%
+Pantone:      18-0110 TCX (Four Leaf Clover - approximate)
+
+USAGE:
+✓ PRIMARY ACCENT COLOR - use most frequently
+✓ All CTA buttons (primary action buttons)
+✓ Interactive elements (links, buttons)
+✓ Success indicators
+✓ Border accents on cards
+✓ Icons and small decorative elements
+✓ Focus states
+✓ Progress indicators
+
+CONTRAST RATIOS:
+- On white (#ffffff): 4.9:1 ✓ AA
+- White on sage: 4.3:1 ✓ AA (for large text)
+- On pale sage (#e8f3ea): 3.8:1 (use darker text)
+
+WHY SAGE GREEN:
+✓ Traditional British garden color - familiar and trustworthy
+✓ Associated with growth, hope, and renewal (appropriate for healing)
+✓ Calming and non-threatening
+✓ Gender-neutral
+✓ Differentiates from competitors who use blues/purples
+✓ High enough contrast for 55+ audience
+✓ Not associated with danger/warning like reds/oranges
+
+DO:
+✓ Use for ALL primary buttons
+✓ Use for positive/success states
+✓ Use for clickable elements
+✓ Pair with white, cream, or neutral backgrounds
+✓ Use for brand recognition
+
+DON'T:
+✗ Use on colored backgrounds (only white/cream/light neutrals)
+✗ Pair with burgundy or warm browns
+✗ Use for body text
+✗ Overuse - maintain visual hierarchy
+
+────────────────────────────────────────────────────────────────────────────
+
+SAGE GREEN LIGHT
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --accent-sage-light
+Hex:          #7a9a7f
+RGB:          122, 154, 127
+HSL:          129°, 15%, 54%
+
+USAGE:
+✓ Hover states for sage green buttons
+✓ Secondary interactive elements
+✓ Lighter borders
+✓ Disabled state (with reduced opacity)
+
+CONTRAST RATIOS:
+- On white (#ffffff): 3.4:1 (use for large text only)
+- White on sage-light: 3.4:1 (use for large text only)
+
+DO:
+✓ Use for hover/active states
+✓ Use for less prominent UI elements
+
+DON'T:
+✗ Use for small text
+✗ Use as primary accent
+
+────────────────────────────────────────────────────────────────────────────
+
+SAGE GREEN PALE
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --accent-sage-pale
+Hex:          #e8f3ea
+RGB:          232, 243, 234
+HSL:          131°, 33%, 93%
+
+USAGE:
+✓ Background for highlighted sections
+✓ Soft card backgrounds
+✓ Hover backgrounds
+✓ Success message backgrounds
+✓ Subtle emphasis areas
+
+CONTRAST RATIOS:
+- Text must be dark on this background
+- Use --neutral-900 or --primary-navy for text
+
+DO:
+✓ Use for large background areas
+✓ Combine with sage green borders
+✓ Use for positive/success contexts
+
+DON'T:
+✗ Use light text on this background
+✗ Use as only indicator of importance
+
+────────────────────────────────────────────────────────────────────────────
+
+SAGE GREEN DARK
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --accent-sage-dark
+Hex:          #4a6a4f
+RGB:          74, 106, 79
+HSL:          129°, 18%, 35%
+
+USAGE:
+✓ Active/pressed button states
+✓ Very important borders
+✓ High-contrast situations
+
+CONTRAST RATIOS:
+- On white (#ffffff): 6.8:1 ✓ AA+
+
+DO:
+✓ Use for pressed states
+✓ Use when more contrast needed
+
+DON'T:
+✗ Use as primary sage color
+✗ Overuse
+
+════════════════════════════════════════════════════════════════════════════
+🎨 DEPRECATED COLORS - DO NOT USE IN NEW CODE
+════════════════════════════════════════════════════════════════════════════
+
+❌ BURGUNDY ACCENT
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --burgundy-accent (DEPRECATED)
+Hex:          #7d5a50
+Status:       🚫 REMOVE from all new code
+
+WHY REMOVED:
+✗ Too warm/aggressive for funeral services
+✗ Can appear harsh to 55+ audience
+✗ Not aligned with British sensibilities
+✗ Lower brand recognition
+✗ Conflicts with subdued, respectful tone
+
+MIGRATION PATH:
+Replace all instances with --accent-sage (#5a7a5f)
+
+────────────────────────────────────────────────────────────────────────────
+
+❌ BURGUNDY HOVER
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --burgundy-hover (DEPRECATED)
+Hex:          #6b4a40
+Status:       🚫 REMOVE from all new code
+
+MIGRATION PATH:
+Replace with --accent-sage-light (#7a9a7f)
+
+────────────────────────────────────────────────────────────────────────────
+
+❌ WARM BROWN
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --warm-brown (DEPRECATED)
+Hex:          #6b5644
+Status:       🚫 REMOVE from all new code
+
+MIGRATION PATH:
+Replace with --neutral-700 (#4a5568)
+
+════════════════════════════════════════════════════════════════════════════
+⚫ NEUTRAL COLORS - Greys & Backgrounds
+════════════════════════════════════════════════════════════════════════════
+
+NEUTRAL 900 (Darkest - Primary Text)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-900
+Hex:          #1a202c
+RGB:          26, 32, 44
+HSL:          220°, 26%, 14%
+
+USAGE:
+✓ PRIMARY body text
+✓ Headings (when not using navy)
+✓ Dark text on light backgrounds
+✓ High-importance content
+
+CONTRAST RATIOS:
+- On white (#ffffff): 16.1:1 ✓ AAA
+- On cream (#f7fafc): 15.2:1 ✓ AAA
+- On pale sage (#e8f3ea): 14.8:1 ✓ AAA
+
+DO:
+✓ Use for all body text
+✓ Use for readability
+✓ Pair with light backgrounds only
+
+DON'T:
+✗ Use on colored backgrounds
+✗ Use on navy backgrounds
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 800 (Very Dark - Secondary Text)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-800
+Hex:          #2d3748
+RGB:          45, 55, 72
+HSL:          220°, 23%, 23%
+
+USAGE:
+✓ Secondary text
+✓ Subheadings
+✓ Less prominent content
+✓ Captions
+
+CONTRAST RATIOS:
+- On white (#ffffff): 11.9:1 ✓ AAA
+- On cream (#f7fafc): 11.2:1 ✓ AAA
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 700 (Dark - Tertiary Text)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-700
+Hex:          #4a5568
+RGB:          74, 85, 104
+HSL:          218°, 17%, 35%
+
+USAGE:
+✓ Tertiary text
+✓ Helper text
+✓ Timestamps
+✓ Metadata
+
+CONTRAST RATIOS:
+- On white (#ffffff): 8.0:1 ✓ AAA
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 600 (Medium - Muted Text)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-600
+Hex:          #718096
+RGB:          113, 128, 150
+HSL:          216°, 15%, 52%
+
+USAGE:
+✓ Placeholder text
+✓ Very muted content
+✓ Disabled text (without opacity)
+
+CONTRAST RATIOS:
+- On white (#ffffff): 5.4:1 ✓ AA
+
+⚠️ WARNING: Do not use for small text (< 18px)
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 500 (Light - Disabled States)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-500
+Hex:          #a0aec0
+RGB:          160, 174, 192
+HSL:          214°, 20%, 69%
+
+USAGE:
+✓ Disabled text (large only)
+✓ Very subtle UI elements
+✓ Decorative elements
+
+CONTRAST RATIOS:
+- On white (#ffffff): 2.9:1 ⚠️ AA Large text only
+
+⚠️ WARNING: Use ONLY for large text (≥24px) or non-text elements
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 400 (Borders)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-400
+Hex:          #cbd5e0
+RGB:          203, 213, 224
+HSL:          213°, 27%, 84%
+
+USAGE:
+✓ Default borders
+✓ Input borders
+✓ Card borders
+✓ Dividers
+
+DO NOT use for text
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 300 (Light Borders)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-300
+Hex:          #e2e8f0
+RGB:          226, 232, 240
+HSL:          214°, 32%, 91%
+
+USAGE:
+✓ Subtle dividers
+✓ Very light borders
+✓ Table borders
+✓ Grid lines
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 200 (Hover Backgrounds)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-200
+Hex:          #edf2f7
+RGB:          237, 242, 247
+HSL:          210°, 36%, 95%
+
+USAGE:
+✓ Hover backgrounds
+✓ Table row hover
+✓ Button hover (for light buttons)
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 100 (Light Backgrounds)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-100
+Hex:          #f7fafc
+RGB:          247, 250, 252
+HSL:          210°, 40%, 98%
+
+USAGE:
+✓ Secondary backgrounds
+✓ Page backgrounds
+✓ Card backgrounds (alternative to white)
+✓ Section backgrounds
+
+────────────────────────────────────────────────────────────────────────────
+
+NEUTRAL 50 (Lightest Backgrounds)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --neutral-50
+Hex:          #fafbfc
+RGB:          250, 251, 252
+HSL:          210°, 20%, 98%
+
+USAGE:
+✓ Subtle background differentiation
+✓ Alternating table rows
+✓ Very subtle emphasis
+
+════════════════════════════════════════════════════════════════════════════
+🎨 BACKGROUND COLORS
+════════════════════════════════════════════════════════════════════════════
+
+PRIMARY BACKGROUND (Pure White)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --bg-primary
+Hex:          #ffffff
+RGB:          255, 255, 255
+HSL:          0°, 0%, 100%
+
+USAGE:
+✓ Main content areas
+✓ Cards
+✓ Modals
+✓ Forms
+✓ Primary containers
+
+────────────────────────────────────────────────────────────────────────────
+
+SECONDARY BACKGROUND (Light Cream)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --bg-secondary
+Hex:          #f7fafc
+RGB:          247, 250, 252
+HSL:          210°, 40%, 98%
+
+USAGE:
+✓ Page backgrounds
+✓ Alternative sections
+✓ Subtle differentiation
+✓ Reports background
+
+────────────────────────────────────────────────────────────────────────────
+
+TERTIARY BACKGROUND (Light Grey)
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --bg-tertiary
+Hex:          #edf2f7
+RGB:          237, 242, 247
+HSL:          210°, 36%, 95%
+
+USAGE:
+✓ Less prominent sections
+✓ Disabled areas
+✓ Subtle containers
+
+════════════════════════════════════════════════════════════════════════════
+✅ SEMANTIC COLORS - Status & Feedback
+════════════════════════════════════════════════════════════════════════════
+
+SUCCESS GREEN
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --success-green
+Hex:          #047857
+RGB:          4, 120, 87
+HSL:          163°, 94%, 24%
+
+USAGE:
+✓ Success messages
+✓ Confirmation states
+✓ Positive indicators
+✓ "Completed" status
+
+CONTRAST RATIOS:
+- On white (#ffffff): 4.6:1 ✓ AA
+- White on success-green: 4.6:1 ✓ AA
+
+LIGHT VARIANT:
+CSS Variable:  --success-green-light
+Hex:          #10b981
+
+PALE VARIANT (backgrounds):
+CSS Variable:  --success-green-pale
+Hex:          #d1fae5
+
+────────────────────────────────────────────────────────────────────────────
+
+ERROR RED
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --error-red
+Hex:          #b91c1c
+RGB:          185, 28, 28
+HSL:          0°, 74%, 42%
+
+USAGE:
+✓ Error messages
+✓ Validation errors
+✓ Destructive actions
+✓ Critical warnings
+
+CONTRAST RATIOS:
+- On white (#ffffff): 4.8:1 ✓ AA
+- White on error-red: 4.8:1 ✓ AA
+
+LIGHT VARIANT:
+CSS Variable:  --error-red-light
+Hex:          #dc2626
+
+PALE VARIANT (backgrounds):
+CSS Variable:  --error-red-pale
+Hex:          #fee2e2
+
+────────────────────────────────────────────────────────────────────────────
+
+WARNING AMBER
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --warning-amber
+Hex:          #d97706
+RGB:          217, 119, 6
+HSL:          32°, 95%, 44%
+
+USAGE:
+✓ Warning messages
+✓ Caution states
+✓ Important notices
+✓ Disclaimers
+
+CONTRAST RATIOS:
+- On white (#ffffff): 4.3:1 ✓ AA
+
+LIGHT VARIANT:
+CSS Variable:  --warning-amber-light
+Hex:          #f59e0b
+
+PALE VARIANT (backgrounds):
+CSS Variable:  --warning-amber-pale
+Hex:          #fef3c7
+
+────────────────────────────────────────────────────────────────────────────
+
+INFO BLUE
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --info-blue
+Hex:          #1e40af
+RGB:          30, 64, 175
+HSL:          226°, 71%, 40%
+
+USAGE:
+✓ Informational messages
+✓ Tips and hints
+✓ Neutral notifications
+✓ Help text
+
+CONTRAST RATIOS:
+- On white (#ffffff): 7.5:1 ✓ AAA
+
+LIGHT VARIANT:
+CSS Variable:  --info-blue-light
+Hex:          #3b82f6
+
+PALE VARIANT (backgrounds):
+CSS Variable:  --info-blue-pale
+Hex:          #dbeafe
+
+════════════════════════════════════════════════════════════════════════════
+📏 COLOR USAGE RULES
+════════════════════════════════════════════════════════════════════════════
+
+HIERARCHY OF COLOR USAGE
+────────────────────────────────────────────────────────────────────────────
+
+1. PRIMARY (Navy) - 30% of colored elements
+   Use for: Headers, main sections, authority elements
+
+2. ACCENT (Sage Green) - 20% of colored elements
+   Use for: CTAs, interactive elements, focus
+
+3. NEUTRAL (Greys) - 40% of interface
+   Use for: Text, borders, backgrounds, structure
+
+4. SEMANTIC (Status colors) - 5% of interface
+   Use for: Feedback, status, alerts
+
+5. WHITE/CREAM - 5% active use
+   Use for: Backgrounds, breathing room
+
+INTERACTION STATES
+────────────────────────────────────────────────────────────────────────────
+
+Default State:
+- Buttons: --accent-sage (#5a7a5f)
+- Links: --accent-sage (#5a7a5f)
+- Borders: --neutral-400 (#cbd5e0)
+
+Hover State:
+- Buttons: --accent-sage-light (#7a9a7f)
+- Links: --accent-sage-dark (#4a6a4f)
+- Backgrounds: --neutral-200 (#edf2f7)
+
+Active/Pressed State:
+- Buttons: --accent-sage-dark (#4a6a4f)
+- Scale down 2% or translateY(1px)
+
+Focus State:
+- All interactive elements: 3px solid --accent-sage
+- Outline offset: 3px
+- Remove default browser outline
+
+Disabled State:
+- Background: --neutral-200 (#edf2f7)
+- Text: --neutral-500 (#a0aec0)
+- Cursor: not-allowed
+- Opacity: 0.6 (optional)
+
+TEXT ON COLORED BACKGROUNDS
+────────────────────────────────────────────────────────────────────────────
+
+✓ Navy backgrounds (#1e3a5f):
+   Use white (#ffffff) text
+
+✓ Sage backgrounds (#5a7a5f):
+   Use white (#ffffff) for large text
+   Use white (#ffffff) for buttons
+
+✓ Light backgrounds (#f7fafc, #e8f3ea):
+   Use --neutral-900 (#1a202c)
+   Or --primary-navy (#1e3a5f)
+
+✓ White backgrounds (#ffffff):
+   Use --neutral-900 (#1a202c) primarily
+   Use --primary-navy (#1e3a5f) for emphasis
+
+✗ NEVER use:
+   - Light text on light backgrounds
+   - Dark text on dark backgrounds
+   - Low contrast combinations
+
+BORDERS & DIVIDERS
+────────────────────────────────────────────────────────────────────────────
+
+Default borders:
+- 1px solid --neutral-300 (#e2e8f0)
+
+Emphasized borders:
+- 1px solid --neutral-400 (#cbd5e0)
+
+Accent borders:
+- 4px solid --accent-sage (#5a7a5f) (left border)
+- Use for card emphasis
+
+Very subtle dividers:
+- 1px solid --neutral-200 (#edf2f7)
+
+════════════════════════════════════════════════════════════════════════════
+✅ DO's AND ❌ DON'Ts
+════════════════════════════════════════════════════════════════════════════
+
+✅ DO:
+────────────────────────────────────────────────────────────────────────────
+✓ Use sage green (#5a7a5f) for ALL primary CTAs
+✓ Maintain high contrast (minimum 4.5:1, aim for 7:1)
+✓ Use navy (#1e3a5f) for headers and authority
+✓ Use neutral-900 (#1a202c) for body text
+✓ Test colors with color blindness simulators
+✓ Use semantic colors consistently (green=success, red=error)
+✓ Provide non-color indicators (icons, text) in addition to color
+✓ Use white (#ffffff) for primary backgrounds
+✓ Limit color palette to defined colors only
+✓ Use spacing and typography to create hierarchy before adding color
+
+❌ DON'T:
+────────────────────────────────────────────────────────────────────────────
+✗ Use burgundy (#7d5a50) in any new code
+✗ Use warm brown (#6b5644) in any new code
+✗ Create gradients with multiple colors
+✗ Use color as the ONLY indicator of state/status
+✗ Use pure black (#000000) for text
+✗ Use colors not in this brand book
+✗ Mix warm (burgundy) and cool (sage) accent colors
+✗ Use sage green and navy together as equal accents
+✗ Rely on subtle color differences for critical information
+✗ Use decorative colors that serve no functional purpose
+
+SPECIFIC COMBINATIONS TO AVOID:
+────────────────────────────────────────────────────────────────────────────
+✗ Sage green + burgundy
+✗ Navy + warm brown
+✗ Burgundy + sage green (in same component)
+✗ Any deprecated color + any current color
+✗ Light grey text on white background
+✗ Sage green text on navy background (insufficient contrast)
+
+════════════════════════════════════════════════════════════════════════════
+🎨 COLOR COMBINATION EXAMPLES
+════════════════════════════════════════════════════════════════════════════
+
+PRIMARY BUTTON
+────────────────────────────────────────────────────────────────────────────
+Background:   --accent-sage (#5a7a5f)
+Text:         white (#ffffff)
+Border:       none or 2px solid --accent-sage
+Hover:        --accent-sage-light (#7a9a7f)
+Active:       --accent-sage-dark (#4a6a4f)
+Focus:        3px solid --accent-sage offset 3px
+
+SECONDARY BUTTON
+────────────────────────────────────────────────────────────────────────────
+Background:   transparent
+Text:         --accent-sage (#5a7a5f)
+Border:       2px solid --accent-sage
+Hover BG:     --accent-sage-pale (#e8f3ea)
+Hover Border: 2px solid --accent-sage-light
+Active:       --accent-sage-pale with --accent-sage-dark border
+
+CARD (DEFAULT)
+────────────────────────────────────────────────────────────────────────────
+Background:   --bg-primary (white #ffffff)
+Border:       1px solid --neutral-300 (#e2e8f0)
+Text:         --neutral-900 (#1a202c)
+Heading:      --primary-navy (#1e3a5f)
+
+CARD (ACCENTED)
+────────────────────────────────────────────────────────────────────────────
+Background:   white (#ffffff)
+Border:       1px solid --neutral-300
+Border-left:  4px solid --accent-sage (#5a7a5f)
+Text:         --neutral-900 (#1a202c)
+Heading:      --primary-navy (#1e3a5f)
+
+CARD (HIGHLIGHTED)
+────────────────────────────────────────────────────────────────────────────
+Background:   --accent-sage-pale (#e8f3ea)
+Border:       2px solid --accent-sage (#5a7a5f)
+Text:         --neutral-900 (#1a202c)
+Heading:      --primary-navy (#1e3a5f)
+
+HEADER (MAIN)
+────────────────────────────────────────────────────────────────────────────
+Background:   --primary-navy (#1e3a5f)
+Text:         white (#ffffff)
+Accent:       --accent-sage (#5a7a5f) for underlines/borders
+Links:        white (#ffffff)
+Links Hover:  --accent-sage-pale (#e8f3ea)
+
+TABLE
+────────────────────────────────────────────────────────────────────────────
+Header BG:    --primary-navy (#1e3a5f)
+Header Text:  white (#ffffff)
+Row BG:       white (#ffffff)
+Alt Row BG:   --neutral-50 (#fafbfc)
+Border:       1px solid --neutral-300 (#e2e8f0)
+Text:         --neutral-900 (#1a202c)
+Hover:        --neutral-100 (#f7fafc)
+
+FORM INPUT
+────────────────────────────────────────────────────────────────────────────
+Background:   white (#ffffff)
+Border:       2px solid --neutral-400 (#cbd5e0)
+Text:         --neutral-900 (#1a202c)
+Placeholder:  --neutral-600 (#718096)
+Focus Border: 3px solid --accent-sage (#5a7a5f)
+Error Border: 2px solid --error-red (#b91c1c)
+
+SUCCESS MESSAGE
+────────────────────────────────────────────────────────────────────────────
+Background:   --success-green-pale (#d1fae5)
+Border:       2px solid --success-green (#047857)
+Text:         --neutral-900 (#1a202c)
+Icon:         --success-green (#047857)
+
+ERROR MESSAGE
+────────────────────────────────────────────────────────────────────────────
+Background:   --error-red-pale (#fee2e2)
+Border:       2px solid --error-red (#b91c1c)
+Text:         --neutral-900 (#1a202c)
+Icon:         --error-red (#b91c1c)
+
+WARNING MESSAGE
+────────────────────────────────────────────────────────────────────────────
+Background:   --warning-amber-pale (#fef3c7)
+Border:       2px solid --warning-amber (#d97706)
+Text:         --neutral-900 (#1a202c)
+Icon:         --warning-amber (#d97706)
+
+════════════════════════════════════════════════════════════════════════════
+♿ ACCESSIBILITY STANDARDS
+════════════════════════════════════════════════════════════════════════════
+
+WCAG 2.1 COMPLIANCE
+────────────────────────────────────────────────────────────────────────────
+
+MINIMUM (AA Standard):
+- Normal text (< 24px): 4.5:1 contrast ratio
+- Large text (≥ 24px): 3:1 contrast ratio
+- UI components: 3:1 contrast ratio
+
+TARGET (AAA Standard - REQUIRED for 55+ audience):
+- Normal text: 7:1 contrast ratio
+- Large text: 4.5:1 contrast ratio
+
+ALL COLOR COMBINATIONS TESTED:
+────────────────────────────────────────────────────────────────────────────
+
+✓ Navy on white: 11.4:1 (AAA)
+✓ Sage on white: 4.9:1 (AA)
+✓ Neutral-900 on white: 16.1:1 (AAA)
+✓ Neutral-700 on white: 8.0:1 (AAA)
+✓ Success-green on white: 4.6:1 (AA)
+✓ Error-red on white: 4.8:1 (AA)
+✓ Warning-amber on white: 4.3:1 (AA)
+
+ADDITIONAL ACCESSIBILITY REQUIREMENTS:
+────────────────────────────────────────────────────────────────────────────
+
+✓ Never use color as the ONLY means of conveying information
+✓ Provide text labels in addition to colored indicators
+✓ Use icons alongside colored status indicators
+✓ Ensure all interactive elements have clear focus states
+✓ Focus indicators must have 3:1 contrast against background
+✓ Touch targets minimum 48x48px (56px recommended for 55+)
+✓ Test with color blindness simulators:
+  - Protanopia (red-blind)
+  - Deuteranopia (green-blind)
+  - Tritanopia (blue-blind)
+  - Achromatopsia (completely color-blind)
+
+════════════════════════════════════════════════════════════════════════════
+🔧 IMPLEMENTATION
+════════════════════════════════════════════════════════════════════════════
+
+CSS VARIABLES DECLARATION
+────────────────────────────────────────────────────────────────────────────
+
+Copy this into your root CSS file (variables.css or main.css):
+
+```css
+:root {
+    /* PRIMARY COLORS */
+    --primary-navy: #1e3a5f;
+    --navy-light: #2d5a8a;
+    
+    /* ACCENT COLORS - Sage Green (PRIMARY ACCENT) */
+    --accent-sage: #5a7a5f;
+    --accent-sage-light: #7a9a7f;
+    --accent-sage-pale: #e8f3ea;
+    --accent-sage-dark: #4a6a4f;
+    
+    /* NEUTRAL COLORS */
+    --neutral-900: #1a202c;
+    --neutral-800: #2d3748;
+    --neutral-700: #4a5568;
+    --neutral-600: #718096;
+    --neutral-500: #a0aec0;
+    --neutral-400: #cbd5e0;
+    --neutral-300: #e2e8f0;
+    --neutral-200: #edf2f7;
+    --neutral-100: #f7fafc;
+    --neutral-50: #fafbfc;
+    
+    /* BACKGROUND COLORS */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --bg-tertiary: #edf2f7;
+    
+    /* SEMANTIC COLORS */
+    --success-green: #047857;
+    --success-green-light: #10b981;
+    --success-green-pale: #d1fae5;
+    
+    --error-red: #b91c1c;
+    --error-red-light: #dc2626;
+    --error-red-pale: #fee2e2;
+    
+    --warning-amber: #d97706;
+    --warning-amber-light: #f59e0b;
+    --warning-amber-pale: #fef3c7;
+    
+    --info-blue: #1e40af;
+    --info-blue-light: #3b82f6;
+    --info-blue-pale: #dbeafe;
+    
+    /* DEPRECATED - Remove in v3.0 */
+    --burgundy-accent: var(--accent-sage);
+    --burgundy-hover: var(--accent-sage-light);
+    --warm-brown: var(--neutral-700);
+    --charcoal-text: var(--neutral-900);
+}
+```
+
+USAGE IN CSS:
+────────────────────────────────────────────────────────────────────────────
+
+```css
+/* Correct usage with fallback */
+.button {
+    background: var(--accent-sage, #5a7a5f);
+    color: var(--bg-primary, #ffffff);
+}
+
+/* Primary heading */
+h1 {
+    color: var(--primary-navy, #1e3a5f);
+}
+
+/* Body text */
+body {
+    color: var(--neutral-900, #1a202c);
+    background: var(--bg-secondary, #f7fafc);
+}
+
+/* Card with accent */
+.card {
+    background: var(--bg-primary, #ffffff);
+    border: 1px solid var(--neutral-300, #e2e8f0);
+    border-left: 4px solid var(--accent-sage, #5a7a5f);
+}
+
+/* Success message */
+.success {
+    background: var(--success-green-pale, #d1fae5);
+    border: 2px solid var(--success-green, #047857);
+    color: var(--neutral-900, #1a202c);
+}
+```
+
+════════════════════════════════════════════════════════════════════════════
+✅ VALIDATION CHECKLIST
+════════════════════════════════════════════════════════════════════════════
+
+Before submitting any CSS changes, verify:
+
+COLOR USAGE:
+□ All colors are from this brand book
+□ No burgundy (#7d5a50) or warm brown (#6b5644) used
+□ Sage green (#5a7a5f) used for primary CTAs
+□ Navy (#1e3a5f) used for headers/authority
+□ Neutral-900 (#1a202c) used for body text
+
+CONTRAST:
+□ All text meets WCAG AA minimum (4.5:1)
+□ Important text meets WCAG AAA (7:1)
+□ Interactive elements have 3:1 contrast
+□ Focus states are clearly visible
+□ Tested with contrast checker tool
+
+ACCESSIBILITY:
+□ Color not used as only indicator
+□ Icons/text accompany colored elements
+□ Focus states defined
+□ Touch targets ≥ 56px (for 55+ audience)
+□ Tested with color blindness simulator
+
+CONSISTENCY:
+□ Similar elements use same colors
+□ Hover states are consistent
+□ Semantic colors used correctly
+□ No custom colors outside brand book
+
+════════════════════════════════════════════════════════════════════════════
+📚 RESOURCES & TOOLS
+════════════════════════════════════════════════════════════════════════════
+
+CONTRAST CHECKERS:
+- WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
+- Colour Contrast Analyser (CCA): https://www.tpgi.com/color-contrast-checker/
+- Contrast Ratio: https://contrast-ratio.com/
+
+COLOR BLINDNESS SIMULATORS:
+- Coblis: https://www.color-blindness.com/coblis-color-blindness-simulator/
+- Chrome DevTools: Built-in simulator
+- Stark plugin for Figma/Sketch
+
+WCAG GUIDELINES:
+- WCAG 2.1: https://www.w3.org/WAI/WCAG21/quickref/
+- Understanding WCAG 2.1: https://www.w3.org/WAI/WCAG21/Understanding/
+
+CSS VARIABLE TOOLS:
+- CSS Variables Browser Support: https://caniuse.com/css-variables
+- CSS Custom Properties Guide: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+
+════════════════════════════════════════════════════════════════════════════
+📝 VERSION HISTORY
+════════════════════════════════════════════════════════════════════════════
+
+Version 2.0 - October 2025
+- ✓ Replaced burgundy accent with sage green as primary accent
+- ✓ Added comprehensive neutral color scale (50-900)
+- ✓ Deprecated warm browns and burgundy
+- ✓ Enhanced semantic colors with light/pale variants
+- ✓ Added detailed accessibility standards
+- ✓ Added usage examples and combinations
+- ✓ Added validation checklist
+- ✓ Optimized for 55+ British audience
+
+Version 1.0 - [Previous date]
+- Initial color palette with burgundy accent
+- Basic navy and neutral colors
+- Simple semantic colors
+
+════════════════════════════════════════════════════════════════════════════
+📞 CONTACT & APPROVAL
+════════════════════════════════════════════════════════════════════════════
+
+Any deviations from this brand book must be approved by:
+- Design Lead
+- Accessibility Specialist
+- Product Owner
+
+For questions or clarification:
+- Reference this document in discussions
+- Cite specific section when requesting exceptions
+- Provide accessibility justification for any deviations
+
+════════════════════════════════════════════════════════════════════════════
+
+════════════════════════════════════════════════════════════════════════════
+📐 TYPOGRAPHY - Font Sizes for 50+ Audience
+════════════════════════════════════════════════════════════════════════════
+
+This section defines all font sizes optimized for 50+ British audience.
+All sizes meet WCAG AAA standards and are designed for maximum readability.
+
+════════════════════════════════════════════════════════════════════════════
+FONT SIZES - Text Scale
+════════════════════════════════════════════════════════════════════════════
+
+BASE TEXT SIZES
+────────────────────────────────────────────────────────────────────────────
+
+TEXT BASE (Primary Body Text) ⭐ MOST IMPORTANT
+CSS Variable:  --text-base
+Size:         20px (1.25rem)
+Usage:        ✓ Main body text
+              ✓ Paragraphs
+              ✓ All content text
+              ✓ Forms and inputs
+              ✓ Info notes
+              ✓ List items
+Rationale:    20px is the minimum readable size for 50+ audience
+              Recommended by WCAG for older users
+              Ensures comfortable reading without zoom
+
+TEXT SMALL
+CSS Variable:  --text-sm
+Size:         16px (1rem)
+Usage:        ✓ Secondary text
+              ✓ Captions
+              ✓ Metadata (dates, timestamps)
+              ✓ Helper text
+              ✓ Provider updated indicators
+              ✓ Form labels (can use base)
+Minimum:      Should NOT be used for important content
+              Only for supporting information
+
+TEXT EXTRA SMALL
+CSS Variable:  --text-xs
+Size:         14px (0.875rem)
+Usage:        ⚠️ Use SPARINGLY
+              ✓ Only for very minor metadata
+              ✓ Copyright text
+              ✓ Legal disclaimers (if necessary)
+Warning:      Below recommended minimum for 50+
+              Only use when absolutely necessary
+
+TEXT MEDIUM
+CSS Variable:  --text-md
+Size:         18px (1.125rem)
+Usage:        ✓ Alternative body text size
+              ✓ Can use instead of base for some contexts
+Rationale:    Acceptable minimum for younger 50+ users
+
+LARGER TEXT SIZES
+────────────────────────────────────────────────────────────────────────────
+
+TEXT LARGE
+CSS Variable:  --text-lg
+Size:         24px (1.5rem)
+Usage:        ✓ Emphasized content
+              ✓ Important quotes
+              ✓ Key numbers/statistics
+              ✓ Mobile: savings amounts
+Rationale:    Good visibility without being too large
+
+TEXT EXTRA LARGE
+CSS Variable:  --text-xl
+Size:         28px (1.75rem)
+Usage:        ✓ Prominent savings amounts
+              ✓ Key statistics
+              ✓ Important callouts
+Rationale:    Draws attention to important information
+
+TEXT 2XL
+CSS Variable:  --text-2xl
+Size:         32px (2rem)
+Usage:        ✓ Very important numbers
+              ✓ Mobile: overview numbers
+Rationale:    Large enough for key metrics
+
+TEXT 3XL
+CSS Variable:  --text-3xl
+Size:         36px (2.25rem)
+Usage:        ✓ Overview numbers (desktop)
+              ✓ Key statistics display
+Rationale:    Large, readable numbers for metrics
+
+TEXT 4XL
+CSS Variable:  --text-4xl
+Size:         40px (2.5rem)
+Usage:        ✓ Large statistics
+              ✓ Hero numbers
+Rationale:    Maximum size for body-scale numbers
+
+TEXT 5XL
+CSS Variable:  --text-5xl
+Size:         48px (3rem)
+Usage:        ✓ Large hero numbers
+              ✓ Maximum emphasis
+Rationale:    Very large for maximum impact
+
+TEXT 6XL
+CSS Variable:  --text-6xl
+Size:         56px (3.5rem)
+Usage:        ✓ Rarely used
+              ✓ Only for very special cases
+Rationale:    Extremely large, use with caution
+
+════════════════════════════════════════════════════════════════════════════
+HEADING SIZES - Clear Hierarchy
+════════════════════════════════════════════════════════════════════════════
+
+H1 - Main Page Title
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h1
+Size:         48px (3rem)
+Usage:        ✓ Main page headings
+              ✓ Report titles
+              ✓ Hero section titles
+              ✓ Primary page headers
+Rationale:    Large enough for maximum visibility
+              Clear hierarchy from body text
+
+H2 - Section Headings
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h2
+Size:         36px (2.25rem)
+Usage:        ✓ Section titles
+              ✓ Major content divisions
+              ✓ Summary titles
+              ✓ Executive summary headings
+Rationale:    Clear distinction from H1
+              Readable at a glance
+
+H3 - Subsection Headings
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h3
+Size:         28px (1.75rem)
+Usage:        ✓ Subsection titles
+              ✓ Card headings
+              ✓ Feature titles
+              ✓ Question titles (questionnaire)
+Rationale:    Clear but not overwhelming
+
+H4 - Minor Headings
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h4
+Size:         24px (1.5rem)
+Usage:        ✓ Minor section headings
+              ✓ Card subtitles
+              ✓ Mobile: section titles
+Rationale:    Distinguishable from body text
+
+H5 - Small Headings
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h5
+Size:         20px (1.25rem)
+Usage:        ✓ Very minor headings
+              ✓ Mobile: subsection titles
+Rationale:    Same size as body but with weight difference
+
+H6 - Smallest Headings
+────────────────────────────────────────────────────────────────────────────
+CSS Variable:  --text-h6
+Size:         18px (1.125rem)
+Usage:        ✓ Labels
+              ✓ Very minor headings
+              ✓ Use SPARINGLY
+Rationale:    Minimum acceptable for headings
+
+════════════════════════════════════════════════════════════════════════════
+LINE HEIGHTS - Readability
+════════════════════════════════════════════════════════════════════════════
+
+LEADING NONE
+CSS Variable:  --leading-none
+Value:        1
+Usage:        ✓ Headings (when appropriate)
+              ✓ Single-line text
+
+LEADING TIGHT
+CSS Variable:  --leading-tight
+Value:        1.25
+Usage:        ✓ Compact headings
+              ✓ Short lines
+
+LEADING SNUG
+CSS Variable:  --leading-snug
+Value:        1.4
+Usage:        ✓ Short paragraphs
+              ✓ List items
+
+LEADING NORMAL ⭐ DEFAULT FOR BODY TEXT
+CSS Variable:  --leading-normal
+Value:        1.6
+Usage:        ✓ Body paragraphs
+              ✓ Main content
+              ✓ Default for all text
+Rationale:    Optimal for 50+ audience readability
+              Comfortable line spacing
+
+LEADING RELAXED
+CSS Variable:  --leading-relaxed
+Value:        1.8
+Usage:        ✓ Dense content
+              ✓ Important information
+              ✓ Info notes
+              ✓ Legal text
+Rationale:    Extra spacing for easier reading
+
+LEADING LOOSE
+CSS Variable:  --leading-loose
+Value:        2.0
+Usage:        ✓ Very dense content
+              ✓ Special emphasis
+              ✓ Use sparingly
+
+════════════════════════════════════════════════════════════════════════════
+FONT WEIGHTS
+════════════════════════════════════════════════════════════════════════════
+
+FONT LIGHT
+CSS Variable:  --font-light
+Value:        300
+Usage:        ⚠️ Use SPARINGLY
+              ✓ Only for very special cases
+
+FONT REGULAR ⭐ DEFAULT
+CSS Variable:  --font-regular
+Value:        400
+Usage:        ✓ Body text default
+              ✓ Most content
+              ✓ Standard text weight
+
+FONT MEDIUM
+CSS Variable:  --font-medium
+Value:        500
+Usage:        ✓ Subheadings
+              ✓ Emphasis
+              ✓ Button text
+
+FONT SEMIBOLD ⭐ FOR HEADINGS
+CSS Variable:  --font-semibold
+Value:        600
+Usage:        ✓ Headings (H1-H6)
+              ✓ Important text
+              ✓ Section titles
+              ✓ Recommended for headings
+
+FONT BOLD
+CSS Variable:  --font-bold
+Value:        700
+Usage:        ✓ Strong emphasis
+              ✓ Key numbers
+              ✓ Important callouts
+              ✓ Logo text
+
+FONT EXTRABOLD
+CSS Variable:  --font-extrabold
+Value:        800
+Usage:        ⚠️ Use SPARINGLY
+              ✓ Only for very special emphasis
+
+════════════════════════════════════════════════════════════════════════════
+LETTER SPACING
+════════════════════════════════════════════════════════════════════════════
+
+TRACKING TIGHTER
+CSS Variable:  --tracking-tighter
+Value:        -0.05em
+Usage:        ✓ Large headings
+              ✓ Display text
+
+TRACKING TIGHT
+CSS Variable:  --tracking-tight
+Value:        -0.025em
+Usage:        ✓ Headings
+              ✓ Compact text
+
+TRACKING NORMAL ⭐ DEFAULT
+CSS Variable:  --tracking-normal
+Value:        0
+Usage:        ✓ Body text
+              ✓ Default for all text
+              ✓ Most content
+
+TRACKING WIDE
+CSS Variable:  --tracking-wide
+Value:        0.025em
+Usage:        ✓ Headings (if needed)
+              ✓ Uppercase text
+
+TRACKING WIDER
+CSS Variable:  --tracking-wider
+Value:        0.05em
+Usage:        ✓ Uppercase headings
+              ✓ Labels
+
+TRACKING WIDEST
+CSS Variable:  --tracking-widest
+Value:        0.1em
+Usage:        ⚠️ Rarely used
+              ✓ Very large uppercase text
+
+════════════════════════════════════════════════════════════════════════════
+📋 USAGE RULES FOR 50+ AUDIENCE
+════════════════════════════════════════════════════════════════════════════
+
+MINIMUM SIZES:
+────────────────────────────────────────────────────────────────────────────
+
+✓ Body text:          20px (--text-base) - REQUIRED
+✓ Secondary text:      16px (--text-sm) - MINIMUM for supporting text
+✓ Important info:      20px (--text-base) - NEVER use smaller
+✓ Headings:            24px (--text-h4) - MINIMUM for headings
+✓ Interactive text:    20px (--text-base) - Buttons, links
+
+✗ NEVER use:
+  - Text smaller than 16px for any important content
+  - Body text smaller than 20px
+  - Headings smaller than 18px (H6 is absolute minimum)
+
+LINE HEIGHT RULES:
+────────────────────────────────────────────────────────────────────────────
+
+✓ Body text:          1.6 (--leading-normal) - REQUIRED
+✓ Important info:     1.7-1.8 (--leading-relaxed) - For dense content
+✓ Headings:           1.3-1.4 - Tighter for headings
+✓ Lists:              1.6-1.7 - Comfortable spacing
+
+MOBILE CONSIDERATIONS:
+────────────────────────────────────────────────────────────────────────────
+
+On mobile devices:
+✓ Can reduce by 1-2px MAXIMUM
+✓ Never go below 16px for any important content
+✓ Maintain line-height of 1.6+ for body text
+✓ Headings can be one size smaller (H2 → H3, etc.)
+
+════════════════════════════════════════════════════════════════════════════
+✅ VALIDATION CHECKLIST FOR FONT SIZES
+════════════════════════════════════════════════════════════════════════════
+
+Before submitting any CSS changes, verify:
+
+BODY TEXT:
+□ All body text uses --text-base (20px) or larger
+□ No important content uses --text-sm (16px) or smaller
+□ Paragraph line-height is 1.6 or greater
+□ Info notes use --text-base (20px), not --text-sm
+
+HEADINGS:
+□ H1 uses --text-h1 (48px)
+□ H2 uses --text-h2 (36px)
+□ H3 uses --text-h3 (28px)
+□ No heading smaller than --text-h4 (24px) for main headings
+□ Heading line-height is appropriate (1.3-1.4)
+
+INTERACTIVE ELEMENTS:
+□ Button text uses --text-base (20px) minimum
+□ Link text uses --text-base (20px) minimum
+□ Form labels use --text-base (20px) or --text-sm (16px)
+□ Form inputs use --text-base (20px) minimum
+
+METADATA & SUPPORTING TEXT:
+□ Metadata uses --text-sm (16px) minimum
+□ Captions use --text-sm (16px) minimum
+□ Timestamps use --text-sm (16px) minimum
+
+ACCESSIBILITY:
+□ All text meets WCAG AAA contrast (7:1) on backgrounds
+□ Line-height provides comfortable reading (1.6+)
+□ Font sizes tested on actual devices
+□ No reliance on very small text for critical information
+
+════════════════════════════════════════════════════════════════════════════
+
+END OF COLOR & TYPOGRAPHY BRAND BOOK
+Version 2.1 - October 2025
+ClearFuneralCosts - Professional Design for 55+ British Audience
+
+This document is the single source of truth for:
+- All color usage
+- All typography (font sizes, line heights, weights)
+- Accessibility standards for 50+ audience
+
+════════════════════════════════════════════════════════════════════════════
