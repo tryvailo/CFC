@@ -1,0 +1,2 @@
+# CFC
+clear funeral costs
