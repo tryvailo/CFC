@@ -422,7 +422,7 @@
 
 body {
     font-family: var(--font-family-primary);
-    line-height: var(--leading-normal);
+    line-height: 1.8; /* Increased from 1.6 for better readability during emotional distress */
     color: var(--neutral-900);
     font-size: var(--text-base);
     background-color: var(--bg-secondary);
@@ -436,6 +436,10 @@ body {
 }
 
 /* === SECTION STANDARDIZATION === */
+.section {
+    padding: 100px 0; /* Increased from 80px for better visual breathing room */
+}
+
 .section-standard {
     padding: 100px 0; /* Increased for better visual hierarchy */
 }
@@ -445,7 +449,7 @@ body {
 }
 
 .section-medium {
-    padding: 80px 0; /* Increased for better visual hierarchy */
+    padding: 100px 0; /* Increased from 80px for better visual hierarchy */
 }
 
 .section-small {
@@ -454,7 +458,7 @@ body {
 
 /* === ENHANCED VISUAL HIERARCHY === */
 .section-spacing-large {
-    margin: 60px 0; /* Large spacing between major sections */
+    margin: 60px 0; /* Increased from 40px for better visual separation */
 }
 
 .section-spacing-medium {
@@ -525,7 +529,8 @@ body {
 /* === PARAGRAPH OPTIMIZATION === */
 p {
     max-width: 65ch; /* Optimal line length for paragraphs */
-    line-height: 1.6;
+    line-height: 1.8; /* Increased from 1.6 for better readability during emotional distress */
+    margin-bottom: 1.75rem; /* Increased from 1rem for better spacing */
 }
 
 .paragraph-wide {
@@ -559,12 +564,12 @@ p {
 
 /* === BUTTON STANDARDIZATION === */
 .cta-primary {
-    background: var(--accent-sage);
-    color: var(--pure-white);
-    padding: 18px 32px; /* Standardized padding */
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    color: #ffffff;
+    padding: 20px 40px;
     border: none;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
@@ -573,7 +578,7 @@ p {
     cursor: pointer;
     min-height: 48px;
     touch-action: manipulation;
-    box-shadow: 0 4px 12px rgba(125, 90, 80, 0.3); /* Enhanced contrast */
+    box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);
     border: 2px solid transparent; /* Enhanced focus state */
 }
 
@@ -636,7 +641,13 @@ p {
 }
 
 /* Button hover states */
-.cta-primary:hover,
+.cta-primary:hover {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(4, 120, 87, 0.4);
+    border-color: transparent;
+}
+
 .cta-button:hover,
 .plan-button:hover {
     background: var(--accent-sage-light);
@@ -790,14 +801,16 @@ h6 {
 
 /* Regional page headline - smaller for longer text */
 .regional-hero .hero-headline {
-    font-size: 3rem; /* Увеличиваем для лучшей видимости, но меньше основного */
+    font-size: 2.25rem; /* 36px - same as main page for consistency */
+    line-height: 1.3;
+    margin-bottom: 20px;
 }
 
 .hero-subheadline {
-    font-size: 1.3rem;
+    font-size: 1.25rem; /* 20px - consistent with main page */
     margin-bottom: 30px;
     opacity: 0.95;
-    line-height: 1.6;
+    line-height: 1.8; /* Better readability */
     max-width: 65ch; /* Optimal line length for readability */
 }
 
@@ -846,15 +859,613 @@ h6 {
     box-shadow: 0 6px 20px rgba(125, 90, 80, 0.4);
 }
 
-/* === HERO EMPATHETIC TEXT === */
-.hero-empathetic-text {
-    margin: 20px 0; /* Унифицированный отступ */
-    text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+/* === HERO MINIMAL VERSION === */
+.hero-minimal {
+    background: linear-gradient(135deg, #2d5a8a 0%, #1e3a5f 100%);
+    color: var(--pure-white);
+    padding: 60px 20px 50px;
+    position: relative;
+    overflow: hidden;
+    min-height: auto;
+}
+
+.hero-minimal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-minimal .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 580px;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-minimal .hero-content {
+    max-width: 500px;
+}
+
+/* Minimal Headline - NO yellow highlight */
+.hero-headline-minimal {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+}
+
+.hero-headline-minimal strong {
+    font-weight: 700;
+    color: #ffffff; /* White, not yellow */
+}
+
+/* Minimal Subheadline */
+.hero-subheadline-minimal {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 16px;
+    font-weight: 400;
+}
+
+/* Minimal Description */
+.hero-description-minimal {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Hide elements that are removed in minimal version */
+.hero-minimal .hero-empathy-badge {
+    display: none;
+}
+
+.hero-minimal .hero-empathy-box {
+    display: none;
+}
+
+.hero-minimal .hero-cta-group {
+    display: none;
+}
+
+.hero-minimal .hero-trust-indicators {
+    display: none;
+}
+
+/* Responsive Styles for Minimal Hero */
+@media (max-width: 768px) {
+    .hero-minimal {
+        padding: 40px 16px 35px;
+    }
+    
+    .hero-minimal .hero-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .hero-headline-minimal {
+        font-size: 1.875rem; /* 30px */
+    }
+    
+    .hero-subheadline-minimal {
+        font-size: 1.125rem; /* 18px */
+    }
+    
+    .hero-description-minimal {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline-minimal {
+        font-size: 1.625rem; /* 26px */
+    }
+    
+    .hero-subheadline-minimal {
+        font-size: 1rem;
+    }
+}
+
+/* Subtle background pattern (опционально) */
+.hero-improved::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-improved .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 580px;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-improved .hero-content {
+    max-width: 800px;
+}
+
+/* Empathy Badge */
+.hero-empathy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 24px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    color: #fbbf24;
+    font-size: 0.875rem;
+    font-weight: 500;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.empathy-icon {
+    width: 18px;
+    height: 18px;
+    color: #fca5a5; /* Soft pink-red for heart */
+    flex-shrink: 0;
+}
+
+/* Региональная метка */
+.regional-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+    color: #10b981;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+}
+
+.location-icon {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+}
+
+/* Improved Headline */
+.hero-headline-improved {
+    font-size: 2.25rem; /* было 2.75rem (44px), теперь 36px */
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    max-width: 65ch;
+}
+
+.highlight-warm {
+    color: #fbbf24;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle underline animation (опционально) */
+.highlight-warm::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+    opacity: 0.5;
+    border-radius: 2px;
+}
+
+/* Improved Subheadline */
+.hero-subheadline-improved {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.8; /* увеличено с 1.6 */
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 28px;
+    font-weight: 400;
+    max-width: 65ch;
+}
+
+/* Empathy Box */
+.hero-empathy-box {
+    background: rgba(255, 255, 255, 0.12);
+    border-left: 4px solid #fbbf24;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 65ch;
+}
+
+.hero-empathy-box p {
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.8; /* увеличено с 1.7 для лучшей читаемости в стрессе */
+    font-size: 1rem;
+}
+
+.hero-empathy-box strong {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+/* Региональный вариант */
+.regional-empathy {
+    border-left-color: #10b981;
+}
+
+.regional-empathy strong {
+    color: #10b981;
+}
+
+/* Benefits List */
+/* Benefits List - supports both SVG icons and text checkmarks */
+.hero-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    max-width: 65ch;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Items without SVG icons (text-only with checkmark) */
+.benefit-item:not(:has(.benefit-icon)) {
+    gap: 0;
+}
+
+.benefit-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 24px;
+    height: 24px;
+}
+
+.benefit-item span {
+    flex: 1;
+    color: #ffffff;
+}
+
+.benefit-item span strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Региональная статистика (новый элемент) */
+.regional-stats-highlight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    backdrop-filter: blur(10px);
+    max-width: 65ch;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    color: #10b981;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.8125rem; /* 13px */
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 16px;
+}
+
+/* CTA Group */
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+    max-width: 400px;
+}
+
+/* Primary CTA - новый зеленый цвет */
+.cta-primary-new {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    color: #ffffff;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 14px rgba(4, 120, 87, 0.35),
+        0 0 0 0 rgba(4, 120, 87, 0.5);
+    position: relative;
+    overflow: hidden;
+    min-height: 48px;
+}
+
+.cta-primary-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-primary-new:hover::before {
+    left: 100%;
+}
+
+.cta-primary-new:hover {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(4, 120, 87, 0.45),
+        0 0 0 4px rgba(4, 120, 87, 0.2);
+}
+
+.cta-primary-new:focus {
+    outline: none;
+    box-shadow: 
+        0 6px 20px rgba(4, 120, 87, 0.45),
+        0 0 0 4px rgba(251, 191, 36, 0.5);
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.cta-subtext {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
+/* White text for cta-subtext on dark backgrounds */
+.hero .cta-subtext,
+.hero-minimal .cta-subtext,
+.regional-hero .cta-subtext,
+.final-cta .cta-subtext {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* White text for cta-secondary on dark backgrounds */
+.final-cta .cta-secondary {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Secondary CTA - outline стиль */
+.cta-secondary-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #ffffff;
+    padding: 18px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-height: 48px;
+}
+
+.cta-secondary-new:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.cta-secondary-new:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+/* Trust Indicators */
+.hero-trust-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 65ch;
+}
+
+.hero-trust-indicators .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.trust-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Styles for Improved Hero */
+@media (max-width: 768px) {
+    .hero-improved {
+        padding: 40px 16px 35px;
+    }
+    
+    .hero-improved .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-headline-improved {
+        font-size: 1.875rem; /* было 2.5rem, теперь 30px */
+        margin-bottom: 16px;
+    }
+    
+    .hero-subheadline-improved {
+        font-size: 1.125rem; /* 18px */
+        margin-bottom: 24px;
+    }
+    
+    .hero-empathy-badge {
+        font-size: 0.8125rem;
+        padding: 6px 12px;
+    }
+    
+    .regional-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+    
+    .hero-empathy-box {
+        padding: 16px 18px;
+        margin-bottom: 24px;
+    }
+    
+    .hero-empathy-box p {
+        font-size: 0.9375rem;
+    }
+    
+    .benefit-item {
+        font-size: 0.9375rem;
+        padding: 8px 0;
+    }
+    
+    .hero-cta-group {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+    
+    .cta-primary-new,
+    .cta-secondary-new {
+        width: 100%;
+        padding: 16px 24px;
+        min-height: 52px; /* увеличено для мобильных */
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+    }
+    
+    .cta-subtext {
+        font-size: 0.75rem;
+    }
+    
+    .regional-stats-highlight {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 16px;
+    }
+    
+    .stat-divider {
+        width: 60%;
+        height: 1px;
+        margin: 0;
+    }
+    
+    .hero-trust-indicators {
+        gap: 16px;
+        padding-top: 16px;
+        justify-content: center;
+    }
+    
+    .trust-item {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-headline-improved {
+        font-size: 1.625rem; /* 26px */
+    }
+    
+    .hero-subheadline-improved {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
 }
 
 .hero-empathetic-text p {
@@ -1132,12 +1743,7 @@ h6 {
 }
 
 
-.regional-hero p {
-    font-size: 1.3rem; /* Унифицированный размер */
-    opacity: 0.9;
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
+/* Regional hero paragraphs use hero-subheadline class, no separate style needed */
 
 /* REGIONAL STATISTICS */
 .regional-stats {
@@ -2976,8 +3582,22 @@ h6 {
 .testimonial-author {
     font-weight: 600;
     color: var(--navy-primary);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-size: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial-author strong {
+    font-weight: 600;
+    color: var(--navy-primary);
+}
+
+.testimonial-date {
+    font-size: 0.9rem;
+    color: var(--neutral-600);
+    font-weight: 400;
+    display: block;
+    margin-top: 4px;
 }
 
 .testimonial-location {
@@ -3629,7 +4249,7 @@ h6 {
     }
 
     .section-spacing-large {
-        margin: 40px 0; /* Reduced for mobile */
+        margin: 60px 0; /* Increased spacing for mobile */
     }
 
     .section-spacing-medium {
@@ -3709,7 +4329,7 @@ h6 {
 
     /* Regional page headline - smaller for longer text on tablets */
     .regional-hero .hero-headline {
-        font-size: 2.5rem; /* Увеличиваем для лучшей видимости на планшетах */
+        font-size: 1.875rem; /* 30px - same as main page */
     }
 
     .information-headline {
@@ -3803,6 +4423,24 @@ h6 {
     .commitment-block,
     .contact-block {
         padding: 28px 24px;
+    }
+
+    /* Enhanced Mobile Touch Targets */
+    .cta-button,
+    .cta-primary,
+    .cta-primary-new,
+    .cta-secondary,
+    .cta-secondary-new {
+        min-height: 52px; /* Increased from 48px for better touch targets */
+        padding: 16px 28px;
+    }
+
+    input,
+    select,
+    .form-input,
+    .form-select {
+        min-height: 56px; /* Increased touch target for better usability */
+        font-size: 16px; /* Prevents iOS zoom on focus */
     }
 }
 
@@ -3906,7 +4544,7 @@ h6 {
 
     /* Regional page headline - smaller for longer text on small mobile */
     .regional-hero .hero-headline {
-        font-size: 2rem; /* Увеличиваем для лучшей видимости на мобильных */
+        font-size: 1.625rem; /* 26px - same as main page */
     }
 
     .information-service {
@@ -5485,19 +6123,22 @@ h6 {
 }
 
 .cta-primary {
-    background: var(--accent-sage);
-    color: white;
-    border: 3px solid var(--accent-sage);
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    color: #ffffff;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 12px rgba(4, 120, 87, 0.3);
 }
 
 .cta-primary:hover {
-    background: var(--accent-sage-light);
-    border-color: var(--accent-sage-light);
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(4, 120, 87, 0.4);
+    transform: translateY(-2px);
 }
 
 .cta-primary:active {
-    background: var(--accent-sage-dark);
-    border-color: var(--accent-sage-dark);
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    border-color: transparent;
     transform: translateY(1px);
 }
 
@@ -5513,6 +6154,18 @@ h6 {
     color: var(--accent-sage-dark);
 }
 
+/* White secondary button on dark backgrounds */
+.final-cta .cta-secondary {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.final-cta .cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+
 .cta-subtext {
     font-size: var(--text-sm, 16px);
     color: var(--neutral-700, #4a5568);
@@ -5520,6 +6173,12 @@ h6 {
     text-align: center;
     line-height: var(--leading-normal, 1.6);
     font-weight: var(--font-normal, 400);
+}
+
+/* White text for cta-subtext on dark backgrounds */
+.final-cta .cta-subtext {
+    color: #ffffff;
+    opacity: 0.9;
 }
 
 /* Focus state для accessibility */
