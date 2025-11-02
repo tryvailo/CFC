@@ -110,7 +110,7 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
-                    <a href="index.html" class="breadcrumb-link">Home</a>
+                    <a href="/" class="breadcrumb-link">Home</a>
                 </li>
                 <li class="breadcrumb-separator" aria-hidden="true">›</li>
                 <li class="breadcrumb-item breadcrumb-current" aria-current="page">
@@ -129,6 +129,14 @@
             <h1 class="questionnaire-title">Tell us more about your research needs</h1>
             <p class="questionnaire-subtitle">This helps us create your personalised research plan</p>
             <div class="completion-info">Step <span id="current-step">1</span> of 8 • 3-4 minutes</div>
+            
+            <!-- Enhanced Progress Indicator -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Question 1 of 8</div>
+            </div>
         </header>
 
         <!-- SERVICE DEFINITION -->
@@ -165,9 +173,18 @@
         </section>
 
         <!-- QUESTIONNAIRE FORM -->
+        <!-- Save & Continue Later Button -->
+        <div class="save-for-later">
+            <button class="save-button" id="save-for-later-btn">
+                <span class="save-icon">💾</span>
+                <span class="save-text">Save & Continue Later</span>
+            </button>
+            <p class="save-description">We'll email you a link to resume where you left off</p>
+        </div>
+
         <form id="questionnaire-form" aria-label="Funeral cost research questionnaire">
         <!-- QUESTION 1: SERVICE TYPE -->
-        <section class="question-card" id="question-1" role="group" aria-labelledby="question-1-title">
+        <section class="question-card active" id="question-1" role="group" aria-labelledby="question-1-title">
             <div class="question-header">
                 <h2 class="question-title" id="question-1-title">What type of funeral service do you wish to research?</h2>
                 <p class="question-subtitle">This affects available research strategies</p>
@@ -213,12 +230,25 @@
                     </div>
                 </div>
 
-                <div class="option" data-question="service_type" data-value="not_sure" tabindex="0" role="radio" aria-label="Not Sure Yet, We'll help you explore options">
+                <div class="option" data-question="service_type" data-value="simple_service" tabindex="0" role="radio" aria-label="Simple Service + Cremation, Typical range: £2,400 to £3,600">
                     <div class="option-content">
                         <div class="option-text">
-                            <div class="option-title">I'm not sure yet</div>
-                            <div class="option-description">Help me explore different options</div>
-                            <div class="option-meta">We'll help you compare</div>
+                            <div class="option-title">Simple service + cremation</div>
+                            <div class="option-description">Brief ceremony followed by cremation</div>
+                            <div class="option-meta">Typical range: £2,400-£3,600*</div>
+                        </div>
+                        <div class="option-selector">
+                            <div class="option-selector-inner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option" data-question="service_type" data-value="natural_burial" tabindex="0" role="radio" aria-label="Natural Burial Service, Typical range: £3,500 to £5,500">
+                    <div class="option-content">
+                        <div class="option-text">
+                            <div class="option-title">Natural burial</div>
+                            <div class="option-description">Eco-friendly burial in woodland or meadow</div>
+                            <div class="option-meta">Typical range: £3,500-£5,500*</div>
                         </div>
                         <div class="option-selector">
                             <div class="option-selector-inner"></div>
@@ -233,6 +263,7 @@
             <div class="question-header">
                 <h2 class="question-title" id="question-2-title">What investment level are you considering for the funeral arrangements?</h2>
                 <p class="question-subtitle">This helps us focus on relevant providers and strategies</p>
+                <button class="back-button" data-current-step="2">← Back to previous question</button>
             </div>
             
             <div class="options-container">
@@ -591,7 +622,7 @@
         <!-- FORM CONTROLS -->
         <div class="navigation-buttons">
             <button type="button" class="nav-button prev" id="prevBtn" disabled>Previous</button>
-            <button type="button" class="nav-button next" id="nextBtn">Next</button>
+            <button type="button" class="nav-button next" id="nextBtn" style="display: inline-block !important; visibility: visible !important;">Next</button>
             <button type="submit" class="nav-button next" id="submitBtn" style="display: none;">View Cost Breakdown</button>
             </div>
         </form>
