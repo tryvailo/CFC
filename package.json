@@ -7,7 +7,9 @@
     "watch-css": "npm run minify-css && echo 'Watching CSS files...' && npm run minify-css",
     "build": "npm run minify-css",
     "dev": "npm run watch-css",
-    "migrate-bem": "bash scripts/migrate-to-bem.sh"
+    "migrate-bem": "bash scripts/migrate-to-bem.sh",
+    "generate:region": "node scripts/generate-regional-pages.js",
+    "generate:all": "node scripts/generate-regional-pages.js"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.2"

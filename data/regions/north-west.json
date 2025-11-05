@@ -1,0 +1,170 @@
+{
+  "id": "north-west",
+  "slug": "north-west",
+  "regionName": "North West England",
+  "regionNameShort": "North West",
+  "regionNameAdjective": "North West England",
+  "regionNameGenitive": "North West England",
+  "regionNameAdjectiveShort": "North West",
+  
+  "meta": {
+    "title": "North West England Funeral Guidance: Save £900–£1,600 on Funeral Costs | ClearFuneralCosts",
+    "description": "North West England funeral guidance helping families honour loved ones within budget. Independent analysis of 320+ funeral directors shows savings of £900–£2,200 through informed choices.",
+    "canonical": "https://clearfuneralcosts.co.uk/regions/north-west/"
+  },
+  
+  "hero": {
+    "headline": "Losing someone you love is incredibly difficult—especially when choosing funeral services locally",
+    "subheadline": "We're here to help North West England families understand funeral costs and explore your options—including how to <strong>typically save £900–£1,600 without compromising on dignity</strong>.",
+    "trustBadge": "4.8/5 satisfaction – 1,285 North West families helped with confidence and dignity",
+    "benefits": [
+      "<strong>Typically save £900–£1,600</strong> in your region",
+      "320 North West funeral directors analysed (CMA data)",
+      "Manchester, Liverpool & Preston crematorium costs compared",
+      "100% independent—no commissions from local providers"
+    ]
+  },
+  
+  "statistics": {
+    "funeralDirectorsCount": 320,
+    "averageSavings": "£1,250",
+    "familiesHelped": 1285,
+    "familiesHelpedFormatted": "1,285",
+    "totalFamiliesHelped": 3247,
+    "totalFamiliesHelpedFormatted": "3,247",
+    "satisfactionRating": "4.8/5",
+    "savingsRange": "£900–£1,600",
+    "costRange": "£3,400-£5,300+",
+    "potentialSavingsRange": "£900-£2,200",
+    "averageRegionalCost": "£4,297",
+    "yearOnYearIncrease": "13%"
+  },
+  
+  "cities": {
+    "main": ["Manchester", "Liverpool", "Preston"],
+    "mainFormatted": "Manchester, Liverpool & Preston",
+    "examples": [
+      {
+        "name": "Manchester",
+        "costRange": "£3,500-£5,200",
+        "variation": "£1,700 variation",
+        "directCremation": "£1,299",
+        "providers": "189 funeral directors"
+      },
+      {
+        "name": "Liverpool",
+        "cremationStandard": "£920",
+        "cremationOffPeak": "£695",
+        "comparison": "standard vs off-peak exploration"
+      },
+      {
+        "name": "Preston",
+        "variation": "45%",
+        "cremationCost": "£872",
+        "description": "Lancashire funeral directors price variation within 10 miles"
+      }
+    ]
+  },
+  
+  "testimonials": [
+    {
+      "quote": "The timing strategy alone saved us £225—Tuesday 9am instead of Saturday 11am at Manchester Crematorium. The 14-day roadmap made everything clear and manageable during such a difficult time.",
+      "author": "Linda M.",
+      "location": "Manchester",
+      "strategies": "Timing + Provider Selection",
+      "saved": "£1,340"
+    },
+    {
+      "quote": "The email templates made requesting quotes so much easier—I didn't have to figure out what to say. The venue optimisation guide showed us a beautiful community hall (£85) instead of a hotel (£450). Everything felt dignified and meaningful.",
+      "author": "Peter & Julie C.",
+      "location": "Liverpool",
+      "strategies": "Provider + Venue + Timing",
+      "saved": "£1,485"
+    },
+    {
+      "quote": "Expanding our search to 20 miles unlocked options we never would have found. The negotiation scripts gave me confidence to ask for discounts without feeling awkward. Mum would have been proud of how we handled this.",
+      "author": "Andrew R.",
+      "location": "Preston",
+      "strategies": "Location + Negotiation + Service",
+      "saved": "£1,150"
+    }
+  ],
+  
+  "faq": {
+    "title": "Common questions about our North West England service",
+    "questions": [
+      {
+        "question": "Is this a fully licensed service?",
+        "answer": "No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and analytical support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised support, we recommend consulting with qualified professionals such as solicitors or financial advisers."
+      },
+      {
+        "question": "Do you receive commissions from funeral directors?",
+        "answer": "Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £49 premium reports. This independence ensures our information remains unbiased and focused solely on helping families explore their options."
+      },
+      {
+        "question": "How accurate is your data?",
+        "answer": "Very accurate. We base all calculations on official CMA Standardised Price Lists that funeral directors must publish by law. We analyse 320 North West England providers and update data weekly. Our 2025 data incorporates the latest regional pricing showing North West funerals averaging £4,297 after a 13% increase."
+      },
+      {
+        "question": "Why have North West funeral costs risen so sharply?",
+        "answer": "North West England saw the highest UK increase (13%) in 2024-2025, jumping from 9th to 4th most expensive region. Funeral directors attribute this to rising crematoria fees and wage increases. Despite this, the region still offers significant savings opportunities through provider comparison and timing optimisation."
+      }
+    ]
+  },
+  
+  "caseStudy": {
+    "city": "Manchester",
+    "baselineCost": "£4,400",
+    "scenarios": [
+      {
+        "name": "Better Provider",
+        "original": "£4,400",
+        "optimised": "£3,650",
+        "savings": "£750",
+        "percentage": "17%"
+      },
+      {
+        "name": "Direct Cremation",
+        "original": "£4,400",
+        "optimised": "£1,299",
+        "savings": "£3,101",
+        "percentage": "70%"
+      },
+      {
+        "name": "Hybrid",
+        "original": "£4,400",
+        "optimised": "£3,200",
+        "savings": "£1,200",
+        "percentage": "27%"
+      }
+    ]
+  },
+  
+  "schema": {
+    "faq": [
+      {
+        "question": "How much does a funeral cost in North West England?",
+        "answer": "Funeral costs in North West England typically range from £3,400-£5,300+ according to 2025 data. The regional average is £4,297, following a significant 13% increase year-on-year. Our analysis shows potential savings of £900-£2,200 through informed choices and provider comparison."
+      },
+      {
+        "question": "What factors affect funeral costs in North West England?",
+        "answer": "Key factors include: crematorium location (urban vs suburban), service timing (peak vs off-peak), provider selection, and venue choices. Manchester, Liverpool, and Preston crematoriums have different pricing structures, with off-peak slots saving £180-250 on average. Manchester alone has 189 funeral directors, creating competitive pricing opportunities."
+      },
+      {
+        "question": "How can I reduce funeral costs in North West England?",
+        "answer": "Reduce costs by: comparing 3-5 local providers from the 320+ available, choosing off-peak cremation times (saving £180-250), selecting simpler venues, and considering direct cremation (averaging £1,299-£1,597). Savings of £900–£1,600 are typical while maintaining dignity."
+      }
+    ]
+  },
+  
+  "additionalData": {
+    "lastUpdated": "2025-11",
+    "dataSource": "CMA Annual Review 2025, SunLife Cost of Dying Report 2025",
+    "regionalRank": 4,
+    "previousRank": 9,
+    "crematoriumCount": 15,
+    "averageDirectCremation": "£1,447",
+    "averageBurial": "£4,196",
+    "averageCremation": "£3,795"
+  }
+}

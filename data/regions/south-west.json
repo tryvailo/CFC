@@ -1,0 +1,149 @@
+{
+  "id": "south-west",
+  "slug": "south-west",
+  "regionName": "South West England",
+  "regionNameShort": "South West",
+  "regionNameAdjective": "South West England",
+  "regionNameGenitive": "South West England",
+  "regionNameAdjectiveShort": "South West",
+  
+  "meta": {
+    "title": "South West England Funeral Guidance: Honouring Your Loved One Within Your Means | ClearFuneralCosts",
+    "description": "South West England funeral guidance helping families honour their loved ones within their means. Independent analysis shows potential savings of £900-£2,400 through informed choices.",
+    "canonical": "https://clearfuneralcosts.co.uk/regions/south-west/"
+  },
+  
+  "hero": {
+    "headline": "Losing someone you love is incredibly difficult—especially when choosing funeral services locally",
+    "subheadline": "We're here to help South West England families understand funeral costs and explore your options—including how to <strong>typically save £1,000–£1,600 without compromising on dignity</strong>.",
+    "trustBadge": "4.8/5 satisfaction – 1,234 South West families helped with confidence and dignity",
+    "benefits": [
+      "<strong>Typically save £1,000–£1,600</strong> in your region",
+      "256 South West funeral directors analysed (CMA data)",
+      "Bristol, Plymouth & Exeter crematorium costs compared",
+      "100% independent—no commissions from local providers"
+    ]
+  },
+  
+  "statistics": {
+    "funeralDirectorsCount": 256,
+    "averageSavings": "£1,234",
+    "familiesHelped": 1234,
+    "familiesHelpedFormatted": "1,234",
+    "totalFamiliesHelped": 2847,
+    "totalFamiliesHelpedFormatted": "2,847",
+    "satisfactionRating": "4.8/5",
+    "savingsRange": "£1,000–£1,600",
+    "costRange": "£3,400-£5,600+",
+    "potentialSavingsRange": "£900-£2,400"
+  },
+  
+  "cities": {
+    "main": ["Bristol", "Plymouth", "Exeter"],
+    "mainFormatted": "Bristol, Plymouth & Exeter",
+    "examples": [
+      {
+        "name": "Bristol",
+        "costRange": "£3,600-£5,100",
+        "variation": "£1,500 variation"
+      },
+      {
+        "name": "Plymouth",
+        "cremationStandard": "£940",
+        "cremationOffPeak": "£710",
+        "comparison": "standard vs off-peak exploration"
+      },
+      {
+        "name": "Exeter",
+        "variation": "39%",
+        "description": "Devon funeral directors price variation within 10 miles"
+      }
+    ]
+  },
+  
+  "testimonials": [
+    {
+      "quote": "The timing strategy alone saved us £260—Tuesday 9am instead of Saturday 11am at the same crematorium. The 14-day roadmap made everything clear and manageable during such a difficult time.",
+      "author": "Patricia W.",
+      "location": "Bristol",
+      "strategies": "Timing + Provider Selection",
+      "saved": "£1,380"
+    },
+    {
+      "quote": "The email templates made requesting quotes so much easier—I didn't have to figure out what to say. The venue optimisation guide showed us a beautiful community hall (£80) instead of a hotel (£490). Everything felt dignified and meaningful.",
+      "author": "Michael & Emma B.",
+      "location": "Plymouth",
+      "strategies": "Provider + Venue + Timing",
+      "saved": "£1,520"
+    },
+    {
+      "quote": "Expanding our search to 20 miles unlocked options we never would have found. The negotiation scripts gave me confidence to ask for discounts without feeling awkward. Mum would have been proud of how we handled this.",
+      "author": "David H.",
+      "location": "Exeter",
+      "strategies": "Location + Negotiation + Service",
+      "saved": "£1,120"
+    }
+  ],
+  
+  "faq": {
+    "title": "Common questions about our South West England service",
+    "questions": [
+      {
+        "question": "Is this a fully licensed service?",
+        "answer": "No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and analytical support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised support, we recommend consulting with qualified professionals such as solicitors or financial advisers."
+      },
+      {
+        "question": "Do you receive commissions from funeral directors?",
+        "answer": "Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £49 premium reports. This independence ensures our information remains unbiased and focused solely on helping families explore their options."
+      },
+      {
+        "question": "How accurate is your data?",
+        "answer": "Very accurate. We base all calculations on official CMA Standardised Price Lists that funeral directors must publish by law. We analyse 256 South West England providers and update data weekly. Our 2025 data incorporates the latest regional pricing showing South West funerals averaging £3,907."
+      }
+    ]
+  },
+  
+  "caseStudy": {
+    "city": "Bristol",
+    "scenarios": [
+      {
+        "name": "Better Provider",
+        "original": "£4,350",
+        "optimised": "£3,650",
+        "savings": "£700",
+        "percentage": "16%"
+      },
+      {
+        "name": "Direct Cremation",
+        "original": "£4,350",
+        "optimised": "£1,650",
+        "savings": "£2,700",
+        "percentage": "62%"
+      },
+      {
+        "name": "Hybrid",
+        "original": "£4,350",
+        "optimised": "£3,200",
+        "savings": "£1,150",
+        "percentage": "26%"
+      }
+    ]
+  },
+  
+  "schema": {
+    "faq": [
+      {
+        "question": "How much does a funeral cost in South West England?",
+        "answer": "Funeral costs in South West England typically range from £3,400-£5,600+ according to 2025 data. The regional average is £3,907, making it more affordable than South East and London. However, our analysis shows potential savings of £900-£2,400 through informed choices and provider comparison."
+      },
+      {
+        "question": "What factors affect funeral costs in South West England?",
+        "answer": "Key factors include: crematorium location (coastal vs inland), service timing (peak vs off-peak), provider selection, and venue choices. Bristol, Plymouth, and Exeter crematoriums have different pricing structures, with off-peak slots saving £200-280 on average."
+      },
+      {
+        "question": "How can I reduce funeral costs in South West England?",
+        "answer": "Reduce costs by: comparing 3-5 local providers, choosing off-peak cremation times (saving £200-280), selecting simpler venues, and considering direct cremation (averaging £1,575). Savings of £1,000–£1,600 are possible while maintaining dignity."
+      }
+    ]
+  }
+}

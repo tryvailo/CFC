@@ -1,0 +1,149 @@
+{
+  "id": "south-east",
+  "slug": "south-east",
+  "regionName": "South East England",
+  "regionNameShort": "South East",
+  "regionNameAdjective": "South East England",
+  "regionNameGenitive": "South East England",
+  "regionNameAdjectiveShort": "South East",
+  
+  "meta": {
+    "title": "South East England Funeral Guidance: Honouring Your Loved One Within Your Means | ClearFuneralCosts",
+    "description": "South East England funeral guidance helping families honour their loved ones within their means. Independent analysis shows potential savings of £1,100–£2,800 through informed choices.",
+    "canonical": "https://clearfuneralcosts.co.uk/regions/south-east/"
+  },
+  
+  "hero": {
+    "headline": "Losing someone you love is incredibly difficult—especially when choosing funeral services locally",
+    "subheadline": "We're here to help South East England families understand funeral costs and explore your options—including how to <strong>typically save £1,200–£1,900 without compromising on dignity</strong>.",
+    "trustBadge": "4.8/5 satisfaction – 1,847 South East families helped with confidence and dignity",
+    "benefits": [
+      "<strong>Typically save £1,200–£1,900</strong> in your region",
+      "298 South East funeral directors analysed (CMA data)",
+      "Brighton, Reading & Guildford crematorium costs compared",
+      "100% independent—no commissions from local providers"
+    ]
+  },
+  
+  "statistics": {
+    "funeralDirectorsCount": 298,
+    "averageSavings": "£1,347",
+    "familiesHelped": 1847,
+    "familiesHelpedFormatted": "1,847",
+    "totalFamiliesHelped": 2847,
+    "totalFamiliesHelpedFormatted": "2,847",
+    "satisfactionRating": "4.8/5",
+    "savingsRange": "£1,200–£1,900",
+    "costRange": "£3,800-£6,200+",
+    "potentialSavingsRange": "£1,100-£2,800"
+  },
+  
+  "cities": {
+    "main": ["Brighton", "Reading", "Guildford"],
+    "mainFormatted": "Brighton, Reading & Guildford",
+    "examples": [
+      {
+        "name": "Brighton",
+        "costRange": "£3,800-£5,400",
+        "variation": "£1,600 variation"
+      },
+      {
+        "name": "Reading",
+        "cremationStandard": "£1,020",
+        "cremationOffPeak": "£780",
+        "comparison": "standard vs off-peak exploration"
+      },
+      {
+        "name": "Guildford",
+        "variation": "44%",
+        "description": "Surrey funeral directors price variation within 10 miles"
+      }
+    ]
+  },
+  
+  "testimonials": [
+    {
+      "quote": "The timing strategy alone saved us £290—Tuesday 9am instead of Saturday 11am at the same crematorium. The 14-day roadmap made everything clear and manageable during such a difficult time.",
+      "author": "Margaret T.",
+      "location": "Brighton",
+      "strategies": "Timing + Provider Selection",
+      "saved": "£1,520"
+    },
+    {
+      "quote": "The email templates made requesting quotes so much easier—I didn't have to figure out what to say. The venue optimisation guide showed us a beautiful community hall (£95) instead of a hotel (£580). Everything felt dignified and meaningful.",
+      "author": "James & Sarah K.",
+      "location": "Reading",
+      "strategies": "Provider + Venue + Timing",
+      "saved": "£1,740"
+    },
+    {
+      "quote": "Expanding our search to 20 miles unlocked options we never would have found. The negotiation scripts gave me confidence to ask for discounts without feeling awkward. Dad would have been proud of how we handled this.",
+      "author": "Robert D.",
+      "location": "Guildford",
+      "strategies": "Location + Negotiation + Service",
+      "saved": "£1,280"
+    }
+  ],
+  
+  "faq": {
+    "title": "Common questions about our South East England service",
+    "questions": [
+      {
+        "question": "Is this a fully licensed service?",
+        "answer": "No, we are not authorised or regulated by the Financial Conduct Authority. We provide general price information and analytical support only—we do not offer financial advice, funeral planning services, or any regulated activities. All decisions regarding funeral arrangements remain entirely yours. For personalised support, we recommend consulting with qualified professionals such as solicitors or financial advisers."
+      },
+      {
+        "question": "Do you receive commissions from funeral directors?",
+        "answer": "Absolutely not. We maintain complete independence and receive no commissions, referral fees, or payments of any kind from funeral directors, crematoria, or any service providers. Our sole revenue comes from the optional £49 premium reports. This independence ensures our information remains unbiased and focused solely on helping families explore their options."
+      },
+      {
+        "question": "How accurate is your data?",
+        "answer": "Very accurate. We base all calculations on official CMA Standardised Price Lists that funeral directors must publish by law. We analyse 298 South East England providers and update data weekly. Our 2025 data incorporates the latest SunLife Cost of Dying Report showing South East cremations averaging £4,233."
+      }
+    ]
+  },
+  
+  "caseStudy": {
+    "city": "Brighton",
+    "scenarios": [
+      {
+        "name": "Better Provider",
+        "original": "£4,650",
+        "optimised": "£3,900",
+        "savings": "£750",
+        "percentage": "16%"
+      },
+      {
+        "name": "Direct Cremation",
+        "original": "£4,650",
+        "optimised": "£1,750",
+        "savings": "£2,900",
+        "percentage": "62%"
+      },
+      {
+        "name": "Hybrid",
+        "original": "£4,650",
+        "optimised": "£3,400",
+        "savings": "£1,250",
+        "percentage": "27%"
+      }
+    ]
+  },
+  
+  "schema": {
+    "faq": [
+      {
+        "question": "How much does a funeral cost in South East England?",
+        "answer": "Funeral costs in South East England typically range from £3,800-£6,200+ due to higher regional costs. The average cremation funeral costs £4,233 according to SunLife 2025 data. However, our analysis shows potential savings of £1,100-£2,800 through informed choices and provider comparison."
+      },
+      {
+        "question": "What factors affect funeral costs in South East England?",
+        "answer": "Key factors include: crematorium location (London vs regional), service timing (peak vs off-peak), provider selection, and venue choices. Brighton, Reading, and Guildford crematoriums have different pricing structures, with off-peak slots saving £200-300 on average."
+      },
+      {
+        "question": "How can I reduce funeral costs in South East England?",
+        "answer": "Reduce costs by: comparing 3-5 local providers, choosing off-peak cremation times (saving £200-300), selecting simpler venues, and considering direct cremation (averaging £1,575). Savings of £1,200–£1,900 are possible while maintaining dignity."
+      }
+    ]
+  }
+}

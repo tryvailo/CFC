@@ -869,6 +869,19 @@ h6 {
     min-height: auto;
 }
 
+/* Hero Background Image */
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><defs><pattern id="subtle-pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.05)"/><circle cx="25" cy="25" r="1.5" fill="rgba(255,255,255,0.03)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="1200" height="800" fill="url(%23subtle-pattern)"/></svg>');
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .hero-minimal::before {
     content: '';
     position: absolute;
@@ -1782,6 +1795,71 @@ h6 {
     font-weight: 500;
 }
 
+/* === UK-WIDE STATISTICS SECTION === */
+.uk-statistics-section {
+    background: var(--warm-grey-bg);
+    padding: 80px 0;
+}
+
+.uk-statistics-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.uk-statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.uk-stat-item {
+    background: var(--pure-white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uk-stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.uk-stat-number {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.uk-stat-label {
+    font-size: 1rem;
+    color: var(--neutral-700);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .uk-statistics-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .uk-stat-item {
+        padding: 32px 24px;
+    }
+    
+    .uk-stat-number {
+        font-size: 2.25rem;
+    }
+}
+
 /* REGIONAL CALCULATOR */
 .regional-calculator {
     background: var(--pure-white);
@@ -2010,7 +2088,7 @@ h6 {
 }
 
 .service-definition-content {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 40px;
     text-align: center;
@@ -2022,6 +2100,7 @@ h6 {
     color: var(--primary-navy, #1e3a5f);
     margin-bottom: 16px;
     line-height: var(--leading-tight, 1.25);
+    text-align: center;
 }
 
 .service-definition-subtitle {
@@ -2034,13 +2113,14 @@ h6 {
 
 .service-definition-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
-    max-width: 1400px;
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 40px;
+    justify-items: center;
 }
 
 .service-definition-item {
@@ -2051,7 +2131,9 @@ h6 {
     border: 1px solid var(--neutral-300, #e2e8f0);
     text-align: left;
     transition: all 0.3s ease;
-    min-width: 0;
+    min-width: 300px;
+    max-width: 400px;
+    width: 100%;
 }
 
 .service-definition-item:hover {
@@ -3570,9 +3652,13 @@ h6 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
 }
 
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
 .testimonial-text {
     font-style: italic;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     color: var(--neutral-900);
     line-height: 1.6;
     font-size: 1rem;
@@ -3580,56 +3666,76 @@ h6 {
 }
 
 .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
     font-weight: 600;
     color: var(--navy-primary);
-    margin-bottom: 8px;
     font-size: 1rem;
     line-height: 1.5;
 }
 
-.testimonial-author strong {
+.testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--neutral-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-sage-light);
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent-sage-light) 0%, var(--accent-sage) 100%);
+    color: var(--pure-white);
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.testimonial-author-info strong {
     font-weight: 600;
     color: var(--navy-primary);
 }
 
-.testimonial-date {
-    font-size: 0.9rem;
+.testimonial-author-info span {
+    font-size: 0.875rem;
     color: var(--neutral-600);
     font-weight: 400;
-    display: block;
-    margin-top: 4px;
-}
-
-.testimonial-location {
-    color: var(--neutral-700, #4a5568);
-    font-size: var(--text-sm, 16px);
-    margin-bottom: 12px;
-    line-height: var(--leading-normal, 1.6);
-}
-
-.testimonial-details {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--neutral-300, #e2e8f0);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .testimonial-strategies {
-    display: block;
-    font-size: var(--text-sm, 16px);
-    color: var(--neutral-700, #4a5568);
-    font-weight: var(--font-medium, 500);
-    line-height: var(--leading-normal, 1.6);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--neutral-300);
+    font-size: 0.9375rem;
+    color: var(--neutral-700);
+    line-height: 1.6;
 }
 
-.testimonial-savings {
-    display: block;
-    font-size: var(--text-base, 20px);
-    color: var(--accent-sage, #5a7a5f);
-    font-weight: var(--font-semibold, 600);
-    line-height: var(--leading-tight, 1.25);
+.testimonial-strategies strong {
+    font-weight: 600;
+    color: var(--navy-primary);
 }
 
 .testimonial-outcome {
@@ -4035,6 +4141,11 @@ h6 {
 .guarantee-text {
     font-size: 1rem;
     opacity: 0.8;
+}
+
+.final-cta .guarantee-text {
+    color: var(--pure-white);
+    opacity: 0.95;
 }
 
 /* === FOOTER === */
