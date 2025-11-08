@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report - All Service Types | ClearFuneralCosts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-controls h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+        }
+        .service-type-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .service-btn {
+            padding: 10px 20px;
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .service-btn:hover {
+            background: #1e40af;
+        }
+        .service-btn.active {
+            background: #10b981;
+        }
+        .test-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f9ff;
+            border-left: 4px solid #1e3a8a;
+            border-radius: 4px;
+        }
+        .test-info strong {
+            color: #1e3a8a;
+        }
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: 2px solid #1e3a8a;
+            border-radius: 8px;
+            background: white;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .status.loading {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-controls">
+        <h2>🧪 Тестирование Отчетов - Все Типы Похорон</h2>
+        
+        <div class="service-type-buttons">
+            <button class="service-btn" data-type="traditional">Traditional</button>
+            <button class="service-btn" data-type="direct">Direct Cremation</button>
+            <button class="service-btn" data-type="simple">Simple Service</button>
+            <button class="service-btn" data-type="hybrid">Hybrid</button>
+            <button class="service-btn" data-type="burial">Burial</button>
+            <button class="service-btn" data-type="unsure">I'm Not Sure</button>
+            <button class="service-btn" data-type="not_sure">Not Sure (alt)</button>
+        </div>
+        
+        <div class="test-info">
+            <strong>Текущий тип:</strong> <span id="current-type">traditional</span><br>
+            <strong>URL:</strong> <span id="current-url">free_report.html?serviceType=traditional</span>
+        </div>
+        
+        <div id="status" class="status loading" style="display: none;">Загрузка...</div>
+    </div>
+    
+    <iframe id="report-frame" src="free_report.html?serviceType=traditional"></iframe>
+    
+    <script>
+        const buttons = document.querySelectorAll('.service-btn');
+        const iframe = document.getElementById('report-frame');
+        const currentTypeSpan = document.getElementById('current-type');
+        const currentUrlSpan = document.getElementById('current-url');
+        const statusDiv = document.getElementById('status');
+        
+        // Обработка кликов по кнопкам
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const serviceType = btn.dataset.type;
+                
+                // Обновление активной кнопки
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Обновление информации
+                currentTypeSpan.textContent = serviceType;
+                const url = `free_report.html?serviceType=${serviceType}`;
+                currentUrlSpan.textContent = url;
+                
+                // Показать статус загрузки
+                statusDiv.style.display = 'block';
+                statusDiv.className = 'status loading';
+                statusDiv.textContent = `Загрузка отчета для типа: ${serviceType}...`;
+                
+                // Загрузка отчета в iframe
+                iframe.src = url;
+                
+                // Ожидание загрузки iframe
+                iframe.onload = () => {
+                    statusDiv.className = 'status success';
+                    statusDiv.textContent = `✅ Отчет загружен для типа: ${serviceType}`;
+                    
+                    // Проверка консоли на ошибки (если возможно)
+                    try {
+                        const iframeWindow = iframe.contentWindow;
+                        if (iframeWindow) {
+                            console.log(`Report loaded for type: ${serviceType}`);
+                        }
+                    } catch (e) {
+                        // Cross-origin ограничения могут не позволить доступ
+                    }
+                };
+                
+                iframe.onerror = () => {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = `❌ Ошибка загрузки отчета для типа: ${serviceType}`;
+                };
+            });
+        });
+        
+        // Установка первой кнопки как активной
+        buttons[0].classList.add('active');
+        
+        // Обработка загрузки первого iframe
+        iframe.onload = () => {
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status success';
+            statusDiv.textContent = '✅ Отчет загружен для типа: traditional';
+        };
+        
+        // Инструкции для разработчика
+        console.log(`
+🧪 Тестирование отчетов ClearFuneralCosts
+==========================================
+
+Доступные типы похорон:
+- traditional: Traditional Funeral Service
+- direct: Direct Cremation  
+- simple: Simple Service + Cremation
+- hybrid: Simple Service + Cremation (синоним)
+- burial: Burial Service
+- unsure: I'm Not Sure (с образовательной таблицей)
+- not_sure: Not Sure (альтернативный вариант)
+
+Проверьте:
+1. ✅ Конфиг загружается без ошибок
+2. ✅ Сценарии генерируются корректно (2 сценария для каждого типа)
+3. ✅ Образовательная таблица показывается только для unsure/not_sure
+4. ✅ Заголовки обновляются правильно
+5. ✅ Нет ошибок в консоли браузера
+
+Откройте консоль браузера (F12) для просмотра логов.
+        `);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,258 @@
+{
+  "serviceTypes": {
+    "traditional": {
+      "displayName": "Traditional Funeral Service",
+      "showEducationTable": false,
+      "introText": "Based on your preference for traditional funeral service, here are two optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Conservative Traditional",
+          "savings": "£500-£800",
+          "percent": "10-15% savings",
+          "description": "Keep traditional service while comparing providers and timing.",
+          "steps": [
+            "Compare several funeral directors",
+            "Request off-peak timing",
+            "Optimize transport"
+          ],
+          "bestFor": "Families wanting traditional service",
+          "timeNeeded": "2-3 hours",
+          "recommended": false
+        },
+        {
+          "title": "Optimized Traditional",
+          "savings": "£1,200-£1,800",
+          "percent": "25-35% savings",
+          "description": "Full traditional service with strategic provider selection for maximum savings.",
+          "steps": [
+            "Compare 5-8 traditional providers",
+            "Strategic timing optimization",
+            "Optimize transport options"
+          ],
+          "bestFor": "Families wanting maximum savings",
+          "timeNeeded": "4-6 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "direct": {
+      "displayName": "Direct Cremation",
+      "showEducationTable": false,
+      "introText": "Based on your preference for direct cremation, here are two optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Standard Direct Cremation",
+          "savings": "£2,000-£2,500",
+          "percent": "45-60% savings",
+          "description": "Find the most cost-effective direct cremation provider while maintaining quality standards.",
+          "steps": [
+            "Compare 3-5 direct cremation providers",
+            "Check for package deals"
+          ],
+          "bestFor": "Families wanting simple cremation",
+          "timeNeeded": "1-2 hours",
+          "recommended": false
+        },
+        {
+          "title": "Direct + Separate Memorial",
+          "savings": "£2,200-£2,800",
+          "percent": "50-65% savings",
+          "description": "Direct cremation with separate memorial gathering for maximum savings and flexibility.",
+          "steps": [
+            "Direct cremation service",
+            "Separate memorial gathering",
+            "Flexible timing for memorial"
+          ],
+          "bestFor": "Families wanting flexibility",
+          "timeNeeded": "3-4 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "simple": {
+      "displayName": "Simple Service + Cremation",
+      "showEducationTable": false,
+      "introText": "Based on your preference for simple service + cremation, here are two optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Simple Ceremony Package",
+          "savings": "£1,200-£1,600",
+          "percent": "30-40% savings",
+          "description": "Simple crematorium service with strategic timing for meaningful but modest celebration.",
+          "steps": [
+            "Compare 3-5 crematorium packages",
+            "Optimize timing for better rates",
+            "Smaller gathering size"
+          ],
+          "bestFor": "Families wanting modest celebration",
+          "timeNeeded": "2-3 hours",
+          "recommended": false
+        },
+        {
+          "title": "Hybrid Approach",
+          "savings": "£1,400-£1,900",
+          "percent": "35-45% savings",
+          "description": "Cremation without attendance followed by separate celebration of life for maximum flexibility.",
+          "steps": [
+            "Direct cremation service",
+            "Separate celebration of life",
+            "Flexible timing for memorial"
+          ],
+          "bestFor": "Families wanting maximum flexibility",
+          "timeNeeded": "3-4 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "hybrid": {
+      "displayName": "Simple Service + Cremation",
+      "showEducationTable": false,
+      "introText": "Based on your preference for simple service + cremation, here are two optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Simple Ceremony Package",
+          "savings": "£1,200-£1,600",
+          "percent": "30-40% savings",
+          "description": "Simple crematorium service with strategic timing for meaningful but modest celebration.",
+          "steps": [
+            "Compare 3-5 crematorium packages",
+            "Optimize timing for better rates",
+            "Smaller gathering size"
+          ],
+          "bestFor": "Families wanting modest celebration",
+          "timeNeeded": "2-3 hours",
+          "recommended": false
+        },
+        {
+          "title": "Hybrid Approach",
+          "savings": "£1,400-£1,900",
+          "percent": "35-45% savings",
+          "description": "Cremation without attendance followed by separate celebration of life for maximum flexibility.",
+          "steps": [
+            "Direct cremation service",
+            "Separate celebration of life",
+            "Flexible timing for memorial"
+          ],
+          "bestFor": "Families wanting maximum flexibility",
+          "timeNeeded": "3-4 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "burial": {
+      "displayName": "Burial Service",
+      "showEducationTable": false,
+      "introText": "Based on your preference for burial service, here are two optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Traditional Burial Optimized",
+          "savings": "£800-£1,200",
+          "percent": "15-25% savings",
+          "description": "Traditional burial service with strategic cemetery selection and material optimisation.",
+          "steps": [
+            "Compare 3-5 cemetery options",
+            "Optimize coffin materials",
+            "Compare transport options"
+          ],
+          "bestFor": "Families wanting traditional burial",
+          "timeNeeded": "3-4 hours",
+          "recommended": false
+        },
+        {
+          "title": "Natural/Woodland Burial",
+          "savings": "£1,500-£2,000",
+          "percent": "30-40% savings",
+          "description": "Natural burial in woodland setting with biodegradable coffin for environmental choice and significant savings.",
+          "steps": [
+            "Natural burial ground",
+            "Biodegradable coffin",
+            "Natural memorial options"
+          ],
+          "bestFor": "Families wanting environmental choice",
+          "timeNeeded": "4-5 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "unsure": {
+      "displayName": "Multiple Service Options",
+      "showEducationTable": true,
+      "introText": "Here are two balanced optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Traditional Service with Thoughtful Choices",
+          "savings": "£500-£800",
+          "percent": "10-15% savings",
+          "description": "Maintain familiar funeral traditions while identifying unnecessary costs.",
+          "steps": [
+            "Compare local funeral directors",
+            "Explore off-peak scheduling",
+            "Review transport and venues"
+          ],
+          "bestFor": "Families wanting familiar traditions",
+          "timeNeeded": "2-3 hours",
+          "recommended": false
+        },
+        {
+          "title": "Direct Cremation + Memorial Service",
+          "savings": "£1,500-£2,200",
+          "percent": "35-50% savings",
+          "description": "Direct cremation followed by separate memorial service for maximum savings and flexibility.",
+          "steps": [
+            "Direct cremation service",
+            "Separate memorial gathering",
+            "Flexible timing and location"
+          ],
+          "bestFor": "Families wanting maximum savings",
+          "timeNeeded": "3-4 hours",
+          "recommended": true
+        }
+      ]
+    },
+    "not_sure": {
+      "displayName": "Multiple Service Options",
+      "showEducationTable": true,
+      "introText": "Here are two balanced optimisation approaches:",
+      "scenarios": [
+        {
+          "title": "Traditional Service with Thoughtful Choices",
+          "savings": "£500-£800",
+          "percent": "10-15% savings",
+          "description": "Maintain familiar funeral traditions while identifying unnecessary costs.",
+          "steps": [
+            "Compare local funeral directors",
+            "Explore off-peak scheduling",
+            "Review transport and venues"
+          ],
+          "bestFor": "Families wanting familiar traditions",
+          "timeNeeded": "2-3 hours",
+          "recommended": false
+        },
+        {
+          "title": "Direct Cremation + Memorial Service",
+          "savings": "£1,500-£2,200",
+          "percent": "35-50% savings",
+          "description": "Direct cremation followed by separate memorial service for maximum savings and flexibility.",
+          "steps": [
+            "Direct cremation service",
+            "Separate memorial gathering",
+            "Flexible timing and location"
+          ],
+          "bestFor": "Families wanting maximum savings",
+          "timeNeeded": "3-4 hours",
+          "recommended": true
+        }
+      ]
+    }
+  },
+  "serviceTypeMap": {
+    "traditional": "Traditional Funeral Service",
+    "direct": "Direct Cremation",
+    "hybrid": "Simple Service + Cremation",
+    "simple": "Simple Service + Cremation",
+    "burial": "Burial Service",
+    "unsure": "Multiple Service Options",
+    "not_sure": "Multiple Service Options"
+  }
+}
+

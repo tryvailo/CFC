@@ -515,6 +515,7 @@
 
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/reports.js"></script>
+    <script src="./js/report-engine.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -608,7 +609,8 @@
                 addDemoModeIndicator();
             }
             
-            showScenariosForServiceType(demoServiceType);
+            // NEW: Use data-driven report engine
+            loadAndGenerateReport(demoServiceType);
             
             // Initialize enhanced features
             initializeEnhancedFeatures();
@@ -681,9 +683,39 @@
         }
         
         /**
-         * Show appropriate scenarios based on service type
+         * Load configuration and generate report using data-driven engine
          */
-        function showScenariosForServiceType(serviceType) {
+        function loadAndGenerateReport(serviceType) {
+            fetch('./config/scenarios-config.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load scenarios config');
+                    }
+                    return response.json();
+                })
+                .then(config => {
+                    // Initialize report engine
+                    const engine = new ReportEngine(config);
+                    engine.generateReport(serviceType);
+                    
+                    // Legacy UI updates (can be removed after full migration)
+                    updateServiceTypeLabels(serviceType);
+                    highlightPersonalization(serviceType);
+                    updatePremiumMessaging(serviceType);
+                })
+                .catch(error => {
+                    console.error('Error loading report config:', error);
+                    // Fallback to old implementation if config fails to load
+                    console.warn('Falling back to legacy scenario generation');
+                    showScenariosForServiceTypeLegacy(serviceType);
+                });
+        }
+        
+        /**
+         * Legacy function - kept as fallback
+         * @deprecated Use loadAndGenerateReport instead
+         */
+        function showScenariosForServiceTypeLegacy(serviceType) {
             // Update personalization header
             updatePersonalizationHeader(serviceType);
             
